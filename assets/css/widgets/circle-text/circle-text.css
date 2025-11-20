@@ -1,0 +1,43 @@
+.elematic-circle-text-wrap {
+    position: relative;
+    border-radius: 100vmax;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.elematic-circle-text-image {
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border-radius: 100vmax;
+}
+
+.elematic-circle-text-txt {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-family: Consolas, monospace;
+    font-size: 17px;
+    color: #000;
+}
+
+.elematic-circle-text-txt {
+    animation-name: txTextRotate;
+}
+
+.elematic-circle-text-txt.elematic-reverse {
+    animation-name: txTextRotateReverse;
+}
+
+@keyframes txTextRotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes txTextRotateReverse {
+    to {
+        transform: rotate(-360deg);
+    }
+}

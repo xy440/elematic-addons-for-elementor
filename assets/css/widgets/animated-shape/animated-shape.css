@@ -1,0 +1,166 @@
+/* #Animated Shape
+------------------------------------- */
+.elematic-animated-shape-image.style_1 img{
+    -webkit-animation: clip-1 10s linear infinite alternate forwards;
+    animation: clip-1 10s linear infinite alternate forwards;
+}
+.elematic-animated-shape-image.style_2 img{
+    -webkit-animation: clip-2 10s linear infinite alternate forwards;
+    animation: clip-2 10s linear infinite alternate forwards;
+}
+.elematic-animated-shape-image.style_3 img{
+    -webkit-animation: clip-3 10s linear infinite alternate forwards;
+    animation: clip-3 10s linear infinite alternate forwards;
+}
+.elematic-animated-shape-image.style_4 img {
+    animation: clip-4 10s linear infinite alternate forwards;
+    -webkit-animation: clip-4 10s linear infinite alternate forwards;
+}
+.elematic-animated-shape-image.style_5 img {
+    animation: clip-5 10s linear infinite alternate forwards;
+    -webkit-animation: clip-5 10s linear infinite alternate forwards;
+}
+.elematic-animated-shape-image.style_6 img {
+    animation: clip-6 10s linear infinite alternate forwards;
+    -webkit-animation: clip-6 10s linear infinite alternate forwards;
+}
+.elematic-animated-shape-image.style_7 img {
+    animation: clip-7 10s linear infinite alternate forwards;
+    -webkit-animation: clip-7 10s linear infinite alternate forwards;
+}
+.elematic-animated-shape-image.style_8 img {
+    animation: clip-8 10s linear infinite alternate forwards;
+    -webkit-animation: clip-8 10s linear infinite alternate forwards;
+}
+ 
+@keyframes clip-1{
+    0%, 100% {
+        border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+    }
+    14% {
+        border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%;
+    }
+    28% {
+        border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%;
+    }
+    42% {
+        border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%;
+    }
+    56% {
+        border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%;
+    }
+    70% {
+        border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%;
+    }
+    84% {
+        border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;
+    }
+}
+
+@keyframes clip-2 {
+    0%, 100% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        box-shadow: 15px 15px 50px rgba(0,0,0,0.2);
+    }
+    25% { 
+        border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+    }
+    50% {
+        border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+        box-shadow: -10px -5px 50px rgba(0,0,0,0.2);
+    }
+    75% {
+        border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+    }
+}
+
+@keyframes clip-3 {
+    0%, 100% {
+      border-radius: 45% 55% 62% 38% / 53% 51% 49% 47%;
+    }
+    40% {
+      border-radius: 45% 55% 49% 51% / 36% 51% 49% 64%;
+    }
+    60% {
+      border-radius: 60% 40% 57% 43% / 47% 62% 38% 53%;
+    }
+    80% {
+      border-radius: 60% 40% 32% 68% / 38% 36% 64% 62%;
+    }
+}
+
+@keyframes clip-4 {
+    from {
+        border-radius: 25% 67% 73% 60% / 56% 28% 80% 14%; 
+    }
+ 
+    to {
+        border-radius: 57% 34% 12% 45% / 15% 34% 23% 90%;
+    }
+}
+
+@keyframes clip-5 {
+    0%, 20%, 100% {
+      border-radius: 52% 89% 62% 41% / 80% 77% 65%;
+    }
+    40% {
+      border-radius: 53% 85% 92% 95% / 89% 68% 90%;
+    }
+    60% {
+      border-radius: 92% 92% 72% 64% / 69% 50% 96%;
+    }
+    80% {
+      border-radius: 30% 40% 50% 60% / 59% 40% 66%;
+    }
+}
+@keyframes clip-6 {
+    0%, 100% {
+      border-radius: 49% 42% 65% 75% / 47% 85% 70% 79%;
+    }
+    20% {
+      border-radius: 41% 90% 76% 99% / 98% 74% 50% 68%;
+    }
+    40% {
+      border-radius: 96% 93% 50% 79% / 92% 67% 42% 65%;
+    }
+    60% {
+      border-radius: 87% 90% 73% 81% / 42% 82% 73% 65%;
+    }
+    80% {
+      border-radius: 71% 80% 48% 63% / 93% 47% 69% 50%;
+    }
+}
+@keyframes clip-7 {
+    0%, 100% {
+      border-radius: 54% 79% 51% 66% / 94% 74% 73% 85%;
+    }
+    20% {
+      border-radius: 69% 68% 51% 75% / 64% 77% 59% 76%;
+    }
+    40% {
+      border-radius: 91% 89% 96% 40% / 85% 89% 64% 62%;
+    }
+    60% {
+      border-radius: 91% 89% 96% 40% / 85% 89% 64% 62%;
+    }
+    80% {
+      border-radius: 76% 79% 95% 92% / 87% 75% 78% 68%;
+    }
+}
+@keyframes clip-8 {
+    0%, 100% {
+      border-radius: 75% 61% 56% 78% / 86% 88% 96% 50%;
+    }
+    25% {
+      border-radius: 55% 84% 41% 67% / 86% 43% 60% 57%;
+    }
+    50% {
+      border-radius: 51% 48% 80% 68% / 55% 96% 67% 92%;
+    }
+    75% {
+      border-radius: 81% 90% 70% 64% / 86% 83% 76% 70%;
+    }
+    90% {
+      border-radius: 68% 48% 66% 85% / 93% 66% 96% 70%;
+    }
+}

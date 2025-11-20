@@ -1,0 +1,100 @@
+/* Base */
+.elematic-image-animate-wrap { display:inline-block; position:relative; }
+.elematic-image-animate-wrap .elematic-ia-inner {
+  display:inline-block;
+  will-change: transform, opacity;
+  transform-origin: center;
+}
+
+/* ==== Float Up/Down ==== */
+.elematic-ia-anim-floatY .elematic-ia-inner {
+  animation: ea-floatY var(--ia-speed, 2.5s) ease-in-out infinite;
+}
+@keyframes ea-floatY {
+  0%,100% { transform: translate3d(0,0,0); }
+  50%     { transform: translate3d(0,var(--ia-dist, 25px),0); }
+}
+
+/* ==== Float Left/Right ==== */
+.elematic-ia-anim-floatX .elematic-ia-inner {
+  animation: ea-floatX var(--ia-speed, 2.5s) ease-in-out infinite;
+}
+@keyframes ea-floatX {
+  0%,100% { transform: translate3d(0,0,0); }
+  50%     { transform: translate3d(var(--ia-dist, 25px),0,0); }
+}
+
+/* ==== Diagonal ==== */
+.elematic-ia-anim-floatDiag .elematic-ia-inner {
+  animation: ea-floatDiag var(--ia-speed, 2.5s) ease-in-out infinite;
+}
+@keyframes ea-floatDiag {
+  0%,100% { transform: translate3d(0,0,0); }
+  50%     { transform: translate3d(var(--ia-dist, 25px), var(--ia-dist, 25px), 0); }
+}
+
+/* ==== Pulse (Scale) ==== */
+.elematic-ia-anim-pulse .elematic-ia-inner {
+  animation: ea-pulse var(--ia-speed, 2.5s) ease-in-out infinite;
+}
+@keyframes ea-pulse {
+  0%,100% { transform: scale(1); }
+  50%     { transform: scale(var(--ia-scale, 1.08)); }
+}
+
+/* ==== Tilt (Alternate Rotate) ==== */
+.elematic-ia-anim-tilt .elematic-ia-inner {
+  animation: ea-tilt var(--ia-speed, 2.5s) ease-in-out infinite;
+}
+@keyframes ea-tilt {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(var(--ia-rotate, 8deg)); }
+  100% { transform: rotate(0deg); }
+}
+
+/* ==== Spin (Continuous) ==== */
+.elematic-ia-anim-spin .elematic-ia-inner {
+  animation: ea-spin var(--ia-speed, 2.5s) linear infinite;
+}
+.elematic-ia-anim-spin[data-spin-dir="ccw"] .elematic-ia-inner {
+  animation-direction: reverse; /* anti-clockwise */
+}
+@keyframes ea-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ==== Bounce ==== */
+.elematic-ia-anim-bounce .elematic-ia-inner {
+  animation: ea-bounce var(--ia-speed, 2.5s) cubic-bezier(.28,.84,.42,1) infinite;
+}
+@keyframes ea-bounce {
+  0%,100% { transform: translate3d(0,0,0); }
+  30%     { transform: translate3d(0, calc(var(--ia-dist, 25px) * -1), 0); }
+  50%     { transform: translate3d(0,0,0); }
+  70%     { transform: translate3d(0, calc(var(--ia-dist, 25px) * -0.5), 0); }
+}
+
+/* ==== Wiggle (small quick rotate) ==== */
+.elematic-ia-anim-wiggle .elematic-ia-inner {
+  animation: ea-wiggle var(--ia-speed, 2.5s) ease-in-out infinite;
+}
+@keyframes ea-wiggle {
+  0%,100% { transform: rotate(0deg); }
+  25%     { transform: rotate(calc(var(--ia-rotate, 8deg) * -1)); }
+  50%     { transform: rotate(var(--ia-rotate, 8deg)); }
+  75%     { transform: rotate(calc(var(--ia-rotate, 8deg) * -0.5)); }
+}
+
+/* ==== Fade In / Out ==== */
+.elematic-ia-anim-fade .elematic-ia-inner {
+  animation: ea-fade var(--ia-speed, 2.5s) ease-in-out infinite;
+}
+@keyframes ea-fade {
+  0%,100% { opacity: 1; }
+  50%     { opacity: .45; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .elematic-image-animate-wrap .elematic-ia-inner { animation: none !important; }
+}

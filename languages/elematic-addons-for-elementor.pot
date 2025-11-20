@@ -1,0 +1,2587 @@
+# Copyright (C) 2025 Anwar Hossain
+# This file is distributed under the GPL3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Elematic – Addon for Elementor 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/elematic-addons-for-elementor\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-09-22T09:05:23+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: elematic-addons-for-elementor\n"
+
+#. Plugin Name of the plugin
+#: elematic-addons-for-elementor.php
+msgid "Elematic – Addon for Elementor"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: elematic-addons-for-elementor.php
+msgid "https://themes.network/elematic/"
+msgstr ""
+
+#. Description of the plugin
+#: elematic-addons-for-elementor.php
+msgid "Lightweight and blazing fast Elementor widgets."
+msgstr ""
+
+#. Author of the plugin
+#: elematic-addons-for-elementor.php
+msgid "Anwar Hossain"
+msgstr ""
+
+#. Author URI of the plugin
+#: elematic-addons-for-elementor.php
+msgid "https://anwarhossain.dev/"
+msgstr ""
+
+#: includes/class-helper.php:221
+msgid "Default"
+msgstr ""
+
+#: includes/class-helper.php:222
+msgid "Linear"
+msgstr ""
+
+#: includes/class-helper.php:223
+msgid "Ease In"
+msgstr ""
+
+#: includes/class-helper.php:224
+msgid "Ease Out"
+msgstr ""
+
+#: includes/class-helper.php:225
+msgid "Ease In Out"
+msgstr ""
+
+#: includes/class-helper.php:226
+msgid "Ease In Quad"
+msgstr ""
+
+#: includes/class-helper.php:227
+msgid "Ease In Cubic"
+msgstr ""
+
+#: includes/class-helper.php:228
+msgid "Ease In Quart"
+msgstr ""
+
+#: includes/class-helper.php:229
+msgid "Ease In Quint"
+msgstr ""
+
+#: includes/class-helper.php:230
+msgid "Ease In Sine"
+msgstr ""
+
+#: includes/class-helper.php:231
+msgid "Ease In Expo"
+msgstr ""
+
+#: includes/class-helper.php:232
+msgid "Ease In Circ"
+msgstr ""
+
+#: includes/class-helper.php:233
+msgid "Ease In Back"
+msgstr ""
+
+#: includes/class-helper.php:234
+msgid "Ease Out Quad"
+msgstr ""
+
+#: includes/class-helper.php:235
+msgid "Ease Out Cubic"
+msgstr ""
+
+#: includes/class-helper.php:236
+msgid "Ease Out Quart"
+msgstr ""
+
+#: includes/class-helper.php:237
+msgid "Ease Out Quint"
+msgstr ""
+
+#: includes/class-helper.php:238
+msgid "Ease Out Sine"
+msgstr ""
+
+#: includes/class-helper.php:239
+msgid "Ease Out Expo"
+msgstr ""
+
+#: includes/class-helper.php:240
+msgid "Ease Out Circ"
+msgstr ""
+
+#: includes/class-helper.php:241
+msgid "Ease Out Back"
+msgstr ""
+
+#: includes/class-helper.php:242
+msgid "Ease In-Out Quad"
+msgstr ""
+
+#: includes/class-helper.php:243
+msgid "Ease In-Out Cubic"
+msgstr ""
+
+#: includes/class-helper.php:244
+msgid "Ease In-Out Quart"
+msgstr ""
+
+#: includes/class-helper.php:245
+msgid "Ease In-Out Quint"
+msgstr ""
+
+#: includes/class-helper.php:246
+msgid "Ease In-Out Sine"
+msgstr ""
+
+#: includes/class-helper.php:247
+msgid "Ease In-Out Expo"
+msgstr ""
+
+#: includes/class-helper.php:248
+msgid "Ease In-Out Circ"
+msgstr ""
+
+#: includes/class-helper.php:249
+msgid "Ease In-Out Back"
+msgstr ""
+
+#: includes/class-init.php:40
+msgid "Elematic Widgets"
+msgstr ""
+
+#: widgets/accordion/accordion.php:26
+msgid " Accordion"
+msgstr ""
+
+#: widgets/accordion/accordion.php:53
+#: widgets/accordion/accordion.php:195
+msgid "Accordion"
+msgstr ""
+
+#: widgets/accordion/accordion.php:62
+#: widgets/accordion/accordion.php:276
+#: widgets/circle-info/circle-info.php:68
+#: widgets/circle-info/circle-info.php:692
+#: widgets/grid/grid.php:130
+#: widgets/marquee/marquee.php:196
+#: widgets/progress-bar/progress-bar.php:84
+#: widgets/progress-bar/progress-bar.php:443
+#: widgets/search/search.php:1594
+#: widgets/service-list/service-list.php:158
+#: widgets/service-list/service-list.php:203
+msgid "Title"
+msgstr ""
+
+#: widgets/accordion/accordion.php:64
+msgid "Accordion Title"
+msgstr ""
+
+#: widgets/accordion/accordion.php:75
+#: widgets/accordion/accordion.php:542
+#: widgets/animated-heading/animated-heading.php:44
+#: widgets/animated-shape/animated-shape.php:39
+#: widgets/circle-info/circle-info.php:61
+#: widgets/circle-info/circle-info.php:392
+#: widgets/grid/grid.php:45
+#: widgets/grid/grid.php:657
+#: widgets/highlight-text/highlight-text.php:37
+#: widgets/lottie/lottie.php:39
+msgid "Content"
+msgstr ""
+
+#: widgets/accordion/accordion.php:77
+msgid "Accordion Content"
+msgstr ""
+
+#: widgets/accordion/accordion.php:84
+msgid "Accordion Items"
+msgstr ""
+
+#: widgets/accordion/accordion.php:89
+msgid "Accordion #1"
+msgstr ""
+
+#: widgets/accordion/accordion.php:90
+#: widgets/accordion/accordion.php:94
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+msgstr ""
+
+#: widgets/accordion/accordion.php:93
+msgid "Accordion #2"
+msgstr ""
+
+#: widgets/accordion/accordion.php:103
+msgid "Initial State"
+msgstr ""
+
+#: widgets/accordion/accordion.php:107
+msgid "Open First Item"
+msgstr ""
+
+#: widgets/accordion/accordion.php:108
+msgid "Open All Items"
+msgstr ""
+
+#: widgets/accordion/accordion.php:109
+msgid "All Items Closed"
+msgstr ""
+
+#: widgets/accordion/accordion.php:116
+#: widgets/accordion/accordion.php:389
+#: widgets/button/button.php:112
+#: widgets/circle-info/circle-info.php:95
+#: widgets/circle-info/circle-info.php:485
+#: widgets/grid/grid.php:72
+#: widgets/grid/grid.php:83
+#: widgets/grid/grid.php:100
+#: widgets/grid/grid.php:562
+#: widgets/info-link/info-link.php:63
+#: widgets/info-link/info-link.php:77
+#: widgets/marquee/marquee.php:141
+#: widgets/marquee/marquee.php:156
+#: widgets/search/search.php:511
+#: widgets/service-list/service-list.php:185
+#: widgets/service-list/service-list.php:260
+msgid "Icon"
+msgstr ""
+
+#: widgets/accordion/accordion.php:145
+msgid "Active Icon"
+msgstr ""
+
+#: widgets/accordion/accordion.php:184
+msgid "FAQ Schema"
+msgstr ""
+
+#: widgets/accordion/accordion.php:216
+#: widgets/accordion/accordion.php:295
+#: widgets/accordion/accordion.php:441
+#: widgets/accordion/accordion.php:561
+#: widgets/button/button.php:309
+#: widgets/button/button.php:464
+#: widgets/circle-info/circle-info.php:631
+#: widgets/circle-info/circle-info.php:709
+#: widgets/circle-info/circle-info.php:737
+#: widgets/circle-info/circle-info.php:772
+#: widgets/circle-info/circle-info.php:801
+#: widgets/circle-progress-bar/circle-progress-bar.php:117
+#: widgets/info-link/info-link.php:514
+#: widgets/info-link/info-link.php:692
+#: widgets/info-link/info-link.php:743
+#: widgets/info-link/info-link.php:872
+#: widgets/info-link/info-link.php:925
+#: widgets/info-link/info-link.php:969
+#: widgets/info-link/info-link.php:1022
+#: widgets/info-link/info-link.php:1131
+#: widgets/progress-bar/progress-bar.php:530
+#: widgets/progress-bar/progress-bar.php:574
+#: widgets/search/search.php:657
+#: widgets/search/search.php:727
+#: widgets/search/search.php:910
+#: widgets/search/search.php:1603
+#: widgets/search/search.php:1654
+#: widgets/search/search.php:1784
+#: widgets/search/search.php:1914
+#: widgets/search/search.php:1980
+#: widgets/search/search.php:2024
+#: widgets/search/search.php:2136
+#: widgets/search/search.php:2203
+#: widgets/search/search.php:2290
+msgid "Color"
+msgstr ""
+
+#: widgets/accordion/accordion.php:227
+#: widgets/accordion/accordion.php:346
+#: widgets/accordion/accordion.php:511
+#: widgets/accordion/accordion.php:589
+#: widgets/grid/grid.php:329
+#: widgets/grid/grid.php:383
+#: widgets/grid/grid.php:454
+#: widgets/info-link/info-link.php:1050
+#: widgets/progress-bar/progress-bar.php:301
+#: widgets/progress-bar/progress-bar.php:414
+#: widgets/progress-bar/progress-bar.php:500
+#: widgets/progress-bar/progress-bar.php:598
+msgid "Border"
+msgstr ""
+
+#: widgets/accordion/accordion.php:234
+#: widgets/accordion/accordion.php:353
+#: widgets/accordion/accordion.php:518
+#: widgets/accordion/accordion.php:596
+#: widgets/button/button.php:417
+#: widgets/circle-info/circle-info.php:436
+#: widgets/grid/grid.php:336
+#: widgets/grid/grid.php:461
+#: widgets/image-slide/image-slide.php:310
+#: widgets/info-link/info-link.php:662
+#: widgets/info-link/info-link.php:809
+#: widgets/info-link/info-link.php:1059
+#: widgets/lottie/lottie.php:432
+#: widgets/progress-bar/progress-bar.php:309
+#: widgets/progress-bar/progress-bar.php:508
+#: widgets/progress-bar/progress-bar.php:606
+#: widgets/search/search.php:855
+#: widgets/search/search.php:967
+#: widgets/search/search.php:1334
+#: widgets/search/search.php:1869
+#: widgets/search/search.php:2089
+#: widgets/search/search.php:2470
+#: widgets/service-list/service-list.php:370
+msgid "Border Radius"
+msgstr ""
+
+#: widgets/accordion/accordion.php:245
+#: widgets/accordion/accordion.php:364
+#: widgets/accordion/accordion.php:529
+#: widgets/accordion/accordion.php:607
+#: widgets/animated-heading/animated-heading.php:308
+#: widgets/animated-heading/animated-heading.php:380
+#: widgets/animated-heading/animated-heading.php:452
+#: widgets/animated-heading/animated-heading.php:524
+#: widgets/button/button.php:431
+#: widgets/circle-info/circle-info.php:417
+#: widgets/grid/grid.php:347
+#: widgets/info-link/info-link.php:1100
+#: widgets/progress-bar/progress-bar.php:473
+#: widgets/progress-bar/progress-bar.php:584
+#: widgets/search/search.php:875
+#: widgets/search/search.php:1576
+#: widgets/search/search.php:1887
+#: widgets/search/search.php:2108
+#: widgets/search/search.php:2433
+#: widgets/service-list/service-list.php:381
+msgid "Padding"
+msgstr ""
+
+#: widgets/accordion/accordion.php:256
+#: widgets/accordion/accordion.php:375
+#: widgets/accordion/accordion.php:618
+#: widgets/animated-heading/animated-heading.php:319
+#: widgets/animated-heading/animated-heading.php:391
+#: widgets/animated-heading/animated-heading.php:463
+#: widgets/animated-heading/animated-heading.php:535
+#: widgets/button/button.php:445
+#: widgets/circle-info/circle-info.php:290
+#: widgets/progress-bar/progress-bar.php:486
+#: widgets/service-list/service-list.php:392
+msgid "Margin"
+msgstr ""
+
+#: widgets/accordion/accordion.php:284
+#: widgets/accordion/accordion.php:419
+#: widgets/accordion/accordion.php:550
+#: widgets/circle-info/circle-info.php:144
+#: widgets/circle-info/circle-info.php:513
+#: widgets/circle-info/circle-info.php:578
+#: widgets/circle-info/circle-info.php:643
+#: widgets/grid/grid.php:320
+#: widgets/grid/grid.php:374
+#: widgets/grid/grid.php:691
+#: widgets/progress-bar/progress-bar.php:291
+#: widgets/progress-bar/progress-bar.php:464
+msgid "Background"
+msgstr ""
+
+#: widgets/accordion/accordion.php:308
+#: widgets/accordion/accordion.php:453
+msgid "Active Color"
+msgstr ""
+
+#: widgets/accordion/accordion.php:400
+#: widgets/animated-heading/animated-heading.php:222
+#: widgets/animated-shape/animated-shape.php:72
+#: widgets/button/button.php:264
+#: widgets/grid/grid.php:664
+#: widgets/image-animate/image-animate.php:120
+#: widgets/info-link/info-link.php:372
+#: widgets/lottie/lottie.php:113
+#: widgets/search/search.php:610
+#: widgets/search/search.php:807
+msgid "Alignment"
+msgstr ""
+
+#: widgets/accordion/accordion.php:404
+#: widgets/marquee/marquee.php:61
+msgid "Start"
+msgstr ""
+
+#: widgets/accordion/accordion.php:408
+msgid "End"
+msgstr ""
+
+#: widgets/accordion/accordion.php:430
+msgid "Active Background"
+msgstr ""
+
+#: widgets/accordion/accordion.php:464
+#: widgets/search/search.php:1926
+msgid "Size"
+msgstr ""
+
+#: widgets/accordion/accordion.php:487
+#: widgets/info-link/info-link.php:883
+#: widgets/info-link/info-link.php:936
+#: widgets/info-link/info-link.php:980
+msgid "Spacing"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:19
+msgid " Animated Heading"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:50
+#: widgets/animated-shape/animated-shape.php:90
+#: widgets/button/button.php:50
+#: widgets/button/button.php:294
+#: widgets/circle-progress-bar/circle-progress-bar.php:109
+#: widgets/image-slide/image-slide.php:278
+#: widgets/lottie/lottie.php:325
+#: widgets/marquee/marquee.php:292
+#: widgets/progress-bar/progress-bar.php:55
+#: widgets/progress-bar/progress-bar.php:68
+#: widgets/search/search.php:476
+msgid "Style"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:53
+msgid "Typed"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:54
+msgid "Animated"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:62
+msgid "Type Speed"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:73
+msgid "Start Delay"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:86
+msgid "Back Speed"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:98
+msgid "Back Delay"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:110
+#: widgets/marquee/marquee.php:57
+msgid "Animation"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:113
+#: widgets/circle-info/circle-info.php:840
+#: widgets/circle-info/circle-info.php:892
+#: widgets/search/search.php:599
+#: widgets/search/search.php:2369
+msgid "None"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:114
+msgid "Fade In"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:115
+msgid "Fade In Up"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:116
+msgid "Fade In Down"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:117
+msgid "Fade In Left"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:118
+msgid "Fade In Right"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:119
+msgid "Zoom In"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:120
+msgid "Zoom In Up"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:121
+msgid "Zoom In Down"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:122
+msgid "Zoom In Left"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:123
+msgid "Zoom In Right"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:124
+msgid "Bounce In"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:125
+msgid "Bounce In Up"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:126
+msgid "Bounce In Down"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:127
+msgid "Bounce In Left"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:128
+msgid "Bounce In Right"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:129
+msgid "Slide In"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:130
+msgid "Slide In Up"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:131
+msgid "Slide In Down"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:132
+msgid "Slide In Left"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:133
+msgid "Slide In Right"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:134
+msgid "Rotate In"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:135
+msgid "Rotate In Up Left"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:136
+msgid "Rotate In Up Right"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:137
+msgid "Rotate In Down Left"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:138
+msgid "Rotate In Down Right"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:139
+msgid "Bounce"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:140
+msgid "Flash"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:141
+msgid "Pulse"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:142
+msgid "Rubber Band"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:143
+msgid "Shake"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:144
+msgid "Head Shake"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:145
+msgid "Swing"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:146
+msgid "Tada"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:147
+msgid "Wobble"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:148
+msgid "Jello"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:149
+msgid "Light Speed In"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:150
+msgid "Roll In"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:161
+#: widgets/circle-progress-bar/circle-progress-bar.php:65
+msgid "Delay"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:173
+#: widgets/animated-heading/animated-heading.php:332
+#: widgets/circle-progress-bar/circle-progress-bar.php:73
+msgid "Before Text"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:176
+msgid "This is"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:184
+#: widgets/animated-heading/animated-heading.php:404
+msgid "Animated Text"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:187
+msgid "Animated, Typing, Dynamic"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:193
+#: widgets/animated-heading/animated-heading.php:476
+#: widgets/circle-progress-bar/circle-progress-bar.php:87
+msgid "After Text"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:196
+msgid "Heading"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:202
+#: widgets/circle-info/circle-info.php:120
+#: widgets/info-link/info-link.php:142
+#: widgets/info-link/info-link.php:419
+#: widgets/info-link/info-link.php:441
+msgid "HTML Tag"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:213
+#: widgets/button/button.php:100
+#: widgets/grid/grid.php:139
+#: widgets/image-animate/image-animate.php:111
+#: widgets/image-slide/image-slide.php:82
+msgid "Link URL"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:226
+#: widgets/animated-shape/animated-shape.php:75
+#: widgets/button/button.php:128
+#: widgets/button/button.php:268
+#: widgets/grid/grid.php:668
+#: widgets/image-animate/image-animate.php:124
+#: widgets/image-slide/image-slide.php:200
+#: widgets/info-link/info-link.php:334
+#: widgets/info-link/info-link.php:376
+#: widgets/lottie/lottie.php:118
+#: widgets/search/search.php:614
+#: widgets/search/search.php:813
+#: widgets/search/search.php:1282
+#: widgets/search/search.php:1430
+msgid "Left"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:230
+#: widgets/animated-shape/animated-shape.php:76
+#: widgets/button/button.php:272
+#: widgets/grid/grid.php:672
+#: widgets/image-animate/image-animate.php:128
+#: widgets/info-link/info-link.php:380
+#: widgets/lottie/lottie.php:122
+#: widgets/search/search.php:618
+#: widgets/search/search.php:817
+#: widgets/search/search.php:1434
+msgid "Center"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:234
+#: widgets/animated-shape/animated-shape.php:77
+#: widgets/button/button.php:132
+#: widgets/button/button.php:276
+#: widgets/grid/grid.php:676
+#: widgets/image-animate/image-animate.php:132
+#: widgets/image-slide/image-slide.php:201
+#: widgets/info-link/info-link.php:335
+#: widgets/info-link/info-link.php:384
+#: widgets/lottie/lottie.php:126
+#: widgets/search/search.php:622
+#: widgets/search/search.php:821
+#: widgets/search/search.php:1286
+#: widgets/search/search.php:1438
+msgid "Right"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:250
+msgid "Default Styles"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:257
+#: widgets/circle-info/circle-info.php:539
+#: widgets/circle-info/circle-info.php:612
+#: widgets/circle-info/circle-info.php:676
+#: widgets/marquee/marquee.php:299
+#: widgets/search/search.php:1095
+#: widgets/search/search.php:1152
+msgid "Text Color"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:267
+#: widgets/marquee/marquee.php:309
+msgid "Text Hover Color"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:277
+msgid "Text Background Color"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:339
+#: widgets/circle-progress-bar/circle-progress-bar.php:138
+msgid "Before Text Color"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:349
+msgid "Before Text Background Color"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:411
+msgid "Animated Text Color"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:421
+msgid "Animated Text Background Color"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:483
+#: widgets/circle-progress-bar/circle-progress-bar.php:218
+msgid "After Text Color"
+msgstr ""
+
+#: widgets/animated-heading/animated-heading.php:493
+msgid "After Text Background Color"
+msgstr ""
+
+#: widgets/animated-shape/animated-shape.php:21
+msgid "Animated Shape"
+msgstr ""
+
+#: widgets/animated-shape/animated-shape.php:43
+msgid "Shape Image"
+msgstr ""
+
+#: widgets/animated-shape/animated-shape.php:56
+msgid "Animation Style"
+msgstr ""
+
+#: widgets/animated-shape/animated-shape.php:60
+#: widgets/button/button.php:54
+msgid "Style 1"
+msgstr ""
+
+#: widgets/animated-shape/animated-shape.php:61
+#: widgets/button/button.php:55
+msgid "Style 2"
+msgstr ""
+
+#: widgets/animated-shape/animated-shape.php:62
+#: widgets/button/button.php:56
+msgid "Style 3"
+msgstr ""
+
+#: widgets/animated-shape/animated-shape.php:63
+#: widgets/button/button.php:57
+msgid "Style 4"
+msgstr ""
+
+#: widgets/animated-shape/animated-shape.php:64
+#: widgets/button/button.php:58
+msgid "Style 5"
+msgstr ""
+
+#: widgets/animated-shape/animated-shape.php:65
+#: widgets/button/button.php:59
+msgid "Style 6"
+msgstr ""
+
+#: widgets/animated-shape/animated-shape.php:66
+#: widgets/button/button.php:60
+msgid "Style 7"
+msgstr ""
+
+#: widgets/animated-shape/animated-shape.php:67
+#: widgets/button/button.php:61
+msgid "Style 8"
+msgstr ""
+
+#: widgets/animated-shape/animated-shape.php:98
+#: widgets/button/button.php:303
+#: widgets/circle-info/circle-info.php:765
+#: widgets/grid/grid.php:313
+#: widgets/grid/grid.php:473
+#: widgets/image-slide/image-slide.php:287
+#: widgets/info-link/info-link.php:507
+#: widgets/info-link/info-link.php:1015
+#: widgets/lottie/lottie.php:334
+#: widgets/marquee/marquee.php:91
+#: widgets/progress-bar/progress-bar.php:72
+#: widgets/search/search.php:650
+#: widgets/search/search.php:1087
+#: widgets/search/search.php:2196
+#: widgets/service-list/service-list.php:513
+msgid "Normal"
+msgstr ""
+
+#: widgets/animated-shape/animated-shape.php:101
+#: widgets/grid/grid.php:480
+#: widgets/grid/grid.php:514
+#: widgets/lottie/lottie.php:341
+#: widgets/lottie/lottie.php:376
+msgid "Opacity"
+msgstr ""
+
+#: widgets/animated-shape/animated-shape.php:116
+#: widgets/button/button.php:458
+#: widgets/circle-info/circle-info.php:345
+#: widgets/grid/grid.php:367
+#: widgets/grid/grid.php:507
+#: widgets/image-slide/image-slide.php:391
+#: widgets/info-link/info-link.php:322
+#: widgets/info-link/info-link.php:1124
+#: widgets/lottie/lottie.php:369
+#: widgets/search/search.php:1143
+#: widgets/search/search.php:2283
+#: widgets/service-list/service-list.php:664
+msgid "Hover"
+msgstr ""
+
+#: widgets/animated-shape/animated-shape.php:119
+msgid "Opacity (Hover)"
+msgstr ""
+
+#: widgets/button/button.php:21
+#: widgets/search/search.php:466
+#: widgets/search/search.php:1074
+msgid "Button"
+msgstr ""
+
+#: widgets/button/button.php:44
+#: widgets/circle-info/circle-info.php:221
+#: widgets/circle-progress-bar/circle-progress-bar.php:40
+#: widgets/grid/grid.php:243
+#: widgets/image-slide/image-slide.php:45
+#: widgets/info-link/info-link.php:275
+#: widgets/lottie/lottie.php:142
+#: widgets/marquee/marquee.php:42
+#: widgets/service-list/service-list.php:43
+msgid "Settings"
+msgstr ""
+
+#: widgets/button/button.php:53
+msgid "Style 0"
+msgstr ""
+
+#: widgets/button/button.php:62
+msgid "Style 9"
+msgstr ""
+
+#: widgets/button/button.php:63
+msgid "Style 10"
+msgstr ""
+
+#: widgets/button/button.php:72
+msgid "Button Text"
+msgstr ""
+
+#: widgets/button/button.php:74
+msgid "HOVER ME"
+msgstr ""
+
+#: widgets/button/button.php:80
+msgid "Hover Text"
+msgstr ""
+
+#: widgets/button/button.php:82
+msgid "CLICK ME"
+msgstr ""
+
+#: widgets/button/button.php:123
+msgid "Icon Position"
+msgstr ""
+
+#: widgets/button/button.php:144
+#: widgets/circle-info/circle-info.php:322
+#: widgets/info-link/info-link.php:543
+#: widgets/service-list/service-list.php:448
+msgid "Icon Size"
+msgstr ""
+
+#: widgets/button/button.php:173
+#: widgets/grid/grid.php:856
+msgid "Icon Spacing"
+msgstr ""
+
+#: widgets/button/button.php:199
+msgid "Icon Vertical Alignment"
+msgstr ""
+
+#: widgets/button/button.php:228
+#: widgets/lottie/lottie.php:287
+#: widgets/search/search.php:1202
+#: widgets/search/search.php:1720
+#: widgets/search/search.php:1992
+msgid "Width"
+msgstr ""
+
+#: widgets/button/button.php:246
+#: widgets/info-link/info-link.php:351
+#: widgets/progress-bar/progress-bar.php:210
+#: widgets/search/search.php:1225
+#: widgets/search/search.php:2044
+msgid "Height"
+msgstr ""
+
+#: widgets/button/button.php:247
+msgid "Adjust the Line Height from Typography to set the text middle"
+msgstr ""
+
+#: widgets/button/button.php:320
+#: widgets/button/button.php:475
+#: widgets/circle-progress-bar/circle-progress-bar.php:127
+#: widgets/search/search.php:669
+#: widgets/search/search.php:739
+#: widgets/search/search.php:924
+#: widgets/search/search.php:1107
+#: widgets/search/search.php:1164
+#: widgets/search/search.php:1378
+#: widgets/search/search.php:1808
+#: widgets/search/search.php:2217
+#: widgets/search/search.php:2303
+msgid "Background Color"
+msgstr ""
+
+#: widgets/button/button.php:350
+#: widgets/button/button.php:500
+#: widgets/circle-info/circle-info.php:465
+#: widgets/circle-info/circle-info.php:589
+#: widgets/circle-info/circle-info.php:654
+#: widgets/circle-info/circle-info.php:868
+#: widgets/circle-info/circle-info.php:920
+#: widgets/info-link/info-link.php:712
+#: widgets/info-link/info-link.php:762
+#: widgets/info-link/info-link.php:1150
+#: widgets/search/search.php:697
+#: widgets/search/search.php:767
+#: widgets/search/search.php:936
+#: widgets/search/search.php:1119
+#: widgets/search/search.php:1176
+#: widgets/search/search.php:2231
+#: widgets/search/search.php:2315
+msgid "Border Color"
+msgstr ""
+
+#: widgets/button/button.php:363
+#: widgets/search/search.php:835
+#: widgets/search/search.php:948
+#: widgets/search/search.php:1315
+#: widgets/search/search.php:2070
+msgid "Border Size"
+msgstr ""
+
+#: widgets/button/button.php:393
+msgid "Text Shadow"
+msgstr ""
+
+#: widgets/button/button.php:514
+msgid "Border Hover Size"
+msgstr ""
+
+#: widgets/button/button.php:537
+msgid "Hover Animation"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:22
+msgid " Circle Info"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:48
+msgid "Item Lists"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:71
+#: widgets/circle-info/circle-info.php:72
+msgid "Title Item"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:82
+msgid "Details"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:84
+msgid "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.   "
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:85
+msgid "Type your description here"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:108
+msgid "Icon Text"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:129
+#: widgets/info-link/info-link.php:129
+#: widgets/lottie/lottie.php:104
+msgid "Link"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:135
+#: widgets/grid/grid.php:185
+msgid "https://your-link.com"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:170
+msgid "Circle Info One"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:171
+msgid "Suspendisse potenti Phasellus euismod libero in neque molestie et elementum libero maximus. Etiam in enim vestibulum suscipit sem quis molestie nibh."
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:177
+msgid "Circle Info Two"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:178
+msgid "Donec ac lacus nec diam gravida pellentesque. Morbi viverra facilisis massa a ullamcorper eivamus egestas tincidunt faucibus."
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:184
+msgid "Circle Info Three"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:185
+msgid "Nulla tristique urna id lacinia egestas sapien arcu convallis velit id porta turpis velit molestie enim."
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:191
+msgid "Circle Info Four"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:192
+msgid "Ullamcorper nisi lorem condimentum tellus vitae semper quam enim vitae justo. Vestibulum vulputate posuere nunc sit amet ultrices."
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:198
+msgid "Circle Info Five"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:199
+msgid "Nam non lectus orci in nibh elit blandit et velit vel sodales vulputate tellus. Koes mattis neque ante vel suscipit odio tristique vel."
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:205
+msgid "Circle Info Six"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:206
+msgid "Hasellus tempus diam et est tristique eget aliquam quam vestibulum. Donec congue enim volutpat sagittis nunc non consectetur exes."
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:228
+msgid "Circle Size "
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:247
+msgid "Content Size "
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:262
+msgid "Hide Content"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:271
+#: widgets/marquee/marquee.php:48
+msgid "Title HTML Tag"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:282
+msgid "Custom Margin"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:304
+msgid "Icon Area Size"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:340
+msgid "Select Event "
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:344
+#: widgets/info-link/info-link.php:321
+msgid "Click"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:353
+msgid "Link On Icon"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:361
+msgid "Auto Mode"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:370
+msgid "Time (ms)"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:402
+#: widgets/circle-info/circle-info.php:495
+#: widgets/circle-info/circle-info.php:702
+msgid "Normal  "
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:450
+#: widgets/circle-info/circle-info.php:559
+#: widgets/circle-info/circle-info.php:730
+#: widgets/circle-info/circle-info.php:794
+msgid "Hover  "
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:501
+#: widgets/circle-info/circle-info.php:566
+#: widgets/grid/grid.php:631
+#: widgets/marquee/marquee.php:319
+#: widgets/service-list/service-list.php:629
+msgid "Icon Color"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:532
+#: widgets/circle-info/circle-info.php:604
+#: widgets/circle-info/circle-info.php:669
+msgid "Shadow"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:624
+msgid "Active  "
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:755
+#: widgets/highlight-text/highlight-text.php:42
+#: widgets/search/search.php:510
+#: widgets/search/search.php:523
+#: widgets/service-list/service-list.php:251
+msgid "Text"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:819
+msgid "Additional"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:830
+msgid "Border 1"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:837
+#: widgets/circle-info/circle-info.php:889
+msgid "Border Style"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:841
+#: widgets/circle-info/circle-info.php:893
+#: widgets/search/search.php:2370
+msgid "Solid"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:842
+#: widgets/circle-info/circle-info.php:894
+#: widgets/search/search.php:2372
+msgid "Dotted"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:843
+#: widgets/circle-info/circle-info.php:895
+#: widgets/search/search.php:2373
+msgid "Dashed"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:844
+#: widgets/circle-info/circle-info.php:896
+#: widgets/search/search.php:2371
+msgid "Double"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:845
+#: widgets/circle-info/circle-info.php:897
+#: widgets/search/search.php:2374
+msgid "Groove"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:857
+#: widgets/circle-info/circle-info.php:909
+#: widgets/search/search.php:2388
+msgid "Border Width"
+msgstr ""
+
+#: widgets/circle-info/circle-info.php:882
+msgid "Border 2"
+msgstr ""
+
+#: widgets/circle-progress-bar/circle-progress-bar.php:16
+msgid "Circle Progress Bar"
+msgstr ""
+
+#: widgets/circle-progress-bar/circle-progress-bar.php:46
+msgid "Percentage"
+msgstr ""
+
+#: widgets/circle-progress-bar/circle-progress-bar.php:57
+msgid "Bar Size"
+msgstr ""
+
+#: widgets/circle-progress-bar/circle-progress-bar.php:80
+msgid "Percentage Text"
+msgstr ""
+
+#: widgets/circle-progress-bar/circle-progress-bar.php:94
+msgid "Line Cap"
+msgstr ""
+
+#: widgets/circle-progress-bar/circle-progress-bar.php:98
+msgid "Rounded"
+msgstr ""
+
+#: widgets/circle-progress-bar/circle-progress-bar.php:99
+msgid "Square"
+msgstr ""
+
+#: widgets/circle-progress-bar/circle-progress-bar.php:100
+msgid "Butt"
+msgstr ""
+
+#: widgets/circle-progress-bar/circle-progress-bar.php:156
+#: widgets/circle-progress-bar/circle-progress-bar.php:196
+#: widgets/circle-progress-bar/circle-progress-bar.php:236
+#: widgets/progress-bar/progress-bar.php:451
+#: widgets/progress-bar/progress-bar.php:563
+#: widgets/progress-bar/progress-bar.php:638
+#: widgets/search/search.php:1276
+msgid "Position"
+msgstr ""
+
+#: widgets/circle-progress-bar/circle-progress-bar.php:178
+msgid "Percentage Text Color"
+msgstr ""
+
+#: widgets/circle-text/circle-text.php:19
+msgid "Circle Text"
+msgstr ""
+
+#: widgets/grid/grid.php:25
+msgid "Grid"
+msgstr ""
+
+#: widgets/grid/grid.php:54
+#: widgets/grid/grid.php:87
+#: widgets/grid/grid.php:116
+#: widgets/grid/grid.php:420
+#: widgets/image-animate/image-animate.php:40
+#: widgets/info-link/info-link.php:67
+#: widgets/marquee/marquee.php:145
+#: widgets/search/search.php:1708
+msgid "Image"
+msgstr ""
+
+#: widgets/grid/grid.php:79
+msgid "Select Icon or Image"
+msgstr ""
+
+#: widgets/grid/grid.php:151
+msgid "Descripton"
+msgstr ""
+
+#: widgets/grid/grid.php:153
+msgid "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt."
+msgstr ""
+
+#: widgets/grid/grid.php:159
+#: widgets/grid/grid.php:168
+#: widgets/info-link/info-link.php:201
+msgid "Read More"
+msgstr ""
+
+#: widgets/grid/grid.php:166
+msgid "Read More Text"
+msgstr ""
+
+#: widgets/grid/grid.php:169
+msgid "Enter Text"
+msgstr ""
+
+#: widgets/grid/grid.php:180
+msgid "Read More Link"
+msgstr ""
+
+#: widgets/grid/grid.php:195
+msgid "Read More Icon"
+msgstr ""
+
+#: widgets/grid/grid.php:249
+msgid "Columns"
+msgstr ""
+
+#: widgets/grid/grid.php:256
+msgid "1 Column"
+msgstr ""
+
+#: widgets/grid/grid.php:257
+msgid "2 Columns"
+msgstr ""
+
+#: widgets/grid/grid.php:258
+msgid "3 Columns"
+msgstr ""
+
+#: widgets/grid/grid.php:259
+msgid "4 Columns"
+msgstr ""
+
+#: widgets/grid/grid.php:260
+msgid "5 Columns"
+msgstr ""
+
+#: widgets/grid/grid.php:261
+msgid "6 Columns"
+msgstr ""
+
+#: widgets/grid/grid.php:272
+#: widgets/service-list/service-list.php:326
+msgid "Gap"
+msgstr ""
+
+#: widgets/grid/grid.php:284
+msgid "Image Hover Zoom"
+msgstr ""
+
+#: widgets/grid/grid.php:292
+msgid "Lightbox"
+msgstr ""
+
+#: widgets/grid/grid.php:304
+#: widgets/info-link/info-link.php:485
+#: widgets/service-list/service-list.php:319
+msgid "Styles"
+msgstr ""
+
+#: widgets/grid/grid.php:397
+#: widgets/grid/grid.php:539
+#: widgets/lottie/lottie.php:402
+#: widgets/search/search.php:1410
+#: widgets/search/search.php:1854
+#: widgets/search/search.php:2340
+msgid "Transition Duration"
+msgstr ""
+
+#: widgets/grid/grid.php:428
+#: widgets/image-animate/image-animate.php:65
+#: widgets/info-link/info-link.php:560
+#: widgets/service-list/service-list.php:403
+msgid "Image Size"
+msgstr ""
+
+#: widgets/grid/grid.php:569
+#: widgets/marquee/marquee.php:330
+msgid "Icon / Image Size"
+msgstr ""
+
+#: widgets/grid/grid.php:589
+msgid "Offset X"
+msgstr ""
+
+#: widgets/grid/grid.php:610
+msgid "Offset Y"
+msgstr ""
+
+#: widgets/grid/grid.php:643
+#: widgets/service-list/service-list.php:703
+msgid "Icon Hover Color"
+msgstr ""
+
+#: widgets/grid/grid.php:699
+msgid "Content Padding"
+msgstr ""
+
+#: widgets/grid/grid.php:710
+msgid "Content Margin"
+msgstr ""
+
+#: widgets/grid/grid.php:722
+msgid "Content Border"
+msgstr ""
+
+#: widgets/grid/grid.php:729
+msgid "Content Border Radius"
+msgstr ""
+
+#: widgets/grid/grid.php:747
+#: widgets/service-list/service-list.php:542
+msgid "Title Color"
+msgstr ""
+
+#: widgets/grid/grid.php:759
+#: widgets/service-list/service-list.php:693
+msgid "Title Hover Color"
+msgstr ""
+
+#: widgets/grid/grid.php:779
+msgid "Title Text Stroke"
+msgstr ""
+
+#: widgets/grid/grid.php:786
+msgid "Descripton Color"
+msgstr ""
+
+#: widgets/grid/grid.php:806
+msgid "Read More Color"
+msgstr ""
+
+#: widgets/grid/grid.php:819
+msgid "Read More Hover Color"
+msgstr ""
+
+#: widgets/grid/grid.php:840
+msgid "Read More Icon Size"
+msgstr ""
+
+#: widgets/grid/grid.php:871
+msgid "Read More Padding"
+msgstr ""
+
+#: widgets/grid/grid.php:883
+msgid "Read More Margin"
+msgstr ""
+
+#: widgets/highlight-text/highlight-text.php:16
+msgid "Highlight Text"
+msgstr ""
+
+#: widgets/highlight-text/highlight-text.php:52
+msgid "Highlight Color"
+msgstr ""
+
+#: widgets/highlight-text/highlight-text.php:59
+msgid "Muted Color"
+msgstr ""
+
+#: widgets/image-animate/image-animate.php:17
+msgid "Image Animate"
+msgstr ""
+
+#: widgets/image-animate/image-animate.php:81
+msgid "Animate"
+msgstr ""
+
+#: widgets/image-animate/image-animate.php:84
+msgid "Up Down"
+msgstr ""
+
+#: widgets/image-animate/image-animate.php:85
+msgid "Left Right"
+msgstr ""
+
+#: widgets/image-animate/image-animate.php:93
+msgid "Moving Area"
+msgstr ""
+
+#: widgets/image-animate/image-animate.php:101
+#: widgets/image-slide/image-slide.php:211
+msgid "Speed"
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:21
+msgid "Image Slide"
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:55
+#: widgets/service-list/service-list.php:231
+msgid "Image."
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:73
+msgid "Caption"
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:143
+msgid "Image Width"
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:144
+msgid "If you do not have same width for all images then adjust width and set the height empty."
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:164
+msgid "Image Height"
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:165
+msgid "If you do not have same height for all images then adjust height and set the width empty."
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:185
+msgid "Image Margin"
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:196
+#: widgets/marquee/marquee.php:87
+msgid "Direction"
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:202
+msgid "Up"
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:203
+msgid "Down"
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:220
+msgid "Clone"
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:228
+msgid "Pause on hover"
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:232
+#: widgets/marquee/marquee.php:77
+msgid "Yes"
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:236
+#: widgets/marquee/marquee.php:76
+msgid "No"
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:293
+msgid "Overlay Color"
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:338
+msgid "Caption Background Color"
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:349
+msgid "Caption Color"
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:361
+msgid "Caption Hover Color"
+msgstr ""
+
+#: widgets/image-slide/image-slide.php:378
+msgid "Caption Padding"
+msgstr ""
+
+#: widgets/info-link/info-link.php:26
+msgid " Info Link"
+msgstr ""
+
+#: widgets/info-link/info-link.php:47
+msgid "Items"
+msgstr ""
+
+#: widgets/info-link/info-link.php:56
+msgid "Icon Type"
+msgstr ""
+
+#: widgets/info-link/info-link.php:92
+msgid "Image Icon"
+msgstr ""
+
+#: widgets/info-link/info-link.php:119
+#: widgets/info-link/info-link.php:122
+msgid "Info"
+msgstr ""
+
+#: widgets/info-link/info-link.php:153
+#: widgets/info-link/info-link.php:790
+msgid "Tab Image"
+msgstr ""
+
+#: widgets/info-link/info-link.php:178
+#: widgets/info-link/info-link.php:181
+#: widgets/info-link/info-link.php:861
+msgid "Tab Title"
+msgstr ""
+
+#: widgets/info-link/info-link.php:189
+#: widgets/info-link/info-link.php:914
+msgid "Tab Sub Title"
+msgstr ""
+
+#: widgets/info-link/info-link.php:199
+msgid "Tab Button Text"
+msgstr ""
+
+#: widgets/info-link/info-link.php:210
+#: widgets/marquee/marquee.php:205
+msgid "Button Link"
+msgstr ""
+
+#: widgets/info-link/info-link.php:226
+msgid "Tab Content"
+msgstr ""
+
+#: widgets/info-link/info-link.php:237
+#: widgets/info-link/info-link.php:244
+#: widgets/info-link/info-link.php:251
+#: widgets/info-link/info-link.php:258
+msgid "Subtitle Goes Here"
+msgstr ""
+
+#: widgets/info-link/info-link.php:238
+msgid "Item One"
+msgstr ""
+
+#: widgets/info-link/info-link.php:239
+#: widgets/info-link/info-link.php:246
+#: widgets/info-link/info-link.php:253
+#: widgets/info-link/info-link.php:260
+msgid "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi."
+msgstr ""
+
+#: widgets/info-link/info-link.php:241
+msgid "Info One"
+msgstr ""
+
+#: widgets/info-link/info-link.php:245
+msgid "Item Two"
+msgstr ""
+
+#: widgets/info-link/info-link.php:248
+msgid "Info Two"
+msgstr ""
+
+#: widgets/info-link/info-link.php:252
+msgid "Item Three"
+msgstr ""
+
+#: widgets/info-link/info-link.php:255
+msgid "Info Three"
+msgstr ""
+
+#: widgets/info-link/info-link.php:259
+msgid "Item Four"
+msgstr ""
+
+#: widgets/info-link/info-link.php:262
+msgid "Info Four"
+msgstr ""
+
+#: widgets/info-link/info-link.php:283
+msgid "Area Width(%)"
+msgstr ""
+
+#: widgets/info-link/info-link.php:294
+msgid "Link Columns"
+msgstr ""
+
+#: widgets/info-link/info-link.php:300
+msgid "1"
+msgstr ""
+
+#: widgets/info-link/info-link.php:301
+msgid "2"
+msgstr ""
+
+#: widgets/info-link/info-link.php:302
+msgid "3"
+msgstr ""
+
+#: widgets/info-link/info-link.php:303
+msgid "4"
+msgstr ""
+
+#: widgets/info-link/info-link.php:304
+msgid "5"
+msgstr ""
+
+#: widgets/info-link/info-link.php:305
+msgid "6"
+msgstr ""
+
+#: widgets/info-link/info-link.php:317
+msgid "Select Event"
+msgstr ""
+
+#: widgets/info-link/info-link.php:330
+msgid "Select Tabs Position"
+msgstr ""
+
+#: widgets/info-link/info-link.php:343
+msgid "Content Fixed Height"
+msgstr ""
+
+#: widgets/info-link/info-link.php:388
+msgid "Justified"
+msgstr ""
+
+#: widgets/info-link/info-link.php:401
+msgid "Show Image"
+msgstr ""
+
+#: widgets/info-link/info-link.php:410
+msgid "Show Sub Title"
+msgstr ""
+
+#: widgets/info-link/info-link.php:432
+msgid "Show Title"
+msgstr ""
+
+#: widgets/info-link/info-link.php:454
+msgid "Show Text"
+msgstr ""
+
+#: widgets/info-link/info-link.php:463
+msgid "Show Button"
+msgstr ""
+
+#: widgets/info-link/info-link.php:472
+msgid "Active Item"
+msgstr ""
+
+#: widgets/info-link/info-link.php:493
+msgid "Tab Padding"
+msgstr ""
+
+#: widgets/info-link/info-link.php:577
+msgid "Rotate"
+msgstr ""
+
+#: widgets/info-link/info-link.php:597
+#: widgets/service-list/service-list.php:482
+msgid "Icon Padding"
+msgstr ""
+
+#: widgets/info-link/info-link.php:617
+#: widgets/service-list/service-list.php:500
+msgid "Icon Border Radius"
+msgstr ""
+
+#: widgets/info-link/info-link.php:630
+#: widgets/progress-bar/progress-bar.php:332
+msgid "Item Padding"
+msgstr ""
+
+#: widgets/info-link/info-link.php:642
+msgid "Item Margin"
+msgstr ""
+
+#: widgets/info-link/info-link.php:685
+msgid "hover"
+msgstr ""
+
+#: widgets/info-link/info-link.php:736
+msgid "Active"
+msgstr ""
+
+#: widgets/info-link/info-link.php:820
+#: widgets/info-link/info-link.php:1074
+msgid "Advanced Radius"
+msgstr ""
+
+#: widgets/info-link/info-link.php:828
+#: widgets/info-link/info-link.php:1082
+msgid "Radius"
+msgstr ""
+
+#: widgets/info-link/info-link.php:829
+#: widgets/info-link/info-link.php:1083
+#, php-format
+msgid "For example: <b>%1s</b> or Go <a href=\"%2s\" target=\"_blank\">this link</a> and copy and paste the radius value."
+msgstr ""
+
+#: widgets/info-link/info-link.php:895
+#: widgets/info-link/info-link.php:948
+#: widgets/info-link/info-link.php:992
+#: widgets/info-link/info-link.php:1114
+#: widgets/marquee/marquee.php:347
+#: widgets/progress-bar/progress-bar.php:543
+#: widgets/progress-bar/progress-bar.php:629
+#: widgets/search/search.php:1307
+msgid "Typography"
+msgstr ""
+
+#: widgets/info-link/info-link.php:904
+msgid "Text Stroke"
+msgstr ""
+
+#: widgets/info-link/info-link.php:958
+msgid "Tab Description"
+msgstr ""
+
+#: widgets/info-link/info-link.php:1002
+msgid "Tab Button"
+msgstr ""
+
+#: widgets/lottie/lottie.php:18
+msgid " Lottie"
+msgstr ""
+
+#: widgets/lottie/lottie.php:46
+#: widgets/service-list/service-list.php:50
+msgid "Source"
+msgstr ""
+
+#: widgets/lottie/lottie.php:50
+msgid "JSON file"
+msgstr ""
+
+#: widgets/lottie/lottie.php:54
+msgid "External URL"
+msgstr ""
+
+#: widgets/lottie/lottie.php:68
+#: widgets/lottie/lottie.php:85
+#, php-format
+msgid "Get %sLottie animations%s"
+msgstr ""
+
+#: widgets/lottie/lottie.php:90
+msgid "Enter your URL"
+msgstr ""
+
+#: widgets/lottie/lottie.php:149
+msgid "Renderer"
+msgstr ""
+
+#: widgets/lottie/lottie.php:162
+msgid "Play Action"
+msgstr ""
+
+#: widgets/lottie/lottie.php:166
+msgid "Autoplay"
+msgstr ""
+
+#: widgets/lottie/lottie.php:167
+msgid "On Hover"
+msgstr ""
+
+#: widgets/lottie/lottie.php:168
+msgid "On Click"
+msgstr ""
+
+#: widgets/lottie/lottie.php:169
+msgid "Scroll"
+msgstr ""
+
+#: widgets/lottie/lottie.php:170
+#: widgets/lottie/lottie.php:223
+msgid "Viewport"
+msgstr ""
+
+#: widgets/lottie/lottie.php:178
+msgid "Autoplay Delay (ms)"
+msgstr ""
+
+#: widgets/lottie/lottie.php:191
+msgid "On Hover Out"
+msgstr ""
+
+#: widgets/lottie/lottie.php:195
+msgid "No Action"
+msgstr ""
+
+#: widgets/lottie/lottie.php:196
+msgid "Pause"
+msgstr ""
+
+#: widgets/lottie/lottie.php:197
+#: widgets/marquee/marquee.php:62
+msgid "Stop"
+msgstr ""
+
+#: widgets/lottie/lottie.php:198
+#: widgets/marquee/marquee.php:92
+msgid "Reverse"
+msgstr ""
+
+#: widgets/lottie/lottie.php:209
+msgid "Redirect Timeout (ms)"
+msgstr ""
+
+#: widgets/lottie/lottie.php:235
+msgid "Bottom"
+msgstr ""
+
+#: widgets/lottie/lottie.php:236
+msgid "Top"
+msgstr ""
+
+#: widgets/lottie/lottie.php:247
+msgid "Loop"
+msgstr ""
+
+#: widgets/lottie/lottie.php:259
+msgid "Reversed"
+msgstr ""
+
+#: widgets/lottie/lottie.php:271
+msgid "Play Speed"
+msgstr ""
+
+#: widgets/lottie/lottie.php:272
+msgid "1 is normal speed"
+msgstr ""
+
+#: widgets/lottie/lottie.php:305
+msgid "Max Width"
+msgstr ""
+
+#: widgets/marquee/marquee.php:23
+#: widgets/marquee/marquee.php:128
+msgid "Marquee"
+msgstr ""
+
+#: widgets/marquee/marquee.php:72
+msgid "Stop on hover"
+msgstr ""
+
+#: widgets/marquee/marquee.php:93
+msgid "Alternate"
+msgstr ""
+
+#: widgets/marquee/marquee.php:94
+msgid "Alternate Reverse"
+msgstr ""
+
+#: widgets/marquee/marquee.php:137
+msgid "Select Type"
+msgstr ""
+
+#: widgets/marquee/marquee.php:198
+msgid "marquee"
+msgstr ""
+
+#: widgets/marquee/marquee.php:368
+msgid "Icon Margin"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:20
+#: widgets/progress-bar/progress-bar.php:48
+#: widgets/progress-bar/progress-bar.php:179
+msgid "Progress Bar"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:59
+msgid "Horizontal"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:60
+msgid "Vertical"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:73
+msgid "Striped"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:86
+#: widgets/progress-bar/progress-bar.php:185
+msgid "WordPress"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:93
+msgid "Progress Bar Value"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:111
+msgid "Progress bar color"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:122
+msgid "Progress bar value color"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:132
+msgid "Progress bar value background color"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:143
+#: widgets/progress-bar/progress-bar.php:358
+msgid "Progress Indicator"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:154
+msgid "Value Indicator"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:163
+msgid "Indicator color"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:202
+msgid "Items Style"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:242
+msgid "Progress Position Top-Bottom"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:268
+msgid "Spacing btween two bars"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:323
+#: widgets/progress-bar/progress-bar.php:521
+#: widgets/progress-bar/progress-bar.php:619
+msgid "Box Shadow"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:345
+msgid "Item Inner Padding"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:370
+msgid "Indicator Size"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:401
+msgid "Indicator Background"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:425
+msgid "Indicator Border Radius"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:453
+#: widgets/progress-bar/progress-bar.php:565
+#: widgets/search/search.php:480
+msgid "Inner"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:454
+#: widgets/progress-bar/progress-bar.php:566
+#: widgets/search/search.php:481
+msgid "Outer"
+msgstr ""
+
+#: widgets/progress-bar/progress-bar.php:555
+msgid "Value"
+msgstr ""
+
+#: widgets/search/search.php:27
+#: widgets/search/search.php:173
+#: widgets/search/search.php:458
+#: widgets/search/search.php:2727
+msgid "Search"
+msgstr ""
+
+#: widgets/search/search.php:90
+msgid "Image Crop"
+msgstr ""
+
+#: widgets/search/search.php:102
+msgid "All"
+msgstr ""
+
+#: widgets/search/search.php:111
+msgid "Select Query"
+msgstr ""
+
+#: widgets/search/search.php:125
+msgid "All Text"
+msgstr ""
+
+#: widgets/search/search.php:128
+msgid "All Categories"
+msgstr ""
+
+#: widgets/search/search.php:153
+#, php-format
+msgid "%s Taxonomies"
+msgstr ""
+
+#: widgets/search/search.php:181
+msgid "Display Mode"
+msgstr ""
+
+#: widgets/search/search.php:185
+msgid "Inline (Full Search)"
+msgstr ""
+
+#: widgets/search/search.php:186
+msgid "Modal (Icon Only)"
+msgstr ""
+
+#: widgets/search/search.php:196
+msgid "Modal Open Icon"
+msgstr ""
+
+#: widgets/search/search.php:209
+msgid "Modal Close Icon"
+msgstr ""
+
+#: widgets/search/search.php:224
+msgid "Enable Taxonomy Filter"
+msgstr ""
+
+#: widgets/search/search.php:238
+msgid "Enable Ajax Search"
+msgstr ""
+
+#: widgets/search/search.php:247
+msgid "Number of Results"
+msgstr ""
+
+#: widgets/search/search.php:261
+msgid "Exclude Posts"
+msgstr ""
+
+#: widgets/search/search.php:289
+msgid "Show Password Protected"
+msgstr ""
+
+#: widgets/search/search.php:291
+msgid "Only for users with capability to read private posts"
+msgstr ""
+
+#: widgets/search/search.php:304
+msgid "Show Attachments"
+msgstr ""
+
+#: widgets/search/search.php:305
+msgid "Include Media Files in Search Results"
+msgstr ""
+
+#: widgets/search/search.php:318
+msgid "Open Link in New Tab"
+msgstr ""
+
+#: widgets/search/search.php:329
+msgid "Show Ajax Thumbnails"
+msgstr ""
+
+#: widgets/search/search.php:341
+msgid "Exclude Results without Thumbnails"
+msgstr ""
+
+#: widgets/search/search.php:354
+msgid "Show View Results Button"
+msgstr ""
+
+#: widgets/search/search.php:366
+#: widgets/search/search.php:371
+msgid "View Results"
+msgstr ""
+
+#: widgets/search/search.php:382
+msgid "Show Description"
+msgstr ""
+
+#: widgets/search/search.php:395
+msgid "Description Number of Words"
+msgstr ""
+
+#: widgets/search/search.php:411
+msgid "Show Product Price"
+msgstr ""
+
+#: widgets/search/search.php:425
+msgid "No Resulsts Text"
+msgstr ""
+
+#: widgets/search/search.php:430
+msgid "No Results Found"
+msgstr ""
+
+#: widgets/search/search.php:440
+msgid "Placeholder"
+msgstr ""
+
+#: widgets/search/search.php:445
+msgid "Search..."
+msgstr ""
+
+#: widgets/search/search.php:453
+msgid "Aria Label"
+msgstr ""
+
+#: widgets/search/search.php:494
+msgid "Disable Button Click"
+msgstr ""
+
+#: widgets/search/search.php:506
+msgid "Type"
+msgstr ""
+
+#: widgets/search/search.php:539
+msgid "Select Icon"
+msgstr ""
+
+#: widgets/search/search.php:560
+msgid "Ajax Pagination"
+msgstr ""
+
+#: widgets/search/search.php:571
+msgid "Load More Text"
+msgstr ""
+
+#: widgets/search/search.php:583
+msgid "Finish Text"
+msgstr ""
+
+#: widgets/search/search.php:595
+msgid "Select Animation"
+msgstr ""
+
+#: widgets/search/search.php:600
+msgid "Loader 1"
+msgstr ""
+
+#: widgets/search/search.php:601
+msgid "Loader 2"
+msgstr ""
+
+#: widgets/search/search.php:602
+msgid "Loader 3"
+msgstr ""
+
+#: widgets/search/search.php:640
+msgid "Input"
+msgstr ""
+
+#: widgets/search/search.php:681
+#: widgets/search/search.php:751
+msgid "Placeholder Color"
+msgstr ""
+
+#: widgets/search/search.php:720
+msgid "Focus"
+msgstr ""
+
+#: widgets/search/search.php:899
+msgid "Taxonomy Filter"
+msgstr ""
+
+#: widgets/search/search.php:987
+msgid "Select Width"
+msgstr ""
+
+#: widgets/search/search.php:1010
+msgid "Options"
+msgstr ""
+
+#: widgets/search/search.php:1018
+#: widgets/search/search.php:1048
+msgid "Font Size"
+msgstr ""
+
+#: widgets/search/search.php:1040
+msgid "Options Group"
+msgstr ""
+
+#: widgets/search/search.php:1251
+msgid "Gutter"
+msgstr ""
+
+#: widgets/search/search.php:1359
+msgid "Ajax"
+msgstr ""
+
+#: widgets/search/search.php:1370
+msgid "Search List"
+msgstr ""
+
+#: widgets/search/search.php:1390
+#: widgets/search/search.php:1820
+msgid "Background Color (Hover)"
+msgstr ""
+
+#: widgets/search/search.php:1425
+msgid "Horizontal Position"
+msgstr ""
+
+#: widgets/search/search.php:1457
+msgid "Container Width"
+msgstr ""
+
+#: widgets/search/search.php:1488
+msgid "Max Height"
+msgstr ""
+
+#: widgets/search/search.php:1515
+msgid "Top Distance"
+msgstr ""
+
+#: widgets/search/search.php:1541
+msgid "List Item"
+msgstr ""
+
+#: widgets/search/search.php:1550
+msgid "Bottom Distance"
+msgstr ""
+
+#: widgets/search/search.php:1623
+#: widgets/search/search.php:1686
+#: widgets/search/search.php:1750
+#: widgets/search/search.php:1949
+#: widgets/search/search.php:2152
+msgid "Distance"
+msgstr ""
+
+#: widgets/search/search.php:1645
+msgid "Description"
+msgstr ""
+
+#: widgets/search/search.php:1775
+msgid "View Result"
+msgstr ""
+
+#: widgets/search/search.php:1796
+msgid "Color (Hover)"
+msgstr ""
+
+#: widgets/search/search.php:1905
+msgid "Close Button"
+msgstr ""
+
+#: widgets/search/search.php:1971
+msgid "Scrollbar"
+msgstr ""
+
+#: widgets/search/search.php:2015
+msgid "No Results"
+msgstr ""
+
+#: widgets/search/search.php:2127
+msgid "Price"
+msgstr ""
+
+#: widgets/search/search.php:2182
+msgid "AJAX Pagination"
+msgstr ""
+
+#: widgets/search/search.php:2252
+msgid "Loader Color"
+msgstr ""
+
+#: widgets/search/search.php:2269
+msgid "Wrapper Color"
+msgstr ""
+
+#: widgets/search/search.php:2366
+msgid "Border Type"
+msgstr ""
+
+#: widgets/search/search.php:2410
+msgid "Distance From List"
+msgstr ""
+
+#: widgets/search/search.php:2452
+msgid "Wrapper Padding"
+msgstr ""
+
+#: widgets/search/search.php:2811
+#: widgets/search/search.php:2839
+msgid "Close"
+msgstr ""
+
+#: widgets/service-list/service-list.php:24
+msgid " Service List"
+msgstr ""
+
+#: widgets/service-list/service-list.php:55
+msgid "Custom"
+msgstr ""
+
+#: widgets/service-list/service-list.php:56
+msgid "Dynamic"
+msgstr ""
+
+#: widgets/service-list/service-list.php:63
+msgid "Post Type"
+msgstr ""
+
+#: widgets/service-list/service-list.php:87
+msgid "Categories"
+msgstr ""
+
+#: widgets/service-list/service-list.php:100
+msgid "Number of Posts"
+msgstr ""
+
+#: widgets/service-list/service-list.php:111
+msgid "Offset"
+msgstr ""
+
+#: widgets/service-list/service-list.php:121
+msgid "Order"
+msgstr ""
+
+#: widgets/service-list/service-list.php:124
+msgid "Ascending"
+msgstr ""
+
+#: widgets/service-list/service-list.php:125
+msgid "Descending"
+msgstr ""
+
+#: widgets/service-list/service-list.php:136
+msgid "Post sort by"
+msgstr ""
+
+#: widgets/service-list/service-list.php:140
+msgid "Latest posts"
+msgstr ""
+
+#: widgets/service-list/service-list.php:141
+msgid "Popular posts"
+msgstr ""
+
+#: widgets/service-list/service-list.php:142
+msgid "Most discussed"
+msgstr ""
+
+#: widgets/service-list/service-list.php:152
+msgid "Order By"
+msgstr ""
+
+#: widgets/service-list/service-list.php:155
+msgid "No order"
+msgstr ""
+
+#: widgets/service-list/service-list.php:156
+msgid "Post ID"
+msgstr ""
+
+#: widgets/service-list/service-list.php:157
+msgid "Author"
+msgstr ""
+
+#: widgets/service-list/service-list.php:159
+msgid "Published date"
+msgstr ""
+
+#: widgets/service-list/service-list.php:160
+msgid "Modified date"
+msgstr ""
+
+#: widgets/service-list/service-list.php:161
+msgid "By parent"
+msgstr ""
+
+#: widgets/service-list/service-list.php:162
+msgid "Random order"
+msgstr ""
+
+#: widgets/service-list/service-list.php:163
+msgid "Comment count"
+msgstr ""
+
+#: widgets/service-list/service-list.php:164
+msgid "Menu order"
+msgstr ""
+
+#: widgets/service-list/service-list.php:165
+msgid "By include order"
+msgstr ""
+
+#: widgets/service-list/service-list.php:177
+msgid "Show Date?"
+msgstr ""
+
+#: widgets/service-list/service-list.php:204
+msgid "Tristique sapien accum"
+msgstr ""
+
+#: widgets/service-list/service-list.php:212
+msgid "Title Link URL"
+msgstr ""
+
+#: widgets/service-list/service-list.php:221
+msgid "Subtitle"
+msgstr ""
+
+#: widgets/service-list/service-list.php:224
+msgid "Ligula ultrices"
+msgstr ""
+
+#: widgets/service-list/service-list.php:252
+msgid "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliquat enim ad minim veniam quis."
+msgstr ""
+
+#: widgets/service-list/service-list.php:273
+msgid "Icon Link URL"
+msgstr ""
+
+#: widgets/service-list/service-list.php:348
+msgid "Title Width"
+msgstr ""
+
+#: widgets/service-list/service-list.php:426
+msgid "Image Spacing"
+msgstr ""
+
+#: widgets/service-list/service-list.php:465
+msgid "Icon Rotate"
+msgstr ""
+
+#: widgets/service-list/service-list.php:562
+msgid "Sub Title"
+msgstr ""
+
+#: widgets/service-list/service-list.php:586
+msgid "Date Color"
+msgstr ""
+
+#: widgets/service-list/service-list.php:611
+msgid "Description Color"
+msgstr ""
+
+#: widgets/service-list/service-list.php:641
+msgid "Icon Background Color"
+msgstr ""
+
+#: widgets/service-list/service-list.php:651
+msgid "Icon Border Color"
+msgstr ""
+
+#: widgets/service-list/service-list.php:714
+msgid "Icon Background Hover Color"
+msgstr ""
+
+#: widgets/service-list/service-list.php:724
+msgid "Icon Border Hover Color"
+msgstr ""
+
+#: widgets/service-list/service-list.php:747
+#, php-format
+msgid "Read more about %s"
+msgstr ""
+
+#: widgets/service-list/service-list.php:750
+#, php-format
+msgid "Visit %s"
+msgstr ""

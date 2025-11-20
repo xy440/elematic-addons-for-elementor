@@ -1,0 +1,54 @@
+/*service list*/
+.elematic-serv-list-text-content {
+    display: flex;
+    align-items: center;
+    grid-column-gap: 200px;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    transition: all .5s;
+    
+}
+.elematic-serv-list-wrapper {
+  position: relative;
+}
+.elematic-serv-list-wrapper:hover .elematic-serv-list-image-content {
+  opacity: 1;
+    transform: translateY(-50%) scale(1);
+    
+}
+.elematic-serv-list-wrapper:hover .elematic-serv-list-text-content {
+  background-color: gray;
+}
+.elematic-serv-list-image-content {
+  width: 350px;
+  position: absolute;
+  right: 110px;
+  transition: all 0.5s cubic-bezier(0.4,0,0.2,1);
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    opacity: 0;
+    z-index: 3;
+}
+.elematic-serv-list-title {
+  width: 400px;
+}
+.elematic-serv-list-icon i,
+.elematic-serv-list-icon svg {
+  transform: rotate(320deg);
+}
+.elematic-serv-list-icon svg {
+  width: 32px;
+  height: 32px;
+}
+@media (max-width: 767px) {
+  .elematic-serv-list-text-content {
+    display: block;
+  }
+  .elematic-serv-list-title {
+    width: auto;
+  }
+  .elematic-serv-list-image-content {
+    width: 150px;
+  }
+}

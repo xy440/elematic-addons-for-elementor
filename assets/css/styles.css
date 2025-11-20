@@ -1,0 +1,17 @@
+
+.d-none {
+    display: none;
+}
+/*image zoom effect*/
+.elematic-img-zoom {
+    overflow: hidden;
+}
+.elematic-img-zoom img {
+    -webkit-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+    display: block;
+}
+.elematic-img-zoom:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}

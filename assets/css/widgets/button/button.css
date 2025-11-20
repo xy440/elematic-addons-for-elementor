@@ -1,0 +1,349 @@
+/*  #Button
+------------------------------------- */
+@keyframes move1 {
+  0% {
+    height: 100%; 
+    bottom: 0;
+  }
+  54% {
+    height: 0; 
+    bottom: 100%;
+  }
+  55% {
+    height: 0; 
+    bottom: 0;
+  }
+  100% {
+    height: 100%; 
+    bottom: 0;
+  }
+}
+
+@keyframes move2 {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  50% {
+    width: 100%; 
+    left: 0;
+  }
+  100% {
+    width: 0; 
+    left: 100%;
+  }
+}
+
+@keyframes move3 {
+  0% {
+    height: 100%; 
+    top: 0;
+  }
+  54% {
+    height: 0; 
+    top: 100%;
+  }
+  55% {
+    height: 0; 
+    top: 0;
+  }
+  100% {
+    height: 100%; 
+    top: 0;
+  }
+}
+
+@keyframes move4 {
+  0% {
+    width: 0; 
+    right: 0;
+  }
+  55% {
+    width: 100%; 
+    right: 0;
+  }
+  100% {
+    width: 0; 
+    right: 100%;
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(.9);
+  }
+    100% {
+    transform: scale(1);
+  }
+}
+.line-1, .line-2, .line-3, .line-4 {
+  content: "";
+    display: block;
+    position: absolute;
+    background-color: #121212;
+}
+.line-1, .line-3 {
+  width: 1px;
+}
+.line-2, .line-4 {
+  height: 1px;
+}
+.line-1, .line-2 {
+  left: 0;
+}
+.line-1, .line-4 {
+  bottom: 0;
+}
+.line-3, .line-4 {
+  right: 0;
+}
+.line-2, .line-3 {
+    top: 0;
+}
+
+.elematic-btn-wrap {
+    display: flex;
+}
+.elematic-btn-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*style 1*/
+.elematic-btn-wrap.style-1 a {
+    position: relative;
+    padding: 10px 30px;
+    border: 1px solid #121212;
+    color: #121212;
+    -webkit-font-smoothing: antialiased;
+}
+.elematic-btn-wrap.style-1 a:hover {
+    border: none;
+}
+.elematic-btn-wrap.style-1 a:hover .line-1 {
+    animation: move1 1500ms infinite ease;
+}
+.elematic-btn-wrap.style-1 a:hover .line-2 {
+    animation: move2 1500ms infinite ease;
+}   
+.elematic-btn-wrap.style-1 a:hover .line-3 {
+    animation: move3 1500ms infinite ease;
+}   
+.elematic-btn-wrap.style-1 a:hover .line-4 {
+    animation: move4 1500ms infinite ease;
+}
+
+/*style 2*/
+.elematic-btn-wrap.style-2 a {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #8e44ad;
+    font-size: 15px;
+    color: #8e44ad;
+    position: relative;
+    overflow: hidden;
+    transition: color 150ms ease-in-out;
+    padding: 10px 50px;
+}
+.elematic-btn-wrap.style-2 a:after {
+  content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background-color: #8e44ad;
+    z-index: -1;
+    transition: width 150ms ease-in-out;
+}
+.elematic-btn-wrap.style-2 a:hover {
+  color: white;
+}
+.elematic-btn-wrap.style-2 a:hover:after {
+    width: 102%;
+}
+
+/*style 3*/
+.elematic-btn-wrap.style-3 a {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    font-size: 15px;
+    line-height: 3;
+    text-align: center;
+    color: #fff;
+    background-color: #AEDB49;
+    -webkit-transition: -webkit-transform 0.4s,background 0.4s;
+    -moz-transition: -moz-transform 0.4s,background 0.4s;
+    transition: transform 0.4s,background 0.4s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50% -100px;
+    -moz-transform-origin: 50% 50% -100px;
+    transform-origin: 50% 50% -100px;
+}
+.elematic-btn-wrap.style-3 a:before {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: #98CA28;
+    content: attr(data-hover);
+    -webkit-transition: background 0.4s;
+    -moz-transition: background 0.4s;
+    transition: background 0.4s;
+    -webkit-transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+    -webkit-transform-origin: 0 50%;
+    -moz-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+}
+.elematic-btn-wrap.style-3:hover a, .elematic-btn-wrap.style-3:focus a {
+    background-color: #98CA28;
+    -webkit-transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+    color: #121212;
+}
+
+/*style 4*/
+.elematic-btn-wrap.style-4 a {
+    padding: 10px 30px;
+    border: 2px solid #ff0251;
+    color: #ff0251;
+    transition: .3s;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.elematic-btn-wrap.style-4 a:hover {
+  animation: pulse 1s infinite;
+    transition: .3s;
+}
+
+/*style 5*/
+.elematic-btn-wrap.style-5 a {
+  position: relative;
+    display: inline-block;
+    font-size: 15px;
+    text-align: center;
+    padding: 0 40px;
+    line-height: 3;
+    color: #fff;
+    background-color: #AEDB49;
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.elematic-btn-wrap.style-5 a:before {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #98CA28;
+    text-align: center;
+    content: attr(data-hover);
+    -webkit-transition: background 0.3s;
+    -moz-transition: background 0.3s;
+    transition: background 0.3s;
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+}
+.elematic-btn-wrap.style-5:hover a, .elematic-btn-wrap.style-5:focus a {
+    -webkit-transform: rotateX(90deg) translateY(-22px);
+    -moz-transform: rotateX(90deg) translateY(-22px);
+    transform: rotateX(90deg) translateY(-22px);
+}
+/* style 6-10 */
+.elematic-btn-wrap.style-6 a,
+.elematic-btn-wrap.style-7 a,
+.elematic-btn-wrap.style-8 a,
+.elematic-btn-wrap.style-9 a,
+.elematic-btn-wrap.style-10 a {
+  position: relative;
+  border: 1px solid #111;
+  padding: 15px 50px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.elematic-btn-wrap.style-6 a:hover:before,
+.elematic-btn-wrap.style-7 a:hover:before,
+.elematic-btn-wrap.style-8 a:hover:before,
+.elematic-btn-wrap.style-9 a:hover:before,
+.elematic-btn-wrap.style-10 a:hover:before {
+  opacity: 1; 
+  transform: translate(0,0);
+}
+.elematic-btn-wrap.style-6 a:before,
+.elematic-btn-wrap.style-7 a:before,
+.elematic-btn-wrap.style-8 a:before,
+.elematic-btn-wrap.style-9 a:before,
+.elematic-btn-wrap.style-10 a:before {
+  content: attr(data-hover);
+  position: absolute;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+.elematic-btn-wrap.style-6 a:before {
+  transform: translate(-100%,0);
+}
+.elematic-btn-wrap.style-7 a:before {
+  transform: translate(100%, 0);
+}
+.elematic-btn-wrap.style-8 a:before {
+  transform: translate(0, -100%);
+}
+.elematic-btn-wrap.style-9 a:before {
+  transform: translate(0, 100%);
+}
+.elematic-btn-wrap.style-6 a .elematic-btn-anim,
+.elematic-btn-wrap.style-7 a .elematic-btn-anim,
+.elematic-btn-wrap.style-8 a .elematic-btn-anim,
+.elematic-btn-wrap.style-9 a .elematic-btn-anim,
+.elematic-btn-wrap.style-10 a .elematic-btn-anim {
+  display: block;
+  transition: all .3s ease-in-out;
+}
+.elematic-btn-wrap.style-6 a:hover .elematic-btn-anim,
+.elematic-btn-wrap.style-7 a:hover .elematic-btn-anim,
+.elematic-btn-wrap.style-8 a:hover .elematic-btn-anim,
+.elematic-btn-wrap.style-9 a:hover .elematic-btn-anim,
+.elematic-btn-wrap.style-10 a:hover .elematic-btn-anim {
+  opacity: 0; 
+}
+.elematic-btn-wrap.style-6 a:hover .elematic-btn-anim {
+  transform: translate(100%,0);
+}
+.elematic-btn-wrap.style-7 a:hover .elematic-btn-anim {
+  transform: translate(-100%,0);
+}
+.elematic-btn-wrap.style-8 a:hover .elematic-btn-anim {
+  transform: translate(0, 100%);
+}
+.elematic-btn-wrap.style-9 a:hover .elematic-btn-anim {
+  transform: translate(0, -100%);
+}

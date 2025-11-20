@@ -1,0 +1,42 @@
+/*  #Marquee
+------------------------------------- */
+.elematic-marquee-item {
+    display: flex;
+    align-items: center;
+}
+.elematic-marquee-link {
+    display: flex;
+    align-items: center;
+}
+.elematic-marquee-wrap {
+    overflow: hidden;
+}
+.elematic-marquee-content {
+    will-change: transform;
+    transform: translateX(0);
+    animation: elematic_marquee 40s linear infinite;
+    white-space: nowrap;
+    display: -webkit-inline-box;
+}
+.elematic-marquee-item * {
+    font-size: 18px;
+}
+.elematic-marquee-item .elematic-marquee-icon {
+    margin-top: -5px;
+}
+.elematic-marquee-icon {
+    margin-left: 15px;
+    margin-right: 20px;
+}
+.elematic-marquee-icon img {
+    width: 28px;
+}
+.elematic-marquee-icon svg {
+    width: 14px;
+}
+@keyframes elematic_marquee {
+    0%   { 
+        transform: translateX(0%);
+         }
+    100% { transform: translateX(-100%); }
+}
