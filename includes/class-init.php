@@ -19,11 +19,13 @@ class Init {
         require_once ELEMATIC_PATH . 'includes/class-widget-manager.php';
         require_once ELEMATIC_PATH . 'includes/class-helper.php';
         require_once ELEMATIC_PATH . 'includes/class-enqueue.php';
+        require_once ELEMATIC_PATH . 'includes/class-ajax-handler.php';
 
         new Plugin_Core();
         new Enqueue();
         new Helper();
         new WidgetManager();
+        new Ajax_Handler();
         
     }
 

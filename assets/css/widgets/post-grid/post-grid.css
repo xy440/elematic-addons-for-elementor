@@ -1,0 +1,215 @@
+/*  #Post Grid
+------------------------------------- */
+.elematic-post-grid-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  transition: all .3s;
+}
+
+.elematic-post-grid-item {
+  padding: 0 5px 25px;
+  position: relative;
+}
+
+/* Smooth Loading Animation for New Items */
+.elematic-post-grid-item.elematic-item-loading {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: none;
+}
+
+.elematic-post-grid-item.elematic-item-loaded {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.elematic-post-thumb {
+    overflow: hidden;
+}
+
+.elematic-post-meta .elematic--post-meta-date,
+.elematic-post-meta .elematic--post-meta-author,
+.elematic-post-meta .nickname,
+.elematic-post-meta .elematic--post-meta-comments,
+.elematic--post-category,
+.elematic-post-widget-meta {
+  margin-right: 10px;
+}
+
+.elematic-post-grid-read-more {
+    color: var(--color-primary);
+    transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.elematic-post-grid-read-more:hover,
+.elematic-post-grid-read-more:focus {
+  color: var(--color-secondary);
+}
+
+.elematic-post-meta {
+  padding: 0 0 15px;
+}
+
+.elematic-post-title {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+}
+
+/*style 1*/
+.elematic-post-grid-style-1 .elematic-post-meta {
+    padding: 15px 0 10px;
+}
+
+/*style 2*/
+.elematic-post-grid-style-2 .elematic-date-style {
+    position: absolute;
+    text-align: center;
+    background-color: var(--color-secondary);
+    right: 15px;
+    top: 0;
+    z-index: 1;
+    line-height: 1.1;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    padding: 5px 7px;
+    display: grid;
+}
+
+.elematic-post-grid-style-2 .elematic-post-title {
+    margin: 15px 0 10px 0;
+}
+
+.elematic-post-grid-style-2 .elematic-date-style span {
+    font-size: 22px;
+}
+
+/*style 3*/
+.elematic-post-grid-style-3 .elematic-date-style {
+    position: relative;
+    background-color: var(--color-primary);
+    top: -25px;
+    z-index: 1;
+    color: white;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    display: inline-block;
+    border-radius: 25px;
+    transition: all .3s;
+}
+
+.elematic-post-grid-style-3 .elematic-date-style .elematic--post-meta-date {
+    margin-right: 0;
+    color: white;
+}
+
+.elematic-post-grid-style-3 .elematic-date-style time {
+    margin-left: 5px;
+}
+
+.elematic-post-grid-style-3:hover .elematic-date-style {
+  background-color: var(--color-secondary);
+}
+
+.elematic-post-grid-style-3 .elematic-post-content {
+  text-align: center;
+  transition: all .3s;
+  background-color: whitesmoke;
+  padding: 0px 15px 20px;
+}
+
+/* Style 4 */
+.elematic-post-grid-style-4 .elematic-post-grid-style-4-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.elematic-post-grid-style-4 .elematic-post-thumb-left {
+    flex: 1 1 40%;
+}
+
+.elematic-post-grid-style-4 .elematic-post-content-right {
+    flex: 1 0 60%;
+}
+
+.elematic-post-grid-style-4 .elematic-post-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 10px;
+}
+
+.elematic-post-grid-style-4 .elematic-post-meta {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.elematic-post-grid-style-4 .elematic-post-grid-read-more {
+    margin-top: 15px;
+    color: var(--color-primary);
+}
+
+.elematic-post-grid-style-4 .elematic-post-grid-read-more:hover {
+    color: var(--color-secondary);
+}
+
+.elematic-post-grid-style-4 .elematic-excerpt {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Alternative Animation Styles - You can choose which one you prefer */
+
+/* Fade + Scale Animation */
+.elematic-post-grid-item.elematic-animation-scale.elematic-item-loading {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.elematic-post-grid-item.elematic-animation-scale.elematic-item-loaded {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Slide from Left Animation */
+.elematic-post-grid-item.elematic-animation-slide-left.elematic-item-loading {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.elematic-post-grid-item.elematic-animation-slide-left.elematic-item-loaded {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Slide from Right Animation */
+.elematic-post-grid-item.elematic-animation-slide-right.elematic-item-loading {
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+.elematic-post-grid-item.elematic-animation-slide-right.elematic-item-loaded {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Rotate + Fade Animation */
+.elematic-post-grid-item.elematic-animation-rotate.elematic-item-loading {
+    opacity: 0;
+    transform: rotate(-5deg) translateY(20px);
+}
+
+.elematic-post-grid-item.elematic-animation-rotate.elematic-item-loaded {
+    opacity: 1;
+    transform: rotate(0deg) translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}

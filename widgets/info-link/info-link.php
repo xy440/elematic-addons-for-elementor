@@ -418,7 +418,7 @@ class InfoLink extends Widget_Base {
             [
                 'label'   => __('HTML Tag', 'elematic-addons-for-elementor'),
                 'type'    => Controls_Manager::SELECT,
-                'default' => 'h4',
+                'default' => 'p',
                 'options' => Helper::elematic_html_tags(),
                 'condition' => [
                     'show_sub_title' => 'yes'

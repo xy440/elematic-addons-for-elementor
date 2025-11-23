@@ -915,15 +915,23 @@ class Grid extends Widget_Base {
         $image = $item['grid_image']['url'];
         $lightbox = 'elematic_lightbox' . $index;
  
-        $this->add_render_attribute(
-            [
-                $lightbox => [
-                    'data-elementor-open-lightbox' => $settings['elematic_lightbox'],
-                    'data-elementor-lightbox-slideshow' => $this->get_id(),
-                    'href' => $image,
-                ]
-            ]
-        );
+            // Accessible label for lightbox link
+            $lightbox_label = ! empty( $item['title'] )
+                ? wp_strip_all_tags( $item['title'] )
+                : esc_html__( 'View image', 'elematic-addons-for-elementor' );
+
+            if ( $image ) {
+                $this->add_render_attribute(
+                    $lightbox,
+                    [
+                        'data-elementor-open-lightbox'      => $settings['elematic_lightbox'],
+                        'data-elementor-lightbox-slideshow' => $this->get_id(),
+                        'href'                              => esc_url( $image ),
+                        // Makes the link have a discernible name for Lighthouse / screen readers
+                        'aria-label'                        => $lightbox_label,
+                    ]
+                );
+            }
     ?>
         <div <?php $this->print_render_attribute_string('item') ?>>
             <div class="elematic-grid-container">

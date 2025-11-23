@@ -1,0 +1,469 @@
+/* #Dual Button
+------------------------------------- */
+.elematic-dual-btn-wrap {
+  display: flex;
+}
+.elematic-dual-btn-primary,
+.elematic-dual-btn-secondary {
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 3px;
+  padding: 12px 24px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.elematic-dual-btn-primary svg,
+.elematic-dual-btn-secondary svg {
+  width: 15px;
+  height: 15px;
+  fill: white;
+}
+.elematic-dual-btn-pri-icon-before,
+.elematic-dual-btn-sec-icon-before {
+  margin-right: 5px;
+}
+.elematic-dual-btn-pri-icon-after,
+.elematic-dual-btn-sec-icon-after {
+  margin-left: 5px;
+}
+.elematic-dual-btn-primary:hover,
+.elematic-dual-btn-primary:focus,
+.elematic-dual-btn-secondary:hover,
+.elematic-dual-btn-secondary:focus {
+  color: white;
+}
+/*primary button*/
+.elematic-dual-btn-primary {
+  background-color: black;
+  margin-right: 15px;
+}
+.elematic-dual-btn-primary:hover {
+  background-color: #550099;
+
+}
+/*secondary button*/
+.elematic-dual-btn-secondary {
+  background-color: #550099;
+}
+.elematic-dual-btn-secondary:hover {
+  background-color: #000;
+}
+/*button styles*/
+.elematic-dual-btn-primary.color-1,
+.elematic-dual-btn-secondary.color-1 {
+  background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+}
+.elematic-dual-btn-primary.color-2,
+.elematic-dual-btn-secondary.color-2 {
+  background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
+}
+.elematic-dual-btn-primary.color-3,
+.elematic-dual-btn-secondary.color-3 {
+  background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
+}
+.elematic-dual-btn-primary.color-4,
+.elematic-dual-btn-secondary.color-4 {
+  background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+}
+.elematic-dual-btn-primary.color-5,
+.elematic-dual-btn-secondary.color-5 {
+  background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+}
+.elematic-dual-btn-primary.color-6,
+.elematic-dual-btn-secondary.color-6 {
+  background-image: linear-gradient(to right, #009245, #FCEE21, #00A8C5, #D9E021);
+}
+.elematic-dual-btn-primary.color-7,
+.elematic-dual-btn-secondary.color-7 {
+  background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
+}
+.elematic-dual-btn-primary.color-8,
+.elematic-dual-btn-secondary.color-8 {
+  background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
+}
+.elematic-dual-btn-primary.color-9,
+.elematic-dual-btn-secondary.color-9 {
+  background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+}
+.elematic-dual-btn-primary.color-10,
+.elematic-dual-btn-secondary.color-10 {
+  background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a , #FBB03B);
+}
+.elematic-dual-btn-primary.color-11,
+.elematic-dual-btn-secondary.color-11 {
+  background-image: linear-gradient(to right, #eb3941, #f15e64, #e14e53, #e2373f);
+}
+.elematic-dual-btn-primary.color-12,
+.elematic-dual-btn-secondary.color-12 {
+  background-image: linear-gradient(to right, #895cf2 0%, #ffabf4 50%, #895cf2 100%);
+}
+.elematic-dual-btn-primary.color-13,
+.elematic-dual-btn-secondary.color-13 {
+  background-image: linear-gradient(to right, #DD5E89 0%, #F7BB97 51%, #DD5E89 100%)
+}
+.elematic-dual-btn-primary.color-14,
+.elematic-dual-btn-secondary.color-14 {
+  background-image: linear-gradient(to right, #2BC0E4 0%, #EAECC6 51%, #2BC0E4 100%);
+}
+.elematic-dual-btn-primary.color-15,
+.elematic-dual-btn-secondary.color-15 {
+  background-image: linear-gradient(to right, #7474BF 0%, #348AC7 51%, #7474BF 100%);
+}
+.elematic-dual-btn-primary.color-16,
+.elematic-dual-btn-secondary.color-16 {
+  background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5 51%, #00d2ff 100%);
+}
+.elematic-dual-btn-primary.color-17,
+.elematic-dual-btn-secondary.color-17 {
+  background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+}
+.elematic-dual-btn-primary.color-18,
+.elematic-dual-btn-secondary.color-18 {
+  background-image: linear-gradient(to right, #603813 0%, #b29f94 51%, #603813 100%);
+}
+.elematic-dual-btn-primary.color-19,
+.elematic-dual-btn-secondary.color-19 {
+  background-image: linear-gradient(to right, #0575E6 0%, #021B79 51%, #0575E6 100%);
+}
+.elematic-dual-btn-primary.color-20,
+.elematic-dual-btn-secondary.color-20 {
+  background-image: linear-gradient(to right, #F7971E 0%, #FFD200 51%, #F7971E 100%);
+}
+.elematic-dual-btn-primary.color-21,
+.elematic-dual-btn-secondary.color-21 {
+  background-image: linear-gradient(to right, #B2FEFA 0%, #0ED2F7 51%, #B2FEFA 100%);
+}
+.elematic-dual-btn-primary.color-22,
+.elematic-dual-btn-secondary.color-22 {
+  background-image: linear-gradient(to right, #6190E8 0%, #A7BFE8 51%, #6190E8 100%);
+}
+.elematic-dual-btn-primary.color-23,
+.elematic-dual-btn-secondary.color-23 {
+  background-image: linear-gradient(to right, #ff0084 0%, #33001b 51%, #ff0084 100%);
+}
+.elematic-dual-btn-primary.color-24,
+.elematic-dual-btn-secondary.color-24 {
+  background-image: linear-gradient(to right, #ee9ca7 0%, #ffdde1 51%, #ee9ca7 100%);
+}
+.elematic-dual-btn-primary.color-25,
+.elematic-dual-btn-secondary.color-25 {
+  background-image: linear-gradient(to right, #6a3093 0%, #a044ff 51%, #6a3093 100%);
+}
+.elematic-dual-btn-primary.color-26,
+.elematic-dual-btn-secondary.color-26 {
+  background-image: linear-gradient(to right, #f7ff00 0%, #db36a4 51%, #f7ff00 100%);
+}
+.elematic-dual-btn-primary.color-27,
+.elematic-dual-btn-secondary.color-27 {
+  background-image: linear-gradient(to right, #56ab2f 0%, #a8e063 51%, #56ab2f 100%);
+}
+.elematic-dual-btn-primary.color-28,
+.elematic-dual-btn-secondary.color-28 {
+  background-image: linear-gradient(to right, #000000 0%, #434343 51%, #000000 100%);
+}
+.elematic-dual-btn-primary.color-29,
+.elematic-dual-btn-secondary.color-29 {
+  background-image: linear-gradient(to right, #1D4350 0%, #A43931 51%, #1D4350 100%);
+}
+.elematic-dual-btn-primary.color-30,
+.elematic-dual-btn-secondary.color-30 {
+  background-image: linear-gradient(to right, #000000 0%, #0f9b0f 51%, #000000 100%);
+}
+.elematic-dual-btn-primary.color-31,
+.elematic-dual-btn-secondary.color-31 {
+  background-image: linear-gradient(to right, #a80077 0%, #66ff00 51%, #a80077 100%);
+}
+.elematic-dual-btn-primary.color-32,
+.elematic-dual-btn-secondary.color-32 {
+  background-image: linear-gradient(to right, #E0EAFC 0%, #CFDEF3 51%, #E0EAFC 100%);
+}
+.elematic-dual-btn-primary.color-33,
+.elematic-dual-btn-secondary.color-33 {
+  background-image: linear-gradient(to right, #E8CBC0 0%, #636FA4 51%, #E8CBC0 100%);
+}
+.elematic-dual-btn-primary.color-34,
+.elematic-dual-btn-secondary.color-34 {
+  background-image: linear-gradient(to right, #1e130c 0%, #9a8478 51%, #1e130c 100%);
+}
+.elematic-dual-btn-primary.color-35,
+.elematic-dual-btn-secondary.color-35 {
+  background-image: linear-gradient(to right, #70e1f5 0%, #ffd194 51%, #70e1f5 100%);
+}
+.elematic-dual-btn-primary.color-36,
+.elematic-dual-btn-secondary.color-36 {
+  background-image: linear-gradient(to right, #DA22FF 0%, #9733EE 51%, #DA22FF 100%);
+}
+.elematic-dual-btn-primary.color-37,
+.elematic-dual-btn-secondary.color-37 {
+  background-image: linear-gradient(to right, #003973 0%, #E5E5BE 51%, #003973 100%);
+}
+.elematic-dual-btn-primary.color-38,
+.elematic-dual-btn-secondary.color-38 {
+  background-image: linear-gradient(to right, #403B4A 0%, #E7E9BB 51%, #403B4A 100%);
+}
+.elematic-dual-btn-primary.color-39,
+.elematic-dual-btn-secondary.color-39 {
+  background-image: linear-gradient(to right, #EDE574 0%, #E1F5C4 51%, #EDE574 100%);
+}
+.elematic-dual-btn-primary.color-40,
+.elematic-dual-btn-secondary.color-40 {
+  background-image: linear-gradient(to right, #ECE9E6 0%, #FFFFFF 51%, #ECE9E6 100%);
+}
+.elematic-dual-btn-primary.color-41,
+.elematic-dual-btn-secondary.color-41 {
+  background-image: linear-gradient(to right, #ff6e7f 0%, #bfe9ff 51%, #ff6e7f 100%);
+}
+.elematic-dual-btn-primary.color-42,
+.elematic-dual-btn-secondary.color-42 {
+  background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA 51%, #1FA2FF 100%);
+}
+.elematic-dual-btn-primary.color-43,
+.elematic-dual-btn-secondary.color-43 {
+  background-image: linear-gradient(to right, #414d0b 0%, #727a17 51%, #414d0b 100%);
+}
+.elematic-dual-btn-primary.color-44,
+.elematic-dual-btn-secondary.color-44 {
+  background-image: linear-gradient(to right, #4b6cb7 0%, #182848 51%, #4b6cb7 100%);
+}
+.elematic-dual-btn-primary.color-45,
+.elematic-dual-btn-secondary.color-46 {
+  background-image: linear-gradient(to right, #FDFC47 0%, #24FE41 51%, #FDFC47 100%);
+}
+.elematic-dual-btn-primary.color-46,
+.elematic-dual-btn-secondary.color-46 {
+  background-image: linear-gradient(to right, #D1913C 0%, #FFD194 51%, #D1913C 100%);
+}
+.elematic-dual-btn-primary.color-47,
+.elematic-dual-btn-secondary.color-47 {
+  background-image: linear-gradient(to right, #4B79A1 0%, #283E51 51%, #4B79A1 100%);
+}
+.elematic-dual-btn-primary.color-48,
+.elematic-dual-btn-secondary.color-48 {
+  background-image: linear-gradient(to right, #4CA1AF 0%, #C4E0E5 51%, #4CA1AF 100%);
+}
+.elematic-dual-btn-primary.color-49,
+.elematic-dual-btn-secondary.color-49 {
+  background-image: linear-gradient(to right, #2C3E50 0%, #FD746C 51%, #2C3E50 100%);
+}
+.elematic-dual-btn-primary.color-50,
+.elematic-dual-btn-secondary.color-50 {
+  background-image: linear-gradient(to right, #000428 0%, #004e92 51%, #000428 100%);
+}
+
+.elematic-dual-btn-primary.color-1,
+.elematic-dual-btn-primary.color-2,
+.elematic-dual-btn-primary.color-3,
+.elematic-dual-btn-primary.color-4,
+.elematic-dual-btn-primary.color-5,
+.elematic-dual-btn-primary.color-6,
+.elematic-dual-btn-primary.color-7,
+.elematic-dual-btn-primary.color-8,
+.elematic-dual-btn-primary.color-9,
+.elematic-dual-btn-primary.color-10,
+.elematic-dual-btn-primary.color-11,
+.elematic-dual-btn-primary.color-12,
+.elematic-dual-btn-primary.color-13,
+.elematic-dual-btn-primary.color-14,
+.elematic-dual-btn-primary.color-15,
+.elematic-dual-btn-primary.color-16,
+.elematic-dual-btn-primary.color-17,
+.elematic-dual-btn-primary.color-18,
+.elematic-dual-btn-primary.color-19,
+.elematic-dual-btn-primary.color-20,
+.elematic-dual-btn-primary.color-21,
+.elematic-dual-btn-primary.color-22,
+.elematic-dual-btn-primary.color-23,
+.elematic-dual-btn-primary.color-24,
+.elematic-dual-btn-primary.color-25,
+.elematic-dual-btn-primary.color-26,
+.elematic-dual-btn-primary.color-27,
+.elematic-dual-btn-primary.color-28,
+.elematic-dual-btn-primary.color-29,
+.elematic-dual-btn-primary.color-30,
+.elematic-dual-btn-primary.color-31,
+.elematic-dual-btn-primary.color-32,
+.elematic-dual-btn-primary.color-33,
+.elematic-dual-btn-primary.color-34,
+.elematic-dual-btn-primary.color-35,
+.elematic-dual-btn-primary.color-36,
+.elematic-dual-btn-primary.color-37,
+.elematic-dual-btn-primary.color-38,
+.elematic-dual-btn-primary.color-39,
+.elematic-dual-btn-primary.color-40,
+.elematic-dual-btn-primary.color-41,
+.elematic-dual-btn-primary.color-42,
+.elematic-dual-btn-primary.color-43,
+.elematic-dual-btn-primary.color-44,
+.elematic-dual-btn-primary.color-45,
+.elematic-dual-btn-primary.color-46,
+.elematic-dual-btn-primary.color-47,
+.elematic-dual-btn-primary.color-48,
+.elematic-dual-btn-primary.color-49,
+.elematic-dual-btn-primary.color-50,
+.elematic-dual-btn-secondary.color-1,
+.elematic-dual-btn-secondary.color-2,
+.elematic-dual-btn-secondary.color-3,
+.elematic-dual-btn-secondary.color-4,
+.elematic-dual-btn-secondary.color-5,
+.elematic-dual-btn-secondary.color-6,
+.elematic-dual-btn-secondary.color-7,
+.elematic-dual-btn-secondary.color-8,
+.elematic-dual-btn-secondary.color-9,
+.elematic-dual-btn-secondary.color-10,
+.elematic-dual-btn-secondary.color-11,
+.elematic-dual-btn-secondary.color-12,
+.elematic-dual-btn-secondary.color-13,
+.elematic-dual-btn-secondary.color-14,
+.elematic-dual-btn-secondary.color-15,
+.elematic-dual-btn-secondary.color-16,
+.elematic-dual-btn-secondary.color-17,
+.elematic-dual-btn-secondary.color-18,
+.elematic-dual-btn-secondary.color-19,
+.elematic-dual-btn-secondary.color-20,
+.elematic-dual-btn-secondary.color-21,
+.elematic-dual-btn-secondary.color-22,
+.elematic-dual-btn-secondary.color-23,
+.elematic-dual-btn-secondary.color-24,
+.elematic-dual-btn-secondary.color-25,
+.elematic-dual-btn-secondary.color-26,
+.elematic-dual-btn-secondary.color-27,
+.elematic-dual-btn-secondary.color-28,
+.elematic-dual-btn-secondary.color-29,
+.elematic-dual-btn-secondary.color-30,
+.elematic-dual-btn-secondary.color-31,
+.elematic-dual-btn-secondary.color-32,
+.elematic-dual-btn-secondary.color-33,
+.elematic-dual-btn-secondary.color-34,
+.elematic-dual-btn-secondary.color-35,
+.elematic-dual-btn-secondary.color-36,
+.elematic-dual-btn-secondary.color-37,
+.elematic-dual-btn-secondary.color-38,
+.elematic-dual-btn-secondary.color-39,
+.elematic-dual-btn-secondary.color-40,
+.elematic-dual-btn-secondary.color-41,
+.elematic-dual-btn-secondary.color-42,
+.elematic-dual-btn-secondary.color-43,
+.elematic-dual-btn-secondary.color-44,
+.elematic-dual-btn-secondary.color-45,
+.elematic-dual-btn-secondary.color-46,
+.elematic-dual-btn-secondary.color-47,
+.elematic-dual-btn-secondary.color-48,
+.elematic-dual-btn-secondary.color-49,
+.elematic-dual-btn-secondary.color-50
+{
+  background-size: 300% 100%;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+.elematic-dual-btn-primary.color-1:hover,
+.elematic-dual-btn-primary.color-2:hover,
+.elematic-dual-btn-primary.color-3:hover,
+.elematic-dual-btn-primary.color-4:hover,
+.elematic-dual-btn-primary.color-5:hover,
+.elematic-dual-btn-primary.color-6:hover,
+.elematic-dual-btn-primary.color-7:hover,
+.elematic-dual-btn-primary.color-8:hover,
+.elematic-dual-btn-primary.color-9:hover,
+.elematic-dual-btn-primary.color-10:hover,
+.elematic-dual-btn-primary.color-11:hover,
+.elematic-dual-btn-primary.color-12:hover,
+.elematic-dual-btn-primary.color-13:hover,
+.elematic-dual-btn-primary.color-14:hover,
+.elematic-dual-btn-primary.color-15:hover,
+.elematic-dual-btn-primary.color-16:hover,
+.elematic-dual-btn-primary.color-17:hover,
+.elematic-dual-btn-primary.color-18:hover,
+.elematic-dual-btn-primary.color-19:hover,
+.elematic-dual-btn-primary.color-20:hover,
+.elematic-dual-btn-primary.color-21:hover,
+.elematic-dual-btn-primary.color-22:hover,
+.elematic-dual-btn-primary.color-23:hover,
+.elematic-dual-btn-primary.color-24:hover,
+.elematic-dual-btn-primary.color-25:hover,
+.elematic-dual-btn-primary.color-26:hover,
+.elematic-dual-btn-primary.color-27:hover,
+.elematic-dual-btn-primary.color-28:hover,
+.elematic-dual-btn-primary.color-29:hover,
+.elematic-dual-btn-primary.color-30:hover,
+.elematic-dual-btn-primary.color-31:hover,
+.elematic-dual-btn-primary.color-32:hover,
+.elematic-dual-btn-primary.color-33:hover,
+.elematic-dual-btn-primary.color-34:hover,
+.elematic-dual-btn-primary.color-35:hover,
+.elematic-dual-btn-primary.color-36:hover,
+.elematic-dual-btn-primary.color-37:hover,
+.elematic-dual-btn-primary.color-38:hover,
+.elematic-dual-btn-primary.color-39:hover,
+.elematic-dual-btn-primary.color-40:hover,
+.elematic-dual-btn-primary.color-41:hover,
+.elematic-dual-btn-primary.color-42:hover,
+.elematic-dual-btn-primary.color-43:hover,
+.elematic-dual-btn-primary.color-44:hover,
+.elematic-dual-btn-primary.color-45:hover,
+.elematic-dual-btn-primary.color-46:hover,
+.elematic-dual-btn-primary.color-47:hover,
+.elematic-dual-btn-primary.color-48:hover,
+.elematic-dual-btn-primary.color-49:hover,
+.elematic-dual-btn-primary.color-50:hover,
+.elematic-dual-btn-secondary.color-1:hover,
+.elematic-dual-btn-secondary.color-2:hover,
+.elematic-dual-btn-secondary.color-3:hover,
+.elematic-dual-btn-secondary.color-4:hover,
+.elematic-dual-btn-secondary.color-5:hover,
+.elematic-dual-btn-secondary.color-6:hover,
+.elematic-dual-btn-secondary.color-7:hover,
+.elematic-dual-btn-secondary.color-8:hover,
+.elematic-dual-btn-secondary.color-9:hover,
+.elematic-dual-btn-secondary.color-10:hover,
+.elematic-dual-btn-secondary.color-11:hover,
+.elematic-dual-btn-secondary.color-12:hover,
+.elematic-dual-btn-secondary.color-13:hover,
+.elematic-dual-btn-secondary.color-14:hover,
+.elematic-dual-btn-secondary.color-15:hover,
+.elematic-dual-btn-secondary.color-16:hover,
+.elematic-dual-btn-secondary.color-17:hover,
+.elematic-dual-btn-secondary.color-18:hover,
+.elematic-dual-btn-secondary.color-19:hover,
+.elematic-dual-btn-secondary.color-20:hover,
+.elematic-dual-btn-secondary.color-21:hover,
+.elematic-dual-btn-secondary.color-22:hover,
+.elematic-dual-btn-secondary.color-23:hover,
+.elematic-dual-btn-secondary.color-24:hover,
+.elematic-dual-btn-secondary.color-25:hover,
+.elematic-dual-btn-secondary.color-26:hover,
+.elematic-dual-btn-secondary.color-27:hover,
+.elematic-dual-btn-secondary.color-28:hover,
+.elematic-dual-btn-secondary.color-29:hover,
+.elematic-dual-btn-secondary.color-30:hover,
+.elematic-dual-btn-secondary.color-31:hover,
+.elematic-dual-btn-secondary.color-32:hover,
+.elematic-dual-btn-secondary.color-33:hover,
+.elematic-dual-btn-secondary.color-34:hover,
+.elematic-dual-btn-secondary.color-35:hover,
+.elematic-dual-btn-secondary.color-36:hover,
+.elematic-dual-btn-secondary.color-37:hover,
+.elematic-dual-btn-secondary.color-38:hover,
+.elematic-dual-btn-secondary.color-39:hover,
+.elematic-dual-btn-secondary.color-40:hover,
+.elematic-dual-btn-secondary.color-41:hover,
+.elematic-dual-btn-secondary.color-42:hover,
+.elematic-dual-btn-secondary.color-43:hover,
+.elematic-dual-btn-secondary.color-44:hover,
+.elematic-dual-btn-secondary.color-45:hover,
+.elematic-dual-btn-secondary.color-46:hover,
+.elematic-dual-btn-secondary.color-47:hover,
+.elematic-dual-btn-secondary.color-48:hover,
+.elematic-dual-btn-secondary.color-49:hover,
+.elematic-dual-btn-secondary.color-50:hover
+{
+  background-position: 100% 0;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}

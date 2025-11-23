@@ -71,7 +71,7 @@ class Gallery extends Widget_Base {
                 'label' => esc_html__('Image', 'elematic-addons-for-elementor'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
-                    'url' => ELEMATIC_URL . '/assets/images/gallery/gall-1.jpg',
+                    'url' => ELEMATIC_URL . 'assets/images/gallery/gall-1.jpg',
                 ],
             ]
         );
@@ -131,37 +131,37 @@ class Gallery extends Widget_Base {
                     [
                         'gall_img_name' => 'Alpha',
                         'gall_filter_name' => 'Mono',
-                        'image' => ['url' => ELEMATIC_URL . '/assets/images/gallery/gall-1.jpg'],
+                        'image' => ['url' => ELEMATIC_URL . 'assets/images/gallery/gall-1.jpg'],
                         'gall_img_link_url' => ['url' => '#'],
                     ],
                     [
                         'gall_img_name' => 'Beta',
                         'gall_filter_name' => 'Di',
-                        'image' => ['url' => ELEMATIC_URL . '/assets/images/gallery/gall-2.jpg'],
+                        'image' => ['url' => ELEMATIC_URL . 'assets/images/gallery/gall-2.jpg'],
                         'gall_img_link_url' => ['url' => '#'],
                     ],
                     [
                         'gall_img_name' => 'Gamma',
                         'gall_filter_name' => 'Tri',
-                        'image' => ['url' => ELEMATIC_URL . '/assets/images/gallery/gall-3.jpg'],
+                        'image' => ['url' => ELEMATIC_URL . 'assets/images/gallery/gall-3.jpg'],
                         'gall_img_link_url' => ['url' => '#'],
                     ],
                     [
                         'gall_img_name' => 'Delta',
                         'gall_filter_name' => 'Tetra',
-                        'image' => ['url' => ELEMATIC_URL . '/assets/images/gallery/gall-4.jpg'],
+                        'image' => ['url' => ELEMATIC_URL . 'assets/images/gallery/gall-4.jpg'],
                         'gall_img_link_url' => ['url' => '#'],
                     ],
                     [
                         'gall_img_name' => 'Epsilon',
                         'gall_filter_name' => 'Penta',
-                        'image' => ['url' => ELEMATIC_URL . '/assets/images/gallery/gall-5.jpg'],
+                        'image' => ['url' => ELEMATIC_URL . 'assets/images/gallery/gall-5.jpg'],
                         'gall_img_link_url' => ['url' => '#'],
                     ],
                     [
                         'gall_img_name' => 'Zeta',
                         'gall_filter_name' => 'Hexa',
-                        'image' => ['url' => ELEMATIC_URL . '/assets/images/gallery/gall-6.jpg'],
+                        'image' => ['url' => ELEMATIC_URL . 'assets/images/gallery/gall-6.jpg'],
                         'gall_img_link_url' => ['url' => '#'],
                     ],
                 ],
@@ -238,7 +238,7 @@ class Gallery extends Widget_Base {
                     '16.666%' => esc_html__( '6 Columns', 'elematic-addons-for-elementor' ),
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-item' => 'width: {{VALUE}};',
+                    '{{WRAPPER}} .elematic-gallery-item' => 'width: {{VALUE}};',
                 ],
                 'render_type' => 'template'
             ]
@@ -260,12 +260,12 @@ class Gallery extends Widget_Base {
             [
                 'label' => esc_html__('Style', 'elematic-addons-for-elementor'),
                 'type' => Controls_Manager::SELECT,
-                'default' => 'tx-gallery-style-1',
+                'default' => 'elematic-gallery-style-1',
                 'options' => [
-                    'tx-gallery-style-1' => esc_html__('Normal', 'elematic-addons-for-elementor'),
-                    'tx-gallery-style-2' => esc_html__('Hover', 'elematic-addons-for-elementor'),
-                    'tx-gallery-style-3' => esc_html__('Whole Image Clickable', 'elematic-addons-for-elementor'),
-                    'tx-gallery-style-4' => esc_html__('Whole Image Lightbox', 'elematic-addons-for-elementor'),
+                    'elematic-gallery-style-1' => esc_html__('Normal', 'elematic-addons-for-elementor'),
+                    'elematic-gallery-style-2' => esc_html__('Hover', 'elematic-addons-for-elementor'),
+                    'elematic-gallery-style-3' => esc_html__('Whole Image Clickable', 'elematic-addons-for-elementor'),
+                    'elematic-gallery-style-4' => esc_html__('Whole Image Lightbox', 'elematic-addons-for-elementor'),
                 ],
             ]
         );
@@ -382,9 +382,6 @@ class Gallery extends Widget_Base {
                     ]
                 ],
                 'default' => 'show',
-                // 'condition' => [
-                //     'gall_img_style!' => ['tx-gallery-style-3', 'tx-gallery-style-4']
-                // ],
                 'separator' => 'before'
             ]
         );
@@ -404,9 +401,7 @@ class Gallery extends Widget_Base {
                     ]
                 ],
                 'default' => 'show',
-                // 'condition' => [
-                //     'gall_img_style!' => ['tx-gallery-style-3', 'tx-gallery-style-4']
-                // ],
+
             ]
         );
         $this->add_control(
@@ -470,8 +465,8 @@ class Gallery extends Widget_Base {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-item'   => 'padding: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .tx-gallery-overlay'   => 'margin: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elematic-gallery-item'   => 'padding: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elematic-gallery-overlay'   => 'margin: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -480,7 +475,7 @@ class Gallery extends Widget_Base {
             [
                 'name' => 'gall_img_border',
                 'label' => esc_html__( 'Image Border', 'elematic-addons-for-elementor' ),
-                'selector' => '{{WRAPPER}} .tx-gallery-item img',
+                'selector' => '{{WRAPPER}} .elematic-gallery-item img',
             ]
         );
         $this->add_responsive_control(
@@ -498,8 +493,8 @@ class Gallery extends Widget_Base {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-item img, {{WRAPPER}} .tx-gallery-overlay'   => 'border-radius: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .tx-gallery-title-bar'   => 'border-bottom-left-radius: {{SIZE}}{{UNIT}};border-bottom-right-radius: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elematic-gallery-item img, {{WRAPPER}} .elematic-gallery-overlay'   => 'border-radius: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elematic-gallery-title-bar'   => 'border-bottom-left-radius: {{SIZE}}{{UNIT}};border-bottom-right-radius: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -507,7 +502,7 @@ class Gallery extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'gall_img_box_shadow',
-                'selector' => '{{WRAPPER}} .tx-gallery-item img',
+                'selector' => '{{WRAPPER}} .elematic-gallery-item img',
             ]
         );
         $this->end_controls_section();
@@ -525,7 +520,7 @@ class Gallery extends Widget_Base {
                 'label'     => esc_html__( 'Image Name Bar Color', 'elematic-addons-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-title-bar' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .elematic-gallery-title-bar' => 'background-color: {{VALUE}};',
                 ],
                 'condition' => [
                     'gall_img_name_switch' => 'show'
@@ -548,8 +543,8 @@ class Gallery extends Widget_Base {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-style-1 .tx-gallery-title-bar, {{WRAPPER}} .tx-gallery-style-2 .tx-gallery-title-bar'   => 'bottom: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .tx-gallery-style-3 .tx-gallery-title-bar, {{WRAPPER}} .tx-gallery-style-4 .tx-gallery-title-bar'   => 'margin-top: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elematic-gallery-style-1 .elematic-gallery-title-bar, {{WRAPPER}} .elematic-gallery-style-2 .elematic-gallery-title-bar'   => 'bottom: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elematic-gallery-style-3 .elematic-gallery-title-bar, {{WRAPPER}} .elematic-gallery-style-4 .elematic-gallery-title-bar'   => 'margin-top: {{SIZE}}{{UNIT}};',
                 ],
                 'condition' => [
                     'gall_img_name_switch' => 'show'
@@ -562,7 +557,7 @@ class Gallery extends Widget_Base {
                 'label'     => esc_html__( 'Image Name Color', 'elematic-addons-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-name, {{WRAPPER}} .tx-gallery-name a' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .elematic-gallery-name, {{WRAPPER}} .elematic-gallery-name a' => 'color: {{VALUE}};',
                 ],
                 'condition' => [
                     'gall_img_name_switch' => 'show'
@@ -576,7 +571,7 @@ class Gallery extends Widget_Base {
                 'label'     => esc_html__( 'Image Name Hover Color', 'elematic-addons-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-name:hover, {{WRAPPER}} .tx-gallery-name a:hover' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .elematic-gallery-name:hover, {{WRAPPER}} .elematic-gallery-name a:hover' => 'color: {{VALUE}};',
                 ],
                 'condition' => [
                     'gall_img_name_switch' => 'show'
@@ -588,7 +583,7 @@ class Gallery extends Widget_Base {
               [
                    'name'    => 'img_name_typography',
                    'label'     => esc_html__( 'Image Name Typography', 'elematic-addons-for-elementor' ),
-                   'selector'  => '{{WRAPPER}} .tx-gallery-name, {{WRAPPER}} .tx-gallery-name a',
+                   'selector'  => '{{WRAPPER}} .elematic-gallery-name, {{WRAPPER}} .elematic-gallery-name a',
                    'condition' => [
                     'gall_img_name_switch' => 'show'
                 ]
@@ -614,7 +609,7 @@ class Gallery extends Widget_Base {
               ]
             ],
             'selectors' => [
-              '{{WRAPPER}} .tx-gallery-name' => 'text-align: {{VALUE}};',
+              '{{WRAPPER}} .elematic-gallery-name' => 'text-align: {{VALUE}};',
             ],
             'condition' => [
                           'gall_filter_switch' => 'hide',
@@ -627,7 +622,7 @@ class Gallery extends Widget_Base {
                 'label'     => esc_html__( 'Image Filter Name Color', 'elematic-addons-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-categoy' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .elematic-gallery-categoy' => 'color: {{VALUE}};',
                 ],
                 'condition' => [
                     'gall_filter_switch' => 'show'
@@ -640,7 +635,7 @@ class Gallery extends Widget_Base {
               [
                    'name'    => 'img_filter_name_typography',
                    'label'     => esc_html__( 'Image Filter Name Typography', 'elematic-addons-for-elementor' ),
-                   'selector'  => '{{WRAPPER}} .tx-gallery-categoy',
+                   'selector'  => '{{WRAPPER}} .elematic-gallery-categoy',
                    'condition' => [
                         'gall_filter_switch' => 'show'
                     ]
@@ -652,7 +647,7 @@ class Gallery extends Widget_Base {
                 'label'     => esc_html__( 'Image Description Color', 'elematic-addons-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-desc > *' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .elematic-gallery-desc > *' => 'color: {{VALUE}};',
                 ],
                 'separator' => 'before'
             ]
@@ -662,7 +657,7 @@ class Gallery extends Widget_Base {
               [
                    'name'    => 'img_desc_typography',
                    'label'     => esc_html__( 'Image Description Typography', 'elematic-addons-for-elementor' ),
-                   'selector'  => '{{WRAPPER}} .tx-gallery-desc > *',
+                   'selector'  => '{{WRAPPER}} .elematic-gallery-desc > *',
               ]
         );
         $this->add_responsive_control(
@@ -685,7 +680,7 @@ class Gallery extends Widget_Base {
               ]
             ],
             'selectors' => [
-              '{{WRAPPER}} .tx-gallery-desc > *' => 'text-align: {{VALUE}};',
+              '{{WRAPPER}} .elematic-gallery-desc > *' => 'text-align: {{VALUE}};',
             ],
            
           ]
@@ -706,7 +701,7 @@ class Gallery extends Widget_Base {
                 'type'      => Controls_Manager::COLOR,
                 'default'   => 'rgba(0,0,0,.2)',
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-overlay' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .elematic-gallery-overlay' => 'background-color: {{VALUE}};',
                 ],
                 'separator' => 'before'
             ]
@@ -718,7 +713,7 @@ class Gallery extends Widget_Base {
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-overlay' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .elematic-gallery-overlay' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
 
             ]
@@ -743,7 +738,7 @@ class Gallery extends Widget_Base {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-icons i'   => 'font-size: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elematic-gallery-icons i'   => 'font-size: {{SIZE}}{{UNIT}};',
                 ],
                 'separator' => 'before'
             ]
@@ -763,7 +758,7 @@ class Gallery extends Widget_Base {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-icons'   => 'top: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elematic-gallery-icons'   => 'top: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );  
@@ -782,8 +777,8 @@ class Gallery extends Widget_Base {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-popup'   => 'margin-right: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .tx-gallery-link'   => 'margin-left: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elematic-gallery-popup'   => 'margin-right: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elematic-gallery-link'   => 'margin-left: {{SIZE}}{{UNIT}};',
                 ],
                 
             ]
@@ -794,7 +789,7 @@ class Gallery extends Widget_Base {
                 'label'     => esc_html__( 'Lightbox Icon Color', 'elematic-addons-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-popup i' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .elematic-gallery-popup i' => 'color: {{VALUE}};',
                 ],
                 'condition' => [
                     'gall_popup_switch' => 'show'
@@ -807,7 +802,7 @@ class Gallery extends Widget_Base {
                 'label'     => esc_html__( 'Lightbox Icon Hover Color', 'elematic-addons-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-popup i:hover' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .elematic-gallery-popup i:hover' => 'color: {{VALUE}};',
                 ],
                 'condition' => [
                     'gall_popup_switch' => 'show'
@@ -820,7 +815,7 @@ class Gallery extends Widget_Base {
                 'label'     => esc_html__( 'Link Icon Color', 'elematic-addons-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-link i' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .elematic-gallery-link i' => 'color: {{VALUE}};',
                 ],
                 'condition' => [
                     'gall_link_switch' => 'show'
@@ -833,7 +828,7 @@ class Gallery extends Widget_Base {
                 'label'     => esc_html__( 'Link Icon Hover Color', 'elematic-addons-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-link i:hover' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .elematic-gallery-link i:hover' => 'color: {{VALUE}};',
                 ],
                 'condition' => [
                     'gall_link_switch' => 'show'
@@ -872,7 +867,7 @@ class Gallery extends Widget_Base {
             ],
             'default' => 'center',
             'selectors' => [
-              '{{WRAPPER}} .tx-gallery-filters' => 'text-align: {{VALUE}};',
+              '{{WRAPPER}} .elematic-gallery-filters' => 'text-align: {{VALUE}};',
             ],
        
           ]
@@ -884,7 +879,7 @@ class Gallery extends Widget_Base {
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-filters' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .elematic-gallery-filters' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
 
             ]
@@ -894,7 +889,7 @@ class Gallery extends Widget_Base {
                     [
                         'name' => 'gall_filter_border',
                         'label' => esc_html__( 'Filter Item Border', 'elematic-addons-for-elementor' ),
-                        'selector' => '{{WRAPPER}} .tx-gallery-filter-item',
+                        'selector' => '{{WRAPPER}} .elematic-gallery-filter-item',
                         
                     ]
                 );
@@ -905,7 +900,7 @@ class Gallery extends Widget_Base {
                         'type' => Controls_Manager::DIMENSIONS,
                         'size_units' => ['px', 'em', '%'],
                         'selectors' => [
-                            '{{WRAPPER}} .tx-gallery-filter-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                            '{{WRAPPER}} .elematic-gallery-filter-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                         ],
                         
                     ]
@@ -917,7 +912,7 @@ class Gallery extends Widget_Base {
                         'type' => Controls_Manager::DIMENSIONS,
                         'size_units' => ['px', 'em', '%'],
                         'selectors' => [
-                            '{{WRAPPER}} .tx-gallery-filter-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                            '{{WRAPPER}} .elematic-gallery-filter-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                         ],
                         
                     ]
@@ -929,7 +924,7 @@ class Gallery extends Widget_Base {
                         'type' => Controls_Manager::DIMENSIONS,
                         'size_units' => ['px', 'em', '%'],
                         'selectors' => [
-                            '{{WRAPPER}} .tx-gallery-filter-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                            '{{WRAPPER}} .elematic-gallery-filter-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                         ],
                         
                     ]
@@ -938,7 +933,7 @@ class Gallery extends Widget_Base {
                     Group_Control_Typography::get_type(),
                       [
                            'name'    => 'gall_filter_item_typography',
-                           'selector'  => '{{WRAPPER}} .tx-gallery-filter-item',
+                           'selector'  => '{{WRAPPER}} .elematic-gallery-filter-item',
                       ]
                 );
         $this->start_controls_tabs('style_filter_tabs');
@@ -955,7 +950,7 @@ class Gallery extends Widget_Base {
                         'label'     => esc_html__( 'Filter Item Color', 'elematic-addons-for-elementor' ),
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
-                            '{{WRAPPER}} .tx-gallery-filter-item' => 'color: {{VALUE}};',
+                            '{{WRAPPER}} .elematic-gallery-filter-item' => 'color: {{VALUE}};',
                         ],
                         
                         'separator' => 'before'
@@ -967,7 +962,7 @@ class Gallery extends Widget_Base {
                         'label'     => esc_html__( 'Filter Item Background Color', 'elematic-addons-for-elementor' ),
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
-                            '{{WRAPPER}} .tx-gallery-filter-item' => 'background-color: {{VALUE}};',
+                            '{{WRAPPER}} .elematic-gallery-filter-item' => 'background-color: {{VALUE}};',
                         ],
 
                     ]
@@ -978,7 +973,7 @@ class Gallery extends Widget_Base {
                         'label'     => esc_html__( 'Filter Item Border Color', 'elematic-addons-for-elementor' ),
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
-                            '{{WRAPPER}} .tx-gallery-filter-item' => 'border-color: {{VALUE}};',
+                            '{{WRAPPER}} .elematic-gallery-filter-item' => 'border-color: {{VALUE}};',
                         ],
 
                     ]
@@ -998,7 +993,7 @@ class Gallery extends Widget_Base {
                         'label'     => esc_html__( 'Filter Item Hover Color', 'elematic-addons-for-elementor' ),
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
-                            '{{WRAPPER}} .tx-gallery-filter-item:hover' => 'color: {{VALUE}};',
+                            '{{WRAPPER}} .elematic-gallery-filter-item:hover' => 'color: {{VALUE}};',
                         ],
                        
                     ]
@@ -1009,7 +1004,7 @@ class Gallery extends Widget_Base {
                         'label'     => esc_html__( 'Filter Item Background Hover Color', 'elematic-addons-for-elementor' ),
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
-                            '{{WRAPPER}} .tx-gallery-filter-item:hover' => 'background-color: {{VALUE}};',
+                            '{{WRAPPER}} .elematic-gallery-filter-item:hover' => 'background-color: {{VALUE}};',
                         ],
                         
                     ]
@@ -1020,7 +1015,7 @@ class Gallery extends Widget_Base {
                         'label'     => esc_html__( 'Filter Item Border Hover Color', 'elematic-addons-for-elementor' ),
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
-                            '{{WRAPPER}} .tx-gallery-filter-item:hover' => 'border-color: {{VALUE}};',
+                            '{{WRAPPER}} .elematic-gallery-filter-item:hover' => 'border-color: {{VALUE}};',
                         ],
                         
                     ]
@@ -1039,7 +1034,7 @@ class Gallery extends Widget_Base {
                         'label'     => esc_html__( 'Filter Item Active Color', 'elematic-addons-for-elementor' ),
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
-                            '{{WRAPPER}} .tx-gallery-filter-item.active' => 'color: {{VALUE}};',
+                            '{{WRAPPER}} .elematic-gallery-filter-item.active' => 'color: {{VALUE}};',
                         ],
                        
                     ]
@@ -1050,7 +1045,7 @@ class Gallery extends Widget_Base {
                         'label'     => esc_html__( 'Filter Item Active Background Color', 'elematic-addons-for-elementor' ),
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
-                            '{{WRAPPER}} .tx-gallery-filter-item.active' => 'background-color: {{VALUE}};',
+                            '{{WRAPPER}} .elematic-gallery-filter-item.active' => 'background-color: {{VALUE}};',
                         ],
                         
                     ]
@@ -1061,7 +1056,7 @@ class Gallery extends Widget_Base {
                         'label'     => esc_html__( 'Filter Item Active Border Color', 'elematic-addons-for-elementor' ),
                         'type'      => Controls_Manager::COLOR,
                         'selectors' => [
-                            '{{WRAPPER}} .tx-gallery-filter-item.active' => 'border-color: {{VALUE}};',
+                            '{{WRAPPER}} .elematic-gallery-filter-item.active' => 'border-color: {{VALUE}};',
                         ],
                         
                     ]
@@ -1102,7 +1097,7 @@ class Gallery extends Widget_Base {
               ]
             ],
             'selectors' => [
-              '{{WRAPPER}} .tx-gallery-search' => 'text-align: {{VALUE}};',
+              '{{WRAPPER}} .elematic-gallery-search' => 'text-align: {{VALUE}};',
             ],
        
           ]
@@ -1132,7 +1127,7 @@ class Gallery extends Widget_Base {
                     'unit' => '%',
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-search-input'   => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elematic-gallery-search-input'   => 'width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -1161,7 +1156,7 @@ class Gallery extends Widget_Base {
                     'unit' => 'px',
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-search-input'   => 'height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elematic-gallery-search-input'   => 'height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -1180,7 +1175,7 @@ class Gallery extends Widget_Base {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-search-input'   => 'border-radius: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elematic-gallery-search-input'   => 'border-radius: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -1188,7 +1183,7 @@ class Gallery extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name'     => 'gall_search_box_shadow',
-                'selector' => '{{WRAPPER}} .tx-gallery-search-input'
+                'selector' => '{{WRAPPER}} .elematic-gallery-search-input'
             ]
         );
         $this->add_control(
@@ -1197,7 +1192,7 @@ class Gallery extends Widget_Base {
                 'label'     => esc_html__( 'Search Input Text Color', 'elematic-addons-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-search-input' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .elematic-gallery-search-input' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -1207,7 +1202,7 @@ class Gallery extends Widget_Base {
                 'label'     => esc_html__( 'Search Input Background Color', 'elematic-addons-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-search-input' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .elematic-gallery-search-input' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -1217,7 +1212,7 @@ class Gallery extends Widget_Base {
                 'label'     => esc_html__( 'Search Placeholder Text Color', 'elematic-addons-for-elementor' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-search-input::placeholder' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .elematic-gallery-search-input::placeholder' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -1225,7 +1220,7 @@ class Gallery extends Widget_Base {
             Group_Control_Typography::get_type(),
               [
                    'name'    => 'gall_search_typography',
-                   'selector'  => '{{WRAPPER}} .tx-gallery-search-input',
+                   'selector'  => '{{WRAPPER}} .elematic-gallery-search-input',
               ]
         );
         $this->add_group_control(
@@ -1233,7 +1228,7 @@ class Gallery extends Widget_Base {
             [
                 'name' => 'gall_search_border',
                 'label' => esc_html__( 'Search Border', 'elematic-addons-for-elementor' ),
-                'selector' => '{{WRAPPER}} .tx-gallery-search-input',
+                'selector' => '{{WRAPPER}} .elematic-gallery-search-input',
             ]
         );
         $this->add_responsive_control(
@@ -1243,7 +1238,7 @@ class Gallery extends Widget_Base {
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-search' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .elematic-gallery-search' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -1254,7 +1249,7 @@ class Gallery extends Widget_Base {
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .tx-gallery-search-input' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .elematic-gallery-search-input' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -1278,7 +1273,7 @@ class Gallery extends Widget_Base {
               ]
             ],
             'selectors' => [
-              '{{WRAPPER}} .tx-gallery-search-input' => 'text-align: {{VALUE}};',
+              '{{WRAPPER}} .elematic-gallery-search-input' => 'text-align: {{VALUE}};',
             ],
        
           ]
@@ -1292,9 +1287,9 @@ class Gallery extends Widget_Base {
 
         $this->add_render_attribute(
             [
-                'tx-gallery' => [
+                'elematic-gallery' => [
                     'class' => [
-                        'tx-gallery-wrap',
+                        'elematic-gallery-wrap',
                         $settings['gall_img_style']
                     ],
                     'data-settings' => [
@@ -1310,50 +1305,50 @@ class Gallery extends Widget_Base {
 
     ?>
         
-    <div <?php $this->print_render_attribute_string( 'tx-gallery' ); ?>>
+    <div <?php $this->print_render_attribute_string( 'elematic-gallery' ); ?>>
         
         <?php if('above' === $settings['gall_search_position']): ?>
             <?php if( 'yes' === $settings['gall_search'] ) : ?>
-            <div class="tx-gallery-search">
+            <div class="elematic-gallery-search">
                 <?php if(is_rtl()): ?>
-                <input id="tx-gallery-search-<?php echo esc_attr($id); ?>" class="tx-gallery-search-input" name="search" type="text"  placeholder="<?php echo esc_attr( $settings['gall_search_text'] ); ?>" onfocus="this.placeholder = ''"onblur="this.placeholder = '<?php echo esc_attr( $settings['gall_search_text'] ); ?>'" >
+                <input id="elematic-gallery-search-<?php echo esc_attr($id); ?>" class="elematic-gallery-search-input" name="search" type="text"  placeholder="<?php echo esc_attr( $settings['gall_search_text'] ); ?>" onfocus="this.placeholder = ''"onblur="this.placeholder = '<?php echo esc_attr( $settings['gall_search_text'] ); ?>'" >
                 <?php else : ?>
-                    <input id="tx-gallery-search-<?php echo esc_attr($id); ?>" class="tx-gallery-search-input" name="search" type="text"  placeholder="<?php echo esc_attr( $settings['gall_search_text'] ); ?>" onfocus="this.placeholder = ''"onblur="this.placeholder = '<?php echo esc_attr( $settings['gall_search_text'] ); ?>'"  >
+                    <input id="elematic-gallery-search-<?php echo esc_attr($id); ?>" class="elematic-gallery-search-input" name="search" type="text"  placeholder="<?php echo esc_attr( $settings['gall_search_text'] ); ?>" onfocus="this.placeholder = ''"onblur="this.placeholder = '<?php echo esc_attr( $settings['gall_search_text'] ); ?>'"  >
                 <?php endif; ?>
-            </div><!-- tx-gallery-search -->
+            </div><!-- elematic-gallery-search -->
             <?php endif; ?>
         <?php endif; ?>
     
         <?php if( 'yes' === $settings['gall_filter'] ) : ?>
-            <ul id="tx-gallery-filters-<?php echo esc_attr($id); ?>" class="tx-gallery-filters">
-                <li id="tx-gallery-filter-item-<?php echo esc_attr($id); ?>" class="tx-gallery-filter-item" data-filter="*"><?php echo esc_attr( $settings['gall_all_label_text'] ); ?></li>
+            <ul id="elematic-gallery-filters-<?php echo esc_attr($id); ?>" class="elematic-gallery-filters">
+                <li id="elematic-gallery-filter-item-<?php echo esc_attr($id); ?>" class="elematic-gallery-filter-item" data-filter="*"><?php echo esc_attr( $settings['gall_all_label_text'] ); ?></li>
                 <?php foreach ($settings['gall_filter_controls'] as $item ) :
                     $filter = $item['gall_filter_item'];
                             $sps = preg_replace('/\s+/', '', $filter);
                             $filt = strtolower($sps);
                 if(!empty($item['gall_filter_item'])) :
                 ?>
-                <li id="tx-gallery-filter-item-<?php echo esc_attr($id); ?>" class="tx-gallery-filter-item" data-filter=".<?php echo esc_attr($filt); ?>"><?php echo esc_attr($item['gall_filter_item']); ?></li>
+                <li id="elematic-gallery-filter-item-<?php echo esc_attr($id); ?>" class="elematic-gallery-filter-item" data-filter=".<?php echo esc_attr($filt); ?>"><?php echo esc_attr($item['gall_filter_item']); ?></li>
                 <?php
                 endif; 
                 endforeach; 
                 ?>
-            </ul><!-- tx-gallery-filter -->
+            </ul><!-- elematic-gallery-filter -->
         <?php endif; ?>
 
         <?php if('below' === $settings['gall_search_position']): ?>
         <?php if( 'yes' === $settings['gall_search'] ) : ?>
-            <div class="tx-gallery-search">
+            <div class="elematic-gallery-search">
                 <?php if(is_rtl()): ?>
-                <input id="tx-gallery-search-<?php echo esc_attr($id); ?>" class="tx-gallery-search-input" name="search" type="text"  placeholder="<?php echo esc_attr( $settings['gall_search_text'] ); ?> &#61442;" onfocus="this.placeholder = ''"onblur="this.placeholder = '<?php echo esc_attr( $settings['gall_search_text'] ); ?> &#61442;'" >
+                <input id="elematic-gallery-search-<?php echo esc_attr($id); ?>" class="elematic-gallery-search-input" name="search" type="text"  placeholder="<?php echo esc_attr( $settings['gall_search_text'] ); ?> &#61442;" onfocus="this.placeholder = ''"onblur="this.placeholder = '<?php echo esc_attr( $settings['gall_search_text'] ); ?> &#61442;'" >
                 <?php else : ?>
-                    <input id="tx-gallery-search-<?php echo esc_attr($id); ?>" class="tx-gallery-search-input" name="search" type="text"  placeholder=" &#61442; <?php echo esc_attr( $settings['gall_search_text'] ); ?>" onfocus="this.placeholder = ''"onblur="this.placeholder = ' &#61442; <?php echo esc_attr( $settings['gall_search_text'] ); ?>'"  >
+                    <input id="elematic-gallery-search-<?php echo esc_attr($id); ?>" class="elematic-gallery-search-input" name="search" type="text"  placeholder=" &#61442; <?php echo esc_attr( $settings['gall_search_text'] ); ?>" onfocus="this.placeholder = ''"onblur="this.placeholder = ' &#61442; <?php echo esc_attr( $settings['gall_search_text'] ); ?>'"  >
                 <?php endif; ?>
-            </div><!-- tx-gallery-search -->
+            </div><!-- elematic-gallery-search -->
         <?php endif; ?>
         <?php endif; ?>
 
-            <div id="tx-gallery-grid-<?php echo esc_attr($id); ?>" class="tx-gallery-grid">
+            <div id="elematic-gallery-grid-<?php echo esc_attr($id); ?>" class="elematic-gallery-grid">
                 <?php 
                     foreach ($settings['gall_items'] as $index => $item ) :
 
@@ -1381,8 +1376,8 @@ class Gallery extends Widget_Base {
                         );
 
                         ?>
-                    <?php if( 'tx-gallery-style-1' === $settings['gall_img_style'] || 'tx-gallery-style-2' === $settings['gall_img_style'] ) : ?>
-                        <div id="tx-gallery-item-<?php echo esc_attr($id); ?>" class="tx-gallery-item <?php echo esc_attr($fill_cat); ?> elementor-animation-<?php echo esc_attr($settings['hover_animation']); ?>" data-category="<?php echo esc_attr($fill_cat); ?>">
+                    <?php if( 'elematic-gallery-style-1' === $settings['gall_img_style'] || 'elematic-gallery-style-2' === $settings['gall_img_style'] ) : ?>
+                        <div id="elematic-gallery-item-<?php echo esc_attr($id); ?>" class="elematic-gallery-item <?php echo esc_attr($fill_cat); ?> elementor-animation-<?php echo esc_attr($settings['hover_animation']); ?>" data-category="<?php echo esc_attr($fill_cat); ?>">
 
                             <?php Group_Control_Image_Size::print_attachment_image_html( $item, 'image', 'image' ); ?>
 
@@ -1391,34 +1386,58 @@ class Gallery extends Widget_Base {
                             <span class="d-none"><?php echo esc_attr($item['gall_filter_name']); ?></span>
                             <?php endif; ?><!-- gallery search as keyword -->
 
-                            <div class="tx-gallery-overlay">  
+                            <div class="elematic-gallery-overlay">  
                                 <?php if( 'show' === $settings['tx_lightbox'] || 'show' === $settings['gall_link_switch'] ) : ?>
-                                <div class="tx-gallery-icons">
-                                    <?php if( 'show' === $settings['tx_lightbox'] ) : ?>
-                                        <a <?php $this->print_render_attribute_string( $lightbox ); ?>>
-                                            <span class="elementor-screen-only">Lightbox</span>
-                                            <i aria-hidden="true" class="falight falight-search-plus"></i>
+                                <div class="elematic-gallery-icons">
+                                    <?php if ( 'show' === $settings['tx_lightbox'] ) : ?>
+                                        <a
+                                            <?php $this->print_render_attribute_string( $lightbox ); ?>
+                                            aria-label="<?php echo esc_attr(
+                                                sprintf(
+                                                    /* translators: %s: image name */
+                                                    __( 'Open %s in lightbox', 'elematic-addons-for-elementor' ),
+                                                    $item['gall_img_name']
+                                                )
+                                            ); ?>"
+                                        >
+                                            <span class="elementor-screen-only">
+                                                <?php esc_html_e( 'Open image in lightbox', 'elematic-addons-for-elementor' ); ?>
+                                            </span>
+                                            <i aria-hidden="true" class="fas fa-search-plus"></i>
                                         </a>
                                     <?php endif; ?>
 
                                     <?php if( !empty($item['gall_img_link_url']['url']) && 'show' === $settings['gall_link_switch'] ) : ?>
-                                    <a class="tx-gallery-link" href="<?php echo esc_url($item['gall_img_link_url']['url']); ?>" target="<?php echo esc_attr($target); ?>">
-                                        <span class="elementor-screen-only">Link</span>
-                                        <i aria-hidden="true" class="falight falight-link"></i>
+                                    <a
+                                        class="elematic-gallery-link"
+                                        href="<?php echo esc_url( $item['gall_img_link_url']['url'] ); ?>"
+                                        target="<?php echo esc_attr( $target ); ?>"
+                                        aria-label="<?php echo esc_attr(
+                                            sprintf(
+                                                /* translators: %s: image name */
+                                                __( 'Open link for %s', 'elematic-addons-for-elementor' ),
+                                                $item['gall_img_name']
+                                            )
+                                        ); ?>"
+                                    >
+                                        <span class="elementor-screen-only">
+                                            <?php esc_html_e( 'Open related link', 'elematic-addons-for-elementor' ); ?>
+                                        </span>
+                                        <i aria-hidden="true" class="fas fa-link"></i>
                                     </a>
                                     <?php endif; ?>
-                                </div><!-- .tx-gallery-icons -->
+                                </div><!-- .elematic-gallery-icons -->
                                 <?php endif; ?>
 
                                 <?php if( !empty($item['gall_desc']) ): ?>
-                                <div class="tx-gallery-desc">
+                                <div class="elematic-gallery-desc">
                                     <?php echo wp_kses_post( $item['gall_desc'] ); ?>
-                                </div><!-- tx-gallery-desc -->
+                                </div><!-- elematic-gallery-desc -->
                                 <?php endif; ?>
                                 
                                 <?php if( 'show' === $settings['gall_img_name_switch'] || 'show' === $settings['gall_filter_switch'] ) : ?>
-                                <div class="tx-gallery-title-bar">
-                                    <h3 class="tx-gallery-name">
+                                <div class="elematic-gallery-title-bar">
+                                    <h3 class="elematic-gallery-name">
                                     <?php if( !empty($item['gall_img_link_url']['url']) ) : ?>
                                     <a href="<?php echo esc_url($item['gall_img_link_url']['url']); ?>" target="<?php echo esc_attr($target); ?>">
                                     <?php endif; ?>
@@ -1426,22 +1445,22 @@ class Gallery extends Widget_Base {
                                         <?php echo esc_attr($item['gall_img_name']); ?>
                                     <?php endif; ?>    
                                     <?php if(!empty($item['gall_img_link_url']['url']) || $settings['gall_link_switch']) : ?></a><?php endif; ?>
-                                    </h3><!-- tx-gallery-name -->
+                                    </h3><!-- elematic-gallery-name -->
 
                                     <?php if( !empty($item['gall_filter_name']) && 'show' === $settings['gall_filter_switch'] ) : ?>
-                                    <h3 class="tx-gallery-categoy"><?php echo esc_html($item['gall_filter_name']); ?></h3>
+                                    <h3 class="elematic-gallery-categoy"><?php echo esc_html($item['gall_filter_name']); ?></h3>
                                     <?php endif; ?>
-                                </div><!-- tx-gallery-title-bar -->
+                                </div><!-- elematic-gallery-title-bar -->
                                 <?php endif; ?>
 
-                            </div><!-- tx-gallery-overlay -->
+                            </div><!-- elematic-gallery-overlay -->
                           
                                                      
-                        </div><!-- tx-gallery-item -->
+                        </div><!-- elematic-gallery-item -->
                     <?php endif; ?>
 
-                        <?php if( 'tx-gallery-style-3' === $settings['gall_img_style'] || 'tx-gallery-style-4' === $settings['gall_img_style'] ) : ?>
-                        <div id="tx-gallery-item-<?php echo esc_attr($id); ?>" class="tx-gallery-item <?php echo esc_attr($fill_cat); ?> elementor-animation-<?php echo esc_attr($settings['hover_animation']); ?>" data-category="<?php echo esc_attr($fill_cat); ?>">
+                        <?php if( 'elematic-gallery-style-3' === $settings['gall_img_style'] || 'elematic-gallery-style-4' === $settings['gall_img_style'] ) : ?>
+                        <div id="elematic-gallery-item-<?php echo esc_attr($id); ?>" class="elematic-gallery-item <?php echo esc_attr($fill_cat); ?> elementor-animation-<?php echo esc_attr($settings['hover_animation']); ?>" data-category="<?php echo esc_attr($fill_cat); ?>">
 
                            <?php Group_Control_Image_Size::print_attachment_image_html( $item, 'image', 'image' ); ?>
 
@@ -1450,26 +1469,45 @@ class Gallery extends Widget_Base {
                             <span class="d-none"><?php echo esc_attr($item['gall_filter_name']); ?></span>
                             <?php endif; ?><!-- gallery search as keyword -->
 
-                            <?php if( !empty($item['gall_img_link_url']['url']) && 'tx-gallery-style-3' === $settings['gall_img_style'] ) : ?>
-                                <a href="<?php echo esc_url($item['gall_img_link_url']['url']); ?>" target="<?php echo esc_attr($target); ?>">
-                            <?php endif ?>
-                            <?php if( 'tx-gallery-style-4' === $settings['gall_img_style'] ) : ?>
-                                <a <?php $this->print_render_attribute_string( $lightbox ); ?>>
+                            <?php if ( ! empty( $item['gall_img_link_url']['url'] ) && 'elematic-gallery-style-3' === $settings['gall_img_style'] ) : ?>
+                                <a
+                                    href="<?php echo esc_url( $item['gall_img_link_url']['url'] ); ?>"
+                                    target="<?php echo esc_attr( $target ); ?>"
+                                    aria-label="<?php echo esc_attr(
+                                        sprintf(
+                                            /* translators: %s: image name */
+                                            __( 'Open %s', 'elematic-addons-for-elementor' ),
+                                            $item['gall_img_name']
+                                        )
+                                    ); ?>"
+                                >
                             <?php endif; ?>
-                                <div class="tx-gallery-overlay"></div>
+                            <?php if ( 'elematic-gallery-style-4' === $settings['gall_img_style'] ) : ?>
+                                <a
+                                    <?php $this->print_render_attribute_string( $lightbox ); ?>
+                                    aria-label="<?php echo esc_attr(
+                                        sprintf(
+                                            /* translators: %s: image name */
+                                            __( 'Open %s in lightbox', 'elematic-addons-for-elementor' ),
+                                            $item['gall_img_name']
+                                        )
+                                    ); ?>"
+                                >
+                            <?php endif; ?>
+                                <div class="elematic-gallery-overlay"></div>
                                     <?php if( !empty($item['gall_img_link_url']['url']) ) : ?>
-                                    <div class="tx-gallery-desc">
+                                    <div class="elematic-gallery-desc">
                                         <?php echo wp_kses_post( $item['gall_desc'] ); ?>
-                                    </div><!-- tx-gallery-desc -->
+                                    </div><!-- elematic-gallery-desc -->
                                     <?php endif; ?>
                                 
-                            <?php if( 'tx-gallery-style-3' === $settings['gall_img_style'] || 'tx-gallery-style-4' === $settings['gall_img_style'] ) : ?>
+                            <?php if( 'elematic-gallery-style-3' === $settings['gall_img_style'] || 'elematic-gallery-style-4' === $settings['gall_img_style'] ) : ?>
                                 </a>
                             <?php endif; ?>
 
                             <?php if( 'show' === $settings['gall_img_name_switch'] && !empty($item['gall_img_name']) || 'show' === $settings['gall_filter_switch'] && !empty($item['gall_filter_name'])) : ?>
-                                <div class="tx-gallery-title-bar">
-                                    <h3 class="tx-gallery-name">
+                                <div class="elematic-gallery-title-bar">
+                                    <h3 class="elematic-gallery-name">
                                     <?php if( !empty($item['gall_img_link_url']['url']) ) : ?>
                                     <a href="<?php echo esc_url($item['gall_img_link_url']['url']); ?>" target="<?php echo esc_attr($target); ?>">
                                     <?php endif; ?>
@@ -1477,20 +1515,20 @@ class Gallery extends Widget_Base {
                                         <?php echo esc_attr($item['gall_img_name']); ?>
                                     <?php endif; ?>    
                                     <?php if(!empty($item['gall_img_link_url']['url']) || $settings['gall_link_switch']) : ?></a><?php endif; ?>
-                                    </h3><!-- tx-gallery-name -->
+                                    </h3><!-- elematic-gallery-name -->
 
                                     <?php if( !empty($item['gall_filter_name']) && 'show' === $settings['gall_filter_switch'] ) : ?>
-                                    <h3 class="tx-gallery-categoy"><?php echo esc_html($item['gall_filter_name']); ?></h3>
+                                    <h3 class="elematic-gallery-categoy"><?php echo esc_html($item['gall_filter_name']); ?></h3>
                                     <?php endif; ?>
-                                </div><!-- tx-gallery-title-bar -->
+                                </div><!-- elematic-gallery-title-bar -->
                             <?php endif; ?>
 
-                        </div><!-- tx-gallery-item -->
+                        </div><!-- elematic-gallery-item -->
                         <?php endif; ?>
 
                 <?php endforeach; ?>
-            </div><!-- tx-gallery-grid -->
-    </div><!-- tx-gallery-wrap -->
+            </div><!-- elematic-gallery-grid -->
+    </div><!-- elematic-gallery-wrap -->
 
 <?php
     } // render end

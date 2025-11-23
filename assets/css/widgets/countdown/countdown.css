@@ -1,0 +1,42 @@
+/* #Countdown
+------------------------------------- */
+.elematic-countdown-content {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.elematic-countdown-content > li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: table-cell;
+  position: relative;
+}
+.elematic-cd-content > div {
+  text-align: center;
+  padding: 20px;
+}
+.elematic-cd-label-block .elematic-cd-digits, 
+.elematic-cd-label-block .elematic-cd-label {
+  display: block;
+  text-align: center;
+}
+.elematic-cd-digits {
+  font-size: 56px;
+  line-height: 1;
+}
+.elematic-cd-label {
+  font-size: 18px;
+  line-height: 1;
+}
+.elematic-cd-separator .elematic-cd-digits::after {
+  content: ":";
+  position: absolute;
+  left: 95%;
+ }
+.elematic-cd-content:last-child .elematic-cd-digits::after {
+  display: none;
+}

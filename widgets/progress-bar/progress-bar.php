@@ -716,6 +716,9 @@ class ProgressBar extends Widget_Base {
         } else {
             $bar_style = sprintf( '--elematic-target:%s%%; width:0;', $percent );
         }
+        // unique id per bar for aria-labelledby
+        $bar_id    = 'elematic-progressbar-' . $this->get_id() . '-' . $key;
+        $label_id  = $bar_id . '-label';
         ?>
         <div <?php $this->print_render_attribute_string( $column_repeater_key ); ?>>
             <p class="elematic_progress_title"><?php echo wp_kses_post( $item['elematic_progressbar_title'] ); ?></p>
@@ -725,8 +728,9 @@ class ProgressBar extends Widget_Base {
                      style="<?php echo esc_attr( $bar_style ); ?>"
                      aria-valuenow="<?php echo esc_attr( $percent ); ?>"
                      aria-valuemin="0"
-                     aria-valuemax="100">
-                    <span class="percent-label"><?php echo esc_html( $percent ) . '%'; ?></span>
+                     aria-valuemax="100"
+                     aria-labelledby="<?php echo esc_attr( $label_id ); ?>">
+                    <span class="percent-label" id="<?php echo esc_attr( $label_id ); ?>"><?php echo esc_html( $percent ) . '%'; ?></span>
                 </div>
             </div>
         </div>

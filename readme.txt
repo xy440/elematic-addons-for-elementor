@@ -4,7 +4,7 @@ Tags: elementor, elementor addons, widgets, animation, design
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -30,17 +30,23 @@ Whether you're a designer, freelancer, or agency, Elematic provides essential an
 - Animated Heading
 - Animated Shape
 - Button
+- Chart
+- Circle Info
 - Circle Progress Bar
 - Circle Text
+- Countdown
 - Counter
-- Gallery
-- Grid
+- Dual Button
+- Gallery with Filter and Popup / Lightbox
+- Grid with Image Popup / Lightbox
 - Highlight Text
+- Icon Box
 - Image Animate
 - Image Slide
 - Info Link
 - Lottie
 - Marquee
+- Post Grid with Load more pagination
 - Progress Bar
 - Service List
 
@@ -52,6 +58,7 @@ More widgets will be added in future releases.
 - Minimal script loading — only loads assets for active widgets  
 - Fully translation ready  
 - Compatible with caching and optimization plugins
+- Google Pagespeed Lighthouse 100% for optimization, accessibility, performance, and SEO.
 
 == Translation ==
 
@@ -88,7 +95,18 @@ Absolutely! Elematic is compatible with all major Elementor addon packs.
 = Does it support Lottie animations? =
 Yes. A dedicated Lottie widget is included.
 
+= Does your post widget support Load More button to load new post without reaload page? =
+Yes. A Post Grid widget is included.
+
 == Changelog ==
+
+= 1.2 =
+- Added Chart widget
+- Added Circle Info widget
+- Added Countdown widget
+- Added Dual Button widget
+- Added Icon Box widget
+- Added Post Grid widget
 
 = 1.1 =
 - Added Counter widget
@@ -103,9 +121,9 @@ Yes. A dedicated Lottie widget is included.
 
 == Upgrade Notice ==
 
-= 1.1 =
+= 1.2 =
 Major update adding new widgets and enhancements.
 
 == Credits ==
 
-Developed by [Anwar Hossain](https://anwarhossain.dev)
+Developed by [Anwar Hossain](https://github.com/xy440)

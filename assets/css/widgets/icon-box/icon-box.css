@@ -1,0 +1,79 @@
+/* #Icon Box
+-------------------------------------- */
+.elematic-icon-box-icon i, 
+.elematic-icon-box-icon img,
+.elematic-icon-box-title,
+.elematic-icon-box-btn,
+.elematic-icon-box-wrap {
+  transition: all .3s ease-out;
+}
+.elematic-icon-box-icon i,
+.elematic-icon-box-icon img {
+  margin-bottom: 15px;
+}
+.elematic-icon-box-icon i {
+  font-size: 36px
+}
+.elematic-icon-box-icon img,
+.elematic-icon-box-icon svg {
+  width: 36px
+}
+.elematic-icon-box-title {
+  font-size: 22px;
+}
+.elematic-icon-box-desc {
+  line-height: 1.8;
+  color: #444;
+}
+.elematic-icon-box-btn svg {
+    width: 12px;
+}
+/*style 1*/
+.elematic-icon-box-wrap.style-1.left{
+  text-align: left;
+}
+.elematic-icon-box-wrap.style-1.center{
+  text-align: center;
+}
+.elematic-icon-box-wrap.style-1.right{
+  text-align: right;
+}
+
+/*style 2*/
+.elematic-icon-box-wrap.style-2.left {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+.elematic-icon-box-wrap.style-2.center {
+  text-align: center;
+}
+.elematic-icon-box-wrap.style-2.right {
+  text-align: right;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.elematic-icon-box-wrap.style-2.left .elematic-icon-box-icon {
+  margin-right: 15px;
+}
+
+/*style 3*/
+.elematic-icon-box-wrap.style-3.left .elematic-icon-box-icon {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+.elematic-icon-box-wrap.style-3.right .elematic-icon-box-icon {
+  text-align: right;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.elematic-icon-box-wrap.style-3.right .elematic-icon-box-content-wrap {
+  text-align: right;
+}
+.elematic-icon-box-wrap.style-3.left .elematic-icon-box-icon .elematic-icon-box-title {
+  margin-left: 15px;
+}
+.elematic-icon-box-wrap.style-3.right .elematic-icon-box-icon .elematic-icon-box-title {
+  margin-right: 15px;
+}

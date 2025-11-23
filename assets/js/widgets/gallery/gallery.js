@@ -4,18 +4,18 @@
 	/* Gallery Widget
 	------------------------------------- */
 	var widgetGallery = function( $scope, $ ) {
-	var txGallery = $scope.find('.tx-gallery-wrap').eq(0);
+	var txGallery = $scope.find('.elematic-gallery-wrap').eq(0);
 		
 		if ( !txGallery.length ) {
             return;
         }
 
         var settings = txGallery.data("settings"),
-        	find_id = txGallery.find( '.tx-gallery-item' ),
-        	find_grid_id = txGallery.find( '.tx-gallery-grid' ),
-        	find_filter_id = txGallery.find( '.tx-gallery-filter-item' ),
-        	find_fls_id = txGallery.find( '.tx-gallery-filters' ),
-        	find_search_id = txGallery.find( '.tx-gallery-search-input' ),
+        	find_id = txGallery.find( '.elematic-gallery-item' ),
+        	find_grid_id = txGallery.find( '.elematic-gallery-grid' ),
+        	find_filter_id = txGallery.find( '.elematic-gallery-filter-item' ),
+        	find_fls_id = txGallery.find( '.elematic-gallery-filters' ),
+        	find_search_id = txGallery.find( '.elematic-gallery-search-input' ),
 			id = $(find_id).attr('id'),
 			gid = $(find_grid_id).attr('id'),
 			fid = $(find_filter_id).attr('id'),
@@ -101,7 +101,7 @@
 		}
 
         // active filter
-        $('.tx-gallery-filter-item').on('click', function() {
+        $('.elematic-gallery-filter-item').on('click', function() {
         $(this).siblings().removeClass('active');
         $(this).addClass('active');
     	});
