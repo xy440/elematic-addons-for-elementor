@@ -94,43 +94,43 @@ class ImageSlide extends Widget_Base {
                 'default' => [
                     [
                         'is_title' => '',
-                        'is_image' => [ 'url' => ELEMATIC_URL . '/assets/images/image-slide/image-slide-1.jpg' ],
+                        'is_image' => [ 'url' => ELEMATIC_URL . 'assets/images/image-slide/image-slide-1.jpg' ],
                     ],
                     [
                         'is_title' => '',
-                        'is_image' => [ 'url' => ELEMATIC_URL . '/assets/images/image-slide/image-slide-2.jpg' ],
+                        'is_image' => [ 'url' => ELEMATIC_URL . 'assets/images/image-slide/image-slide-2.jpg' ],
                     ],
                     [
                         'is_title' => '',
-                        'is_image' => [ 'url' => ELEMATIC_URL . '/assets/images/image-slide/image-slide-3.jpg' ],
+                        'is_image' => [ 'url' => ELEMATIC_URL . 'assets/images/image-slide/image-slide-3.jpg' ],
                     ],
                     [
                         'is_title' => '',
-                        'is_image' => [ 'url' => ELEMATIC_URL . '/assets/images/image-slide/image-slide-4.jpg' ],
+                        'is_image' => [ 'url' => ELEMATIC_URL . 'assets/images/image-slide/image-slide-4.jpg' ],
                     ],
                     [
                         'is_title' => '',
-                        'is_image' => [ 'url' => ELEMATIC_URL . '/assets/images/image-slide/image-slide-5.jpg' ],
+                        'is_image' => [ 'url' => ELEMATIC_URL . 'assets/images/image-slide/image-slide-5.jpg' ],
                     ],
                     [
                         'is_title' => '',
-                        'is_image' => [ 'url' => ELEMATIC_URL . '/assets/images/image-slide/image-slide-6.jpg' ],
+                        'is_image' => [ 'url' => ELEMATIC_URL . 'assets/images/image-slide/image-slide-6.jpg' ],
                     ],
                     [
                         'is_title' => '',
-                        'is_image' => [ 'url' => ELEMATIC_URL . '/assets/images/image-slide/image-slide-7.jpg' ],
+                        'is_image' => [ 'url' => ELEMATIC_URL . 'assets/images/image-slide/image-slide-7.jpg' ],
                     ],
                     [
                         'is_title' => '',
-                        'is_image' => [ 'url' => ELEMATIC_URL . '/assets/images/image-slide/image-slide-8.jpg' ],
+                        'is_image' => [ 'url' => ELEMATIC_URL . 'assets/images/image-slide/image-slide-8.jpg' ],
                     ],
                     [
                         'is_title' => '',
-                        'is_image' => [ 'url' => ELEMATIC_URL . '/assets/images/image-slide/image-slide-9.jpg' ],
+                        'is_image' => [ 'url' => ELEMATIC_URL . 'assets/images/image-slide/image-slide-9.jpg' ],
                     ],
                     [
                         'is_title' => '',
-                        'is_image' => [ 'url' => ELEMATIC_URL . '/assets/images/image-slide/image-slide-10.jpg' ],
+                        'is_image' => [ 'url' => ELEMATIC_URL . 'assets/images/image-slide/image-slide-10.jpg' ],
                     ],
                 ],
 

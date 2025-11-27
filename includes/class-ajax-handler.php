@@ -29,19 +29,19 @@ class Ajax_Handler {
 
     /**
      * Handle Load More Posts AJAX request
+     * Optimized with better error handling and security
      *
      * @since 1.2
      * @return void
      */
     public function load_more_posts_handler() {
 
-        // We intentionally read from $_POST here, but we unslash and sanitize immediately.
+        // Read and unslash POST data
         // phpcs:ignore WordPress.Security.NonceVerification.Missing
         $post_data = wp_unslash( $_POST );
 
         /**
-         * NONCE
-         * ------------------------------------------------------------------
+         * SECURITY: Verify Nonce
          */
         $nonce = isset( $post_data['nonce'] ) ? sanitize_text_field( $post_data['nonce'] ) : '';
 
@@ -54,9 +54,7 @@ class Ajax_Handler {
         }
 
         /**
-         * SETTINGS
-         * ------------------------------------------------------------------
-         * Can arrive as JSON string or already-decoded array.
+         * SETTINGS: Parse and sanitize
          */
         $settings_raw = isset( $post_data['settings'] ) ? $post_data['settings'] : '';
 
@@ -68,32 +66,22 @@ class Ajax_Handler {
             );
         }
 
+        // Parse settings (handle both string and array)
         if ( is_string( $settings_raw ) ) {
-            // Sanitize JSON text before decoding.
-            // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
             $settings_json = sanitize_textarea_field( $settings_raw );
             $settings      = json_decode( $settings_json, true );
         } elseif ( is_array( $settings_raw ) ) {
-            // Already array from JS, sanitize scalar values.
-            $settings = array_map(
-                static function ( $value ) {
-                    if ( is_string( $value ) ) {
-                        return sanitize_text_field( $value );
-                    }
-                    return $value;
-                },
-                $settings_raw
-            );
+            $settings = $this->sanitize_settings_array( $settings_raw );
         } else {
             $settings = array();
         }
 
         /**
-         * PAGE
-         * ------------------------------------------------------------------
+         * PAGE: Get current page number
          */
         $page = isset( $post_data['page'] ) ? absint( $post_data['page'] ) : 1;
 
+        // Validate we have everything needed
         if ( empty( $settings ) || ! is_array( $settings ) || $page < 1 ) {
             wp_send_json_error(
                 array(
@@ -104,43 +92,11 @@ class Ajax_Handler {
 
         /**
          * BUILD QUERY ARGS
-         * ------------------------------------------------------------------
          */
-        $post_type = ! empty( $settings['post_type'] ) ? sanitize_key( $settings['post_type'] ) : 'post';
-
-        $query_args = array(
-            'post_type'           => $post_type,
-            'posts_per_page'      => ! empty( $settings['number_of_posts'] ) ? absint( $settings['number_of_posts'] ) : 3,
-            'ignore_sticky_posts' => true,
-            'post_status'         => 'publish',
-            'paged'               => $page,
-        );
-
-        // Sorting.
-        $post_sortby = ! empty( $settings['post_sortby'] ) ? sanitize_text_field( $settings['post_sortby'] ) : 'latestpost';
-        $order       = ! empty( $settings['order'] ) ? sanitize_text_field( $settings['order'] ) : 'DESC';
-        $orderby     = ! empty( $settings['orderby'] ) ? sanitize_text_field( $settings['orderby'] ) : 'date';
-
-        if ( 'mostdiscussed' === $post_sortby ) {
-            $query_args['orderby'] = 'comment_count';
-            $query_args['order']   = $order;
-        } else {
-            $query_args['orderby'] = $orderby;
-            $query_args['order']   = $order;
-        }
-
-        // Optimized tax_query if provided.
-        if ( ! empty( $settings['tax_query'] ) && is_array( $settings['tax_query'] ) ) {
-            $tax_query = $this->build_optimized_tax_query( $settings['tax_query'] );
-            if ( ! empty( $tax_query ) ) {
-                // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
-                $query_args['tax_query'] = $tax_query;
-            }
-        }
+        $query_args = $this->build_query_args( $settings, $page );
 
         /**
          * RUN QUERY
-         * ------------------------------------------------------------------
          */
         $post_query = new \WP_Query( $query_args );
 
@@ -150,14 +106,8 @@ class Ajax_Handler {
             while ( $post_query->have_posts() ) {
                 $post_query->the_post();
 
-                $grid_style = ! empty( $settings['grid_style'] ) ? sanitize_text_field( $settings['grid_style'] ) : 'style-1';
-
-                $template_file = ELEMATIC_PATH . 'widgets/post-grid/templates/' . $grid_style . '.php';
-
-                if ( file_exists( $template_file ) ) {
-                    // $settings is in scope for the template.
-                    include $template_file;
-                }
+                // Render template based on grid style
+                $this->render_post_template( $settings );
             }
 
             wp_reset_postdata();
@@ -180,39 +130,133 @@ class Ajax_Handler {
             );
         }
 
-        wp_die(); // Required to terminate AJAX requests properly.
+        wp_die();
     }
 
     /**
-     * Build optimized tax_query using term_id instead of slug.
-     * Groups terms by taxonomy for better database performance.
+     * Sanitize settings array (recursive for nested arrays)
      *
-     * @since 1.2
+     * @param array $settings_raw Raw settings array
+     * @return array Sanitized settings
+     */
+    private function sanitize_settings_array( $settings_raw ) {
+        $sanitized = array();
+        
+        foreach ( $settings_raw as $key => $value ) {
+            $key = sanitize_key( $key );
+            
+            if ( is_array( $value ) ) {
+                $sanitized[ $key ] = $this->sanitize_settings_array( $value );
+            } elseif ( is_string( $value ) ) {
+                $sanitized[ $key ] = sanitize_text_field( $value );
+            } elseif ( is_numeric( $value ) ) {
+                $sanitized[ $key ] = is_int( $value ) ? absint( $value ) : floatval( $value );
+            } else {
+                $sanitized[ $key ] = $value;
+            }
+        }
+        
+        return $sanitized;
+    }
+
+    /**
+     * Build WP_Query arguments from settings
      *
-     * @param array $tax_queries Array of "taxonomy:term" strings.
-     * @return array Optimized tax_query array or empty array.
+     * @param array $settings Widget settings
+     * @param int $page Current page number
+     * @return array Query arguments
+     */
+    private function build_query_args( $settings, $page ) {
+        $post_type = ! empty( $settings['post_type'] ) ? sanitize_key( $settings['post_type'] ) : 'post';
+
+        $query_args = array(
+            'post_type'           => $post_type,
+            'posts_per_page'      => ! empty( $settings['number_of_posts'] ) ? absint( $settings['number_of_posts'] ) : 3,
+            'ignore_sticky_posts' => true,
+            'post_status'         => 'publish',
+            'paged'               => $page,
+        );
+
+        // Sorting
+        $post_sortby = ! empty( $settings['post_sortby'] ) ? sanitize_text_field( $settings['post_sortby'] ) : 'latestpost';
+        $order       = ! empty( $settings['order'] ) ? sanitize_text_field( $settings['order'] ) : 'DESC';
+        $orderby     = ! empty( $settings['orderby'] ) ? sanitize_text_field( $settings['orderby'] ) : 'date';
+
+        if ( 'mostdiscussed' === $post_sortby ) {
+            $query_args['orderby'] = 'comment_count';
+            $query_args['order']   = $order;
+        } else {
+            $query_args['orderby'] = $orderby;
+            $query_args['order']   = $order;
+        }
+
+        // Handle offset (if not on first page)
+        if ( ! empty( $settings['offset'] ) ) {
+            $offset = absint( $settings['offset'] );
+            if ( $page > 1 ) {
+                $offset += ( $query_args['posts_per_page'] * ( $page - 1 ) );
+            }
+            $query_args['offset'] = $offset;
+            unset( $query_args['paged'] ); // Can't use both offset and paged
+        }
+
+        // Taxonomy query
+        if ( ! empty( $settings['tax_query'] ) && is_array( $settings['tax_query'] ) ) {
+            $tax_query = $this->build_optimized_tax_query( $settings['tax_query'] );
+            if ( ! empty( $tax_query ) ) {
+                // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+                $query_args['tax_query'] = $tax_query;
+            }
+        }
+
+        return $query_args;
+    }
+
+    /**
+     * Render post template based on grid style
+     *
+     * @param array $settings Widget settings
+     * @return void
+     */
+    private function render_post_template( $settings ) {
+        $grid_style = ! empty( $settings['grid_style'] ) ? sanitize_text_field( $settings['grid_style'] ) : 'style-1';
+        
+        $template_file = ELEMATIC_PATH . 'widgets/post-grid/templates/' . $grid_style . '.php';
+
+        if ( file_exists( $template_file ) ) {
+            // $settings is in scope for the template
+            include $template_file;
+        }
+    }
+
+    /**
+     * Build optimized tax_query using term_id instead of slug
+     * Groups terms by taxonomy for better performance
+     *
+     * @param array $tax_queries Array of "taxonomy:term" strings
+     * @return array Optimized tax_query array or empty array
      */
     private function build_optimized_tax_query( $tax_queries ) {
-        $prepared_tax_query    = array( 'relation' => 'OR' );
-        $term_ids_by_taxonomy  = array();
+        $prepared_tax_query   = array( 'relation' => 'OR' );
+        $term_ids_by_taxonomy = array();
 
         foreach ( $tax_queries as $taxquery ) {
-            // Validate format.
+            // Validate format
             if ( ! is_string( $taxquery ) || empty( $taxquery ) || strpos( $taxquery, ':' ) === false ) {
                 continue;
             }
 
-            // Parse taxonomy and term.
+            // Parse taxonomy and term
             list( $tax, $term_slug ) = explode( ':', $taxquery, 2 );
             $tax       = trim( sanitize_text_field( $tax ) );
             $term_slug = trim( sanitize_text_field( $term_slug ) );
 
-            // Validate taxonomy and term.
+            // Validate taxonomy and term
             if ( empty( $tax ) || empty( $term_slug ) || ! taxonomy_exists( $tax ) ) {
                 continue;
             }
 
-            // Get term object (cached by WordPress).
+            // Get term object (cached by WordPress)
             $term_obj = get_term_by( 'slug', sanitize_title( $term_slug ), $tax );
 
             if ( $term_obj && ! is_wp_error( $term_obj ) ) {
@@ -223,7 +267,7 @@ class Ajax_Handler {
             }
         }
 
-        // Build optimized tax_query: one query per taxonomy with multiple term_ids.
+        // Build optimized tax_query
         foreach ( $term_ids_by_taxonomy as $taxonomy => $term_ids ) {
             if ( ! empty( $term_ids ) ) {
                 $prepared_tax_query[] = array(
@@ -235,11 +279,13 @@ class Ajax_Handler {
             }
         }
 
-        // Only return tax_query if we have valid queries.
+        // Only return if we have valid queries
         if ( count( $prepared_tax_query ) > 1 ) {
             return $prepared_tax_query;
         }
 
         return array();
     }
+
+    
 }

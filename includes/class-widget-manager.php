@@ -15,6 +15,7 @@ final class WidgetManager {
         'circle-info',
         'circle-progress-bar',
         'circle-text',
+        'contact-form-7',
         'countdown',
         'counter',
         'dual-button',
@@ -22,8 +23,14 @@ final class WidgetManager {
         'gallery',
         'grid',
         'highlight-text',
+        'hotspot',
         'icon-box',
         'image-animate',
+        'image-box',
+        'image-comparison',
+        'image-hover',
+        'image-mask',
+        'image-scrolling',
         'image-slide',
         'info-link',
         'lottie',
@@ -31,6 +38,7 @@ final class WidgetManager {
         'post-grid',
         'progress-bar',
         'service-list',
+        'table',
     ];
 
     public function __construct() {

@@ -1,0 +1,99 @@
+/* Main container for image choices */
+.elementor-image-choices {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Individual image choice block */
+.image-choose-label-block {
+    padding: 3px;
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Small thumbnail image */
+.image-choose-label-block .imagesmall {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+/* Hide the actual radio input */
+.image-choose-label-block input {
+    display: none !important;
+}
+
+/* Label styling */
+.elementor-image-choices-label {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    padding: 4px;
+    background: #fff;
+}
+
+.elementor-image-choices-label:hover {
+    border-color: rgba(147, 0, 60, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Checked state styling */
+.elementor-image-choices input.checked + .elementor-image-choices-label,
+.elementor-image-choices input:checked + .elementor-image-choices-label {
+    border-color: #93003c;
+    background: rgba(147, 0, 60, 0.05);
+    box-shadow: 0 2px 8px rgba(147, 0, 60, 0.2);
+}
+
+/* Add checkmark for selected state */
+.elementor-image-choices input.checked + .elementor-image-choices-label:after,
+.elementor-image-choices input:checked + .elementor-image-choices-label:after {
+    content: '\2713';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: #93003c;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* Ensure proper layout in Elementor panel */
+.elementor-control-type-elematic-image-choose .elementor-control-input-wrapper {
+    overflow: visible;
+}
+
+/* Screen reader text */
+.elementor-screen-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .image-choose-label-block {
+        width: 50% !important;
+    }
+}

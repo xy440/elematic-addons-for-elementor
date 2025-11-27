@@ -1,0 +1,13 @@
+input.wpcf7-form-control {
+    height: 45px;
+    padding: 5px 10px;
+}
+.wpcf7-textarea {
+    padding: 10px;
+}
+.wpcf7-form .wpcf7-submit {
+    cursor: pointer;
+    border: none;
+    width: 110px;
+    height: 45px;
+}

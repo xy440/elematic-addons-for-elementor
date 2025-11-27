@@ -293,55 +293,452 @@ class Helper {
 
   // Pagination Numbering
   public static function elematic_pagination_number($numpages = '', $pagerange = '', $paged='') {
-  if (empty($pagerange)) {
-    $pagerange = 2;
-  }
-  global $paged;
-  if (empty($paged)) {
-    $paged = 1;
-  }
-  if(is_front_page()) {
-      $paged = (get_query_var('page')) ? get_query_var('page') : 1;
-  } else {
-      $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-  }
-  if ($numpages == '') {
-    global $wp_query;
-    $numpages = $wp_query->max_num_pages;
-    if(!$numpages) {
-        $numpages = 1;
-    }
-  }
+      if (empty($pagerange)) {
+        $pagerange = 2;
+      }
+      global $paged;
+      if (empty($paged)) {
+        $paged = 1;
+      }
+      if(is_front_page()) {
+          $paged = (get_query_var('page')) ? get_query_var('page') : 1;
+      } else {
+          $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+      }
+      if ($numpages == '') {
+        global $wp_query;
+        $numpages = $wp_query->max_num_pages;
+        if(!$numpages) {
+            $numpages = 1;
+        }
+      }
 
-   
-  /** 
-   * We construct the pagination arguments to enter into our paginate_links
-   * function. 
-   */
-  $prev_arrow = is_rtl() ? '<span class="elementor-screen-only">Next</span><i class="fas fa-arrow-right"></i>' : '<span class="elementor-screen-only">Prev</span><i class="fas fa-arrow-left"></i>';
-  $next_arrow = is_rtl() ? '<span class="elementor-screen-only">Prev</span><i class="fzas fa-arrow-left"></i>' : '<span class="elementor-screen-only">Next</span><i class="fas fa-arrow-right"></i>';
-  $pagination_args = array(
-    'base'            => get_pagenum_link(1) . '%_%',
-    'format'          => 'page/%#%',
-    'total'           => $numpages,
-    'current'         => $paged,
-    'show_all'        => False,
-    'end_size'        => 1,
-    'mid_size'        => $pagerange,
-    'prev_next'       => true,
-    'prev_text'       => $prev_arrow,
-    'next_text'       => $next_arrow,
-    'type'            => 'plain',
-    'add_args'        => false,
-    'add_fragment'    => ''
-  );
-  $paginate_links = paginate_links($pagination_args);
-  if ($paginate_links) {
-    echo "<nav class='elematic-pagination'>";
-    echo wp_kses_post($paginate_links); 
-    echo "</nav>";
-  }
-}
+       
+      /** 
+       * We construct the pagination arguments to enter into our paginate_links
+       * function. 
+       */
+      $prev_arrow = is_rtl() ? '<span class="elementor-screen-only">Next</span><i class="fas fa-arrow-right"></i>' : '<span class="elementor-screen-only">Prev</span><i class="fas fa-arrow-left"></i>';
+      $next_arrow = is_rtl() ? '<span class="elementor-screen-only">Prev</span><i class="fzas fa-arrow-left"></i>' : '<span class="elementor-screen-only">Next</span><i class="fas fa-arrow-right"></i>';
+      $pagination_args = array(
+        'base'            => get_pagenum_link(1) . '%_%',
+        'format'          => 'page/%#%',
+        'total'           => $numpages,
+        'current'         => $paged,
+        'show_all'        => False,
+        'end_size'        => 1,
+        'mid_size'        => $pagerange,
+        'prev_next'       => true,
+        'prev_text'       => $prev_arrow,
+        'next_text'       => $next_arrow,
+        'type'            => 'plain',
+        'add_args'        => false,
+        'add_fragment'    => ''
+      );
+      $paginate_links = paginate_links($pagination_args);
+      if ($paginate_links) {
+        echo "<nav class='elematic-pagination'>";
+        echo wp_kses_post($paginate_links); 
+        echo "</nav>";
+      }
+    }
+
+    /**
+     * Get all SVG shapes dynamically from the image-mask directory.
+     *
+     * @return array Array of shape options for the image chooser control.
+     */
+    public static function elematic_get_svg_shapes() {
+        
+        // Check if transient exists for caching
+        $cached_shapes = get_transient( 'elematic_svg_shapes_cache' );
+        if ( false !== $cached_shapes && is_array( $cached_shapes ) ) {
+            return $cached_shapes;
+        }
+        
+        $shapes = array();
+        $shapes_dir = ELEMATIC_PATH . 'assets/images/image-mask/';
+        $shapes_url = ELEMATIC_URL . 'assets/images/image-mask/';
+        
+        // Check if directory exists
+        if ( ! is_dir( $shapes_dir ) ) {
+            return $shapes;
+        }
+        
+        // Get all SVG files from the directory
+        $svg_files = glob( $shapes_dir . 'shape-*.svg' );
+        
+        if ( empty( $svg_files ) ) {
+            return $shapes;
+        }
+        
+        // Sort files naturally (shape-1, shape-2, ..., shape-10, etc.)
+        natsort( $svg_files );
+        
+        foreach ( $svg_files as $svg_file ) {
+            $filename = basename( $svg_file, '.svg' );
+            
+            // Extract shape number from filename (e.g., "shape-1" from "shape-1.svg")
+            if ( preg_match( '/^shape-(\d+)$/', $filename, $matches ) ) {
+                $shape_number = $matches[1];
+                $shape_key = $filename;
+                
+                $shapes[ $shape_key ] = array(
+                    'title'      => sprintf(
+                        /* translators: %s: shape number */
+                        esc_html__( 'Shape %s', 'elematic-addons-for-elementor' ),
+                        $shape_number
+                    ),
+                    'imagesmall' => $shapes_url . $filename . '.svg',
+                    'width'      => '25%',
+                );
+            }
+        }
+        
+        // Cache the shapes for 24 hours (DAY_IN_SECONDS)
+        set_transient( 'elematic_svg_shapes_cache', $shapes, DAY_IN_SECONDS );
+        
+        return $shapes;
+    }
+
+    /**
+     * Clear shapes cache when needed.
+     * Call this function when you add/remove shape files.
+     */
+    public static function clear_svg_shapes_cache() {
+        delete_transient( 'elematic_svg_shapes_cache' );
+    }
+
+    /**
+     *  Get Contact Form 7 forms list
+     */
+    public static function elematic_contact_form_seven() {
+        $wpcf7_form_list = get_posts(array(
+            'post_type' => 'wpcf7_contact_form',
+            'showposts' => -1,
+        ));
+        $options = array();
+        $options[0] = esc_html__( 'Select a Contact Form', 'elematic-addons-for-elementor' );
+        if ( ! empty( $wpcf7_form_list ) && ! is_wp_error( $wpcf7_form_list ) ) {
+            foreach ( $wpcf7_form_list as $post ) {
+                $options[ $post->ID ] = $post->post_title;
+            }
+        } else {
+            $options[0] = esc_html__( 'Create a Form First', 'elematic-addons-for-elementor' );
+        }
+        return $options;
+    }
+
+
+    /**
+     * Build WP_Query arguments for post widgets
+     * 
+     * @param array $settings Widget settings from Elementor
+     * @param int $paged Current page number
+     * @return array WP_Query arguments
+     */
+    public static function setup_query_args( $settings, $paged = 1 ) {
+        
+        // Get posts per page and offset
+        $posts_per_page = isset( $settings['number_of_posts'] ) ? absint( $settings['number_of_posts'] ) : 6;
+        $offset = isset( $settings['offset'] ) ? absint( $settings['offset'] ) : 0;
+        
+        // Calculate offset for pagination
+        // CRITICAL: When using offset with pagination, we must account for both
+        // Formula: total_offset = initial_offset + (posts_per_page * (current_page - 1))
+        $calculated_offset = $offset;
+        if ( $paged > 1 && $offset > 0 ) {
+            $calculated_offset = $offset + ( $posts_per_page * ( $paged - 1 ) );
+        }
+        
+        // Handle orderby based on post_sortby setting
+        if ( isset( $settings['post_sortby'] ) && 'mostdiscussed' === $settings['post_sortby'] ) {
+            $query_args = [
+                'orderby'               => 'comment_count',
+                'order'                 => isset( $settings['order'] ) ? $settings['order'] : 'DESC',
+                'ignore_sticky_posts'   => true,
+                'post_status'           => 'publish',
+                'posts_per_page'        => $posts_per_page,
+            ];
+        } else {
+            $query_args = [
+                'orderby'               => isset( $settings['orderby'] ) ? $settings['orderby'] : 'date',
+                'order'                 => isset( $settings['order'] ) ? $settings['order'] : 'DESC',
+                'ignore_sticky_posts'   => true,
+                'post_status'           => 'publish',
+                'posts_per_page'        => $posts_per_page,
+            ];
+        }
+        
+        // Add offset or paged parameter
+        // IMPORTANT: Don't use both 'offset' and 'paged' together - they conflict
+        if ( $calculated_offset > 0 ) {
+            $query_args['offset'] = $calculated_offset;
+        } else {
+            $query_args['paged'] = $paged;
+        }
+        
+        // Add post type if specified
+        if ( ! empty( $settings['post_type'] ) ) {
+            $query_args['post_type'] = $settings['post_type'];
+        }
+        
+        // Handle taxonomy query
+        if ( ! empty( $settings['tax_query'] ) && is_array( $settings['tax_query'] ) ) {
+            $tax_queries = $settings['tax_query'];
+            $prepared_tax_query = [ 'relation' => 'OR' ];
+            $term_ids_by_taxonomy = [];
+            
+            foreach ( $tax_queries as $taxquery ) {
+                if ( ! is_string( $taxquery ) || empty( $taxquery ) || strpos( $taxquery, ':' ) === false ) {
+                    continue;
+                }
+                
+                list( $tax, $term_slug ) = explode( ':', $taxquery, 2 );
+                $tax = trim( $tax );
+                $term_slug = trim( $term_slug );
+                
+                if ( empty( $tax ) || empty( $term_slug ) || ! taxonomy_exists( $tax ) ) {
+                    continue;
+                }
+                
+                $term_obj = get_term_by( 'slug', sanitize_title( $term_slug ), $tax );
+                
+                if ( $term_obj && ! is_wp_error( $term_obj ) ) {
+                    if ( ! isset( $term_ids_by_taxonomy[$tax] ) ) {
+                        $term_ids_by_taxonomy[$tax] = [];
+                    }
+                    $term_ids_by_taxonomy[$tax][] = (int) $term_obj->term_id;
+                }
+            }
+            
+            foreach ( $term_ids_by_taxonomy as $taxonomy => $term_ids ) {
+                if ( ! empty( $term_ids ) ) {
+                    $prepared_tax_query[] = [
+                        'taxonomy' => $taxonomy,
+                        'field'    => 'term_id',
+                        'terms'    => $term_ids,
+                        'operator' => 'IN',
+                    ];
+                }
+            }
+            
+            if ( count( $prepared_tax_query ) > 1 ) {
+                // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+                $query_args['tax_query'] = $prepared_tax_query;
+            }
+        }
+        
+        return $query_args;
+    }
+
+    /**
+     * Fix pagination count when offset is used
+     * 
+     * @param WP_Query $query The WP_Query object
+     * @param array $settings Widget settings
+     * @return WP_Query Modified query object
+     */
+    public static function fix_query_offset_pagination( $query, $settings ) {
+        $offset = isset( $settings['offset'] ) ? absint( $settings['offset'] ) : 0;
+        
+        if ( $offset > 0 && $query->found_posts > 0 ) {
+            $posts_per_page = isset( $settings['number_of_posts'] ) ? absint( $settings['number_of_posts'] ) : 6;
+            $adjusted_found_posts = $query->found_posts - $offset;
+            
+            if ( $adjusted_found_posts < 0 ) {
+                $adjusted_found_posts = 0;
+            }
+            
+            $query->max_num_pages = ceil( $adjusted_found_posts / $posts_per_page );
+        }
+        
+        return $query;
+    }
+
+    /**
+     * Get current page number
+     * 
+     * @return int Current page number
+     */
+    public static function get_current_page() {
+        if ( get_query_var( 'paged' ) ) {
+            return get_query_var( 'paged' );
+        } elseif ( get_query_var( 'page' ) ) {
+            return get_query_var( 'page' );
+        }
+        return 1;
+    }
+
+        /**
+     * Render pagination - universal function for all post widgets
+     * 
+     * @param array $settings Widget settings
+     * @param WP_Query $query The WP_Query object
+     * @param string $widget_id Unique widget ID
+     * @param int $paged Current page number
+     */
+    public static function render_pagination( $settings, $query, $widget_id, $paged = 1 ) {
+        
+        if ( empty( $settings['pagination'] ) || 'show' !== $settings['pagination'] ) {
+            return;
+        }
+        
+        $pagination_style = isset( $settings['pagination_style'] ) ? $settings['pagination_style'] : 'loadmore';
+        
+        if ( 'loadmore' === $pagination_style ) {
+            self::render_load_more_button( $settings, $query, $widget_id );
+        } elseif ( 'numbering' === $pagination_style ) {
+            self::elematic_pagination_number( $query->max_num_pages, '', $paged );
+        }
+    }
+
+    
+
+    /**
+     * Render Load More button with minimal, optimized data
+     * 
+     * @param array $settings Widget settings
+     * @param WP_Query $query The WP_Query object
+     * @param string $widget_id Unique widget ID
+     */
+    public static function render_load_more_button( $settings, $query, $widget_id ) {
+        
+        // Get button text with fallbacks
+        $load_more_text = isset( $settings['load_more_text'] ) && ! empty( $settings['load_more_text'] ) 
+            ? $settings['load_more_text'] 
+            : esc_html__( 'Load More', 'elematic-addons-for-elementor' );
+        
+        $loading_text = isset( $settings['loading_text'] ) && ! empty( $settings['loading_text'] ) 
+            ? $settings['loading_text'] 
+            : esc_html__( 'Loading...', 'elematic-addons-for-elementor' );
+        
+        $no_more_text = isset( $settings['no_more_text'] ) && ! empty( $settings['no_more_text'] ) 
+            ? $settings['no_more_text'] 
+            : esc_html__( 'No more posts', 'elematic-addons-for-elementor' );
+        
+        // Create minimal settings - ONLY essentials
+        $minimal_settings = self::get_minimal_ajax_settings( $settings );
+        
+        // Create security nonce - matches Ajax_Handler expectation
+        $nonce = wp_create_nonce( 'load_more_nonce' );
+        
+        // Encode to JSON
+        $settings_json = wp_json_encode( $minimal_settings );
+        
+        ?>
+        <div id="elematic_pagination_load_more" class="elematic-load-more">
+            <button 
+                id="elematic-load-more-btn-<?php echo esc_attr( $widget_id ); ?>" 
+                class="elematic-load-more-btn" 
+                type="button" 
+                data-widget-id="<?php echo esc_attr( $widget_id ); ?>"
+                data-nonce="<?php echo esc_attr( $nonce ); ?>"
+                data-loading-text="<?php echo esc_attr( $loading_text ); ?>" 
+                data-load-more-text="<?php echo esc_attr( $load_more_text ); ?>" 
+                data-no-more-text="<?php echo esc_attr( $no_more_text ); ?>" 
+                data-settings='<?php echo esc_attr( $settings_json ); ?>' 
+                data-page="1"
+                data-max-pages="<?php echo esc_attr( $query->max_num_pages ); ?>">
+                <?php echo esc_html( $load_more_text ); ?>
+            </button>
+        </div>
+        <?php
+    }
+
+
+    /**
+     * Get minimal settings for AJAX - ONLY what's needed
+     * This reduces HTML size by 60-70%
+     * 
+     * @param array $settings Full widget settings
+     * @return array Minimal settings array
+     */
+    private static function get_minimal_ajax_settings( $settings ) {
+        return [
+            // === Query Parameters ===
+            'post_type'       => $settings['post_type'] ?? 'post',
+            'number_of_posts' => absint( $settings['number_of_posts'] ?? 5 ),
+            'offset'          => absint( $settings['offset'] ?? 0 ),
+            'order'           => $settings['order'] ?? 'DESC',
+            'orderby'         => $settings['orderby'] ?? 'date',
+            'post_sortby'     => $settings['post_sortby'] ?? 'latestpost',
+            'tax_query'       => $settings['tax_query'] ?? [], // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+            
+            // === Layout ===
+            'grid_style'      => $settings['grid_style'] ?? 'style-1',
+            'image_size'      => $settings['image_size'] ?? 'medium',
+            
+            // === Display Toggles (for template rendering) ===
+            'date'            => $settings['date'] ?? 'show',
+            'author'          => $settings['author'] ?? 'show',
+            'title'           => $settings['title'] ?? 'show',
+            'title_lenth'     => absint( $settings['title_lenth'] ?? 50 ),
+            'post_category'   => $settings['post_category'] ?? 'hide',
+            'comments'        => $settings['comments'] ?? 'show',
+            'desc'            => $settings['desc'] ?? 'show',
+            'excerpt_words'   => absint( $settings['excerpt_words'] ?? 15 ),
+            'read_more'       => $settings['read_more'] ?? 'show',
+            'read_more_txt'   => $settings['read_more_txt'] ?? 'Read More',
+        ];
+    }
+
+    /**
+     * Sanitize settings for AJAX/JSON output
+     * Removes unnecessary data to reduce payload size
+     * Includes ALL settings needed for query AND rendering posts
+     * 
+     * @param array $settings Full settings array
+     * @param array $additional_keys Additional keys to include beyond defaults (optional)
+     * @return array Filtered settings
+     */
+    public static function sanitize_settings_for_ajax( $settings, $additional_keys = [] ) {
+        
+        // Essential keys needed for AJAX query and rendering
+        $essential_keys = [
+            // Query parameters
+            'post_type',
+            'number_of_posts',
+            'offset',
+            'tax_query',
+            'order',
+            'orderby',
+            'post_sortby',
+            
+            // Layout/Style
+            'grid_style',      // Grid style (style-1, style-2, etc.)
+            'columns',         // Column layout
+            
+            // Image settings
+            'image_size',      // Thumbnail size
+            
+            // Content visibility toggles
+            'date',            // Show/hide date
+            'author',          // Show/hide author
+            'title',           // Show/hide title
+            'title_lenth',     // Title character limit (typo from original, keeping for compatibility)
+            'post_category',   // Show/hide category
+            'comments',        // Show/hide comments count
+            'desc',            // Show/hide excerpt
+            'excerpt_words',   // Excerpt word limit
+            'read_more',       // Show/hide read more button
+            'read_more_txt',   // Read more button text
+        ];
+        
+        // Merge with any additional widget-specific keys
+        if ( ! empty( $additional_keys ) ) {
+            $essential_keys = array_merge( $essential_keys, $additional_keys );
+        }
+        
+        // Remove duplicates
+        $essential_keys = array_unique( $essential_keys );
+        
+        // Filter settings to only include essential keys
+        return array_filter( $settings, function( $key ) use ( $essential_keys ) {
+            return in_array( $key, $essential_keys, true );
+        }, ARRAY_FILTER_USE_KEY );
+    }
+
 
 
 

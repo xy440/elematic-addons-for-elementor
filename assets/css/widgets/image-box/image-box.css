@@ -1,0 +1,71 @@
+/*! Image Box */
+.elementor-widget-elematic-image-box .elematic-image-box-content {
+    width: 100%
+}
+
+@media (min-width: 768px) {
+    .elementor-widget-elematic-image-box.elementor-position-left .elematic-image-box-wrapper,.elementor-widget-elematic-image-box.elementor-position-right .elematic-image-box-wrapper {
+        display:flex
+    }
+
+    .elementor-widget-elematic-image-box.elementor-position-right .elematic-image-box-wrapper {
+        text-align: end;
+        flex-direction: row-reverse
+    }
+
+    .elementor-widget-elematic-image-box.elementor-position-left .elematic-image-box-wrapper {
+        text-align: start;
+        flex-direction: row
+    }
+
+    .elementor-widget-elematic-image-box.elementor-position-top .elematic-image-box-img {
+        margin: auto
+    }
+
+    .elementor-widget-elematic-image-box.elementor-vertical-align-top .elematic-image-box-wrapper {
+        align-items: flex-start
+    }
+
+    .elementor-widget-elematic-image-box.elementor-vertical-align-middle .elematic-image-box-wrapper {
+        align-items: center
+    }
+
+    .elementor-widget-elematic-image-box.elementor-vertical-align-bottom .elematic-image-box-wrapper {
+        align-items: flex-end
+    }
+}
+
+@media (max-width: 767px) {
+    .elementor-widget-elematic-image-box .elematic-image-box-img {
+        margin-left:auto!important;
+        margin-right: auto!important;
+        margin-bottom: 15px
+    }
+}
+
+.elementor-widget-elematic-image-box .elematic-image-box-img {
+    display: inline-block
+}
+
+.elementor-widget-elematic-image-box .elematic-image-box-title a {
+    color: inherit
+}
+
+.elementor-widget-elematic-image-box .elematic-image-box-wrapper {
+    text-align: center
+}
+
+.elementor-widget-elematic-image-box .elematic-image-box-description {
+    margin: 0
+}
+.elementor-widget-elematic-image-box .elematic-image-box-btn svg {
+    width: 14px;
+    height: 14px;
+    transition: all ease .3s;
+}
+.elementor-widget-elematic-image-box .elematic-image-box-btn i,
+.elementor-widget-elematic-image-box .elematic-image-box-btn svg {
+    margin-left: 5px;
+    vertical-align: middle;
+}
+

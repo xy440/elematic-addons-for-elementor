@@ -206,6 +206,14 @@ class PostGrid extends Widget_Base {
                 'default' => 3
             ]
         );
+        $this->add_control(
+            'offset',
+            [
+                'label' => esc_html__( 'Offset', 'elematic-addons-for-elementor' ),
+                'type' => Controls_Manager::NUMBER,
+                'default' => 0
+            ]
+        );
         $this->add_responsive_control(
             'min_height',
             [
@@ -1063,122 +1071,10 @@ class PostGrid extends Widget_Base {
         $style = $settings['grid_style']; // Get the selected style.
         $pagination = $settings['pagination'];
         $columns = $settings['columns'];
-
-        if ( get_query_var('paged') ) :
-            $paged = get_query_var('paged');
-        elseif ( get_query_var('page') ) :
-            $paged = get_query_var('page');
-        else :
-            $paged = 1;
-        endif;
-
-        $query_args = [
-            'post_type' => $settings['post_type'],
-            'posts_per_page' => $settings['number_of_posts'],
-            'ignore_sticky_posts' => true,
-            'post_status' => 'publish',
-            'paged' => $paged,
-        ];
-
-        // Add orderby and order for most discussed posts
-        if (!empty($settings['post_sortby']) && 'mostdiscussed' === $settings['post_sortby']) {
-            $query_args['orderby'] = 'comment_count';
-            $query_args['order'] = $settings['order'];
-        } else {
-            // Latest posts
-            $query_args['orderby'] = $settings['orderby'];
-            $query_args['order'] = $settings['order'];
-        }
-
-        // Add the tax_query dynamically if provided in settings
-        // Using term_id instead of slug for optimal database performance
-        if (!empty($settings['tax_query']) && is_array($settings['tax_query'])) {
-            $tax_queries = $settings['tax_query'];
-            $prepared_tax_query = array('relation' => 'OR');
-            $term_ids_by_taxonomy = array(); // Group term IDs by taxonomy for better performance
-
-            foreach ($tax_queries as $taxquery) {
-                // Validate format
-                if (!is_string($taxquery) || empty($taxquery) || strpos($taxquery, ':') === false) {
-                    continue;
-                }
-
-                // Parse taxonomy and term
-                list($tax, $term_slug) = explode(':', $taxquery, 2);
-                $tax = trim($tax);
-                $term_slug = trim($term_slug);
-                
-                // Validate taxonomy and term
-                if (empty($tax) || empty($term_slug) || !taxonomy_exists($tax)) {
-                    continue;
-                }
-
-                // Get term object - cached by WordPress and cache plugins
-                $term_obj = get_term_by('slug', sanitize_title($term_slug), $tax);
-                
-                if ($term_obj && !is_wp_error($term_obj)) {
-                    // Group terms by taxonomy for optimization
-                    if (!isset($term_ids_by_taxonomy[$tax])) {
-                        $term_ids_by_taxonomy[$tax] = array();
-                    }
-                    $term_ids_by_taxonomy[$tax][] = (int) $term_obj->term_id;
-                }
-            }
-
-            // Build optimized tax_query - one query per taxonomy with multiple term_ids
-            foreach ($term_ids_by_taxonomy as $taxonomy => $term_ids) {
-                if (!empty($term_ids)) {
-                    $prepared_tax_query[] = array(
-                        'taxonomy' => $taxonomy,
-                        'field'    => 'term_id', // Using term_id is more performant than slug
-                        'terms'    => $term_ids,
-                        'operator' => 'IN',
-                    );
-                }
-            }
-
-            // Only add tax_query if we have valid queries
-            if (count($prepared_tax_query) > 1) {
-                // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- Optimized with term_id and grouped by taxonomy
-                $query_args['tax_query'] = $prepared_tax_query;
-            }
-        }
-
+        $paged = Helper::get_current_page();
+        $query_args = Helper::setup_query_args( $settings, $paged );
         $post_query = new \WP_Query( $query_args );
-
-        // Remove unnecessary fields from the settings
-        $settings = array_filter($settings, function($key) {
-            // List of keys that are necessary for Load More functionality
-            $necessary_keys = [
-                'number_of_posts',
-                'read_more_txt',
-                'pagination',
-                'load_more_text',
-                'loading_text',
-                'no_more_text',
-                'grid_style',
-                'tax_query',
-                'columns',
-                'image_size',
-                'order',
-                'post_sortby',
-                'orderby',
-                'date',
-                'author',
-                'title',
-                'title_lenth',
-                'post_category',
-                'comments',
-                'desc',
-                'excerpt_words',
-                'read_more',
-                'pagination_style'
-            ];
-            return in_array($key, $necessary_keys);
-        }, ARRAY_FILTER_USE_KEY);
-
-        // Create a smaller JSON for data-settings
-        $settings_json = json_encode($settings);
+        $post_query = Helper::fix_query_offset_pagination( $post_query, $settings );
         ?>
 
         <div id="elematic-post-grid-wrapper-<?php echo esc_attr( $this->get_id() ); ?>" class="elematic-post-grid-wrapper">
@@ -1195,27 +1091,9 @@ class PostGrid extends Widget_Base {
         </div><!-- /elematic-post-grid-wrapper -->
         <div class="clearfix"></div>
 
-
-            <!-- pagination -->
-            <?php if( 'show' === $settings['pagination'] && 'loadmore' === $settings['pagination_style'] ) : ?>
-                <div id="elematic_pagination_load_more" class="elematic-load-more">
-                    <button 
-                        id="elematic-load-more-btn-<?php echo esc_attr($this->get_id()); ?>" 
-                        class="elematic-load-more-btn" 
-                        type="button" 
-                        data-widget-id="<?php echo esc_attr($this->get_id()); ?>"
-                        data-loading-text="<?php echo esc_attr($settings['loading_text']); ?>" 
-                        data-load-more-text="<?php echo esc_attr($settings['load_more_text']); ?>" 
-                        data-no-more-text="<?php echo esc_attr($settings['no_more_text']); ?>" 
-                        data-settings='<?php echo esc_attr( $settings_json ); ?>' 
-                        data-page="1">
-                        <?php echo esc_html($settings['load_more_text']); ?>
-                    </button>
-                </div>
-            <?php elseif( 'show' === $settings['pagination'] && 'numbering' === $settings['pagination_style'] ) :
-                Helper::elematic_pagination_number($post_query->max_num_pages,"",$paged);
-            endif;
-            
+        <?php
+        // Render pagination
+        Helper::render_pagination( $settings, $post_query, $this->get_id(), $paged );
 
     } // function render()
 
