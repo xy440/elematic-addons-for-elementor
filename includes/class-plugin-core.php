@@ -19,6 +19,7 @@ class Plugin_Core {
 		wp_register_style( 'elematic-accordion', ELEMATIC_URL . 'assets/css/widgets/accordion/accordion.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-animated-heading', ELEMATIC_URL . 'assets/css/widgets/animated-heading/animated-heading.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-animated-shape', ELEMATIC_URL . 'assets/css/widgets/animated-shape/animated-shape.min.css', [], ELEMATIC_VERSION );
+		wp_register_style( 'elematic-banner', ELEMATIC_URL . 'assets/css/widgets/banner/banner.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-button', ELEMATIC_URL . 'assets/css/widgets/button/button.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-chart', ELEMATIC_URL . 'assets/css/widgets/chart/chart.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-circle-info', ELEMATIC_URL . 'assets/css/widgets/circle-info/circle-info.min.css', [], ELEMATIC_VERSION );
@@ -28,6 +29,7 @@ class Plugin_Core {
 		wp_register_style( 'elematic-countdown', ELEMATIC_URL . 'assets/css/widgets/countdown/countdown.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-counter', ELEMATIC_URL . 'assets/css/widgets/counter/counter.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-dual-button', ELEMATIC_URL . 'assets/css/widgets/dual-button/dual-button.min.css', [], ELEMATIC_VERSION );
+		wp_register_style( 'elematic-features', ELEMATIC_URL . 'assets/css/widgets/features/features.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-flip-box', ELEMATIC_URL . 'assets/css/widgets/flip-box/flip-box.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-gallery', ELEMATIC_URL . 'assets/css/widgets/gallery/gallery.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-grid', ELEMATIC_URL . 'assets/css/widgets/grid/grid.min.css', [], ELEMATIC_VERSION );
@@ -43,10 +45,12 @@ class Plugin_Core {
 		wp_register_style( 'elematic-info-link', ELEMATIC_URL . 'assets/css/widgets/info-link/info-link.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-lottie', ELEMATIC_URL . 'assets/css/widgets/lottie/lottie.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-marquee', ELEMATIC_URL . 'assets/css/widgets/marquee/marquee.min.css', [], ELEMATIC_VERSION );
+		wp_register_style( 'elematic-post-alter', ELEMATIC_URL . 'assets/css/widgets/post-alter/post-alter.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-post-grid', ELEMATIC_URL . 'assets/css/widgets/post-grid/post-grid.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-progress-bar', ELEMATIC_URL . 'assets/css/widgets/progress-bar/progress-bar.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-service-list', ELEMATIC_URL . 'assets/css/widgets/service-list/service-list.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-table', ELEMATIC_URL . 'assets/css/widgets/table/table.min.css', [], ELEMATIC_VERSION );
+		wp_register_style( 'elematic-timeline', ELEMATIC_URL . 'assets/css/widgets/timeline/timeline.min.css', [], ELEMATIC_VERSION );
 	}
 
 
@@ -83,6 +87,7 @@ class Plugin_Core {
 		wp_register_script( 'lottie', ELEMATIC_URL . 'assets/js/widgets/lottie/lottie.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
 		wp_register_script( 'elematic-progress-bar', ELEMATIC_URL . 'assets/js/widgets/progress-bar/progress-bar.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
 		wp_register_script( 'elematic-table', ELEMATIC_URL . 'assets/js/widgets/table/table.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
+		wp_register_script( 'elematic-timeline', ELEMATIC_URL . 'assets/js/widgets/timeline/timeline.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
 		
 
 		// Localize the script with the AJAX URL

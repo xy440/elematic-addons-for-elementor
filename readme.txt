@@ -1,10 +1,10 @@
 === Elematic — Addons for Elementor ===
 Contributors: xy440
-Tags: elementor, elementor addons, elementor widgets, webflow, framer
+Tags: elementor, elementor addons, elementor widgets, webflow, widgets for elementor
 Requires at least: 6.0
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,7 +18,7 @@ Whether you’re building a landing page, business website, portfolio, SaaS layo
 
 This addon focuses on **performance, styling flexibility, and usability.** Every widget loads only when used, ensuring fast page load, better Core Web Vitals, and a higher Google PageSpeed score.
 
-**With Elematic, you can create:**
+🚀 **With Elematic, you can create:**
 
 - High-engagement landing pages
 - Animated portfolio and creative UI layouts
@@ -58,37 +58,76 @@ Every widget includes granular styling controls for typography, spacing, hover e
 == Included Widgets ==
 
 - **Accordion**. Clean collapsible FAQ sections with icons and smooth animation.
+
 - **Animated Heading**. Dynamic title animations (typed, sliding, or looping) to highlight key headlines.
+
 - **Animated Shape**. Modern motion shapes and blobs to add subtle, looping background animation to sections and hero areas.
+
+- **Banner**. Create modern hero banners with image, title, subtitle, and CTA buttons with animations, perfect for landing pages and marketing sections.
+
 - **Button**. Customizable button with icons, hover effects, and full control over typography, spacing, and borders.
+
 - **Chart**. Responsive, animated charts (bar, line, pie, radar, horizontal, vertical, etc.) powered by your data, with full color and typography control for dashboards and stats sections.
+
 - **Circle Info**. Interactive circular feature widget with auto/manual rotation and clickable icons revealing detailed content in the center.
+
 - **Circle Progress Bar**. Animated circular progress indicator with percentage display and full styling control for dashboards, skills, and achievement counters.
+
 - **Circle Text (Webflow + Framer style)**. Create rotating circular text around logos or icons with smooth Webflow/Framer-style animation for badges, seals, and hero sections.
+
 - **Contact Form 7**. Style Contact Form 7 forms inside Elementor with custom spacing, colors, and typography without touching CSS.
+
 - **Countdown**. Create animated countdown timers for launches, sales, or events with full control over layout, labels, and expiry actions.
+
 - **Counter**. Animate numbers from any start/end value with icons, prefixes, and suffixes to highlight key stats or milestones.
+
 - **Dual Button**. Create side-by-side CTA buttons with separate links and icons, featuring 50 built-in gradient presets for instant modern styling.
+
+- **Features**. Create flexible feature sections with custom items or fully dynamic content pulled from any post type. Supports images, titles, descriptions, meta info, and multi-column layouts for building service lists, feature highlights, or dynamic content showcases.
+
 - **Flip Box**. Create interactive cards that flip on hover with zoom, up/down, left/right and other 3D flip effects to reveal extra info or CTAs.
+
 - **Gallery**. Responsive, filterable image gallery with hover effects, spacing control, and built-in lightbox/popup modal for clean portfolio and showcase layouts.
+
 - **Grid**. Flexible multi-column content grid with image, icon, title, description, read-more link, and optional image lightbox for services, features, or portfolio cards.
+
 - **Highlight Text (Webflow + Framer style)**. Scroll-triggered highlight text effect inspired by Webflow and Framer, animating your headings or paragraphs as they enter the viewport.
+
 - **Hotspot**. Lets you add clickable markers over images with tooltips or popups, perfect for product highlights, maps, and interactive storytelling.
+
 - **Icon Box**. Lets you showcase features in 3 layouts using icon or image, with full-box hover effects for highly interactive service or feature blocks.
+
 - **Image Animate**. Adds smooth left-right and up-down reveal animations to your images for simple, lightweight scroll-based motion effects.
+
 - **Image Box**. Displays an image with title, description, and optional button in multiple layouts, ideal for feature/service cards and promo blocks.
+
 - **Image Comparison**. Add an interactive draggable before/after slider with hover, smoothing, and label controls for showcasing transformations or visual changes in horizontal and vertical orientation.
+
 - **Image Hover**. Add 30+ modern hover effects to images with title, description, and overlay controls for eye-catching rollovers.
+
 - **Image Mask**. Clip images into 80+ ready-made artistic shapes (ink, blobs, badges, etc.) for instant Webflow-style image frames.
+
 - **Image Scrolling**. Create smooth horizontal or vertical image scrolling effects for product shots, long screenshots, or parallax-style image reveals.
+
 - **Image Slide (Webflow + Framer style)**. Create smooth looping image strips that slide left, right, up, or down for modern Webflow/Framer-style hero and gallery sections.
+
 - **Info Link**. Create an interactive tab-style content switcher with icons where text changes dynamically on click for cleaner layouts and better UX.
+
 - **Lottie**. Add lightweight JSON animations with full playback controls, autoplay, loop, speed adjustment, and scroll-based animation support.
+
 - **Marquee (Webflow + Framer style)**. Create smooth, looping marquee rows for text or logos with controllable speed, direction, and hover pause, inspired by Webflow and Framer motion rails.
+
+- **Post Alter**. Display blog posts in an alternating left-right layout with featured images, meta info, excerpt. Perfect for storytelling-style blog layouts.
+
 - **Post Grid**. Display posts in a customizable grid with category filters, numbered pagination and AJAX “Load More” button without page reload.
+
 - **Progress Bar**. Show elegant vertical or horizontal progress indicators for skills, stats, or milestones with full color and animation controls.
+
 - **Service List (Webflow + Framer style)**. Display modern, animated service rows with icons, descriptions, title, subtle and hover image inspired by Webflow and Framer layouts.
+
 - **Table**. Create responsive, styled data tables with headings, rows, and typography controls for pricing, feature comparison, or structured content layouts.
+
+- **Timeline**. Visual timeline with custom or dynamic posts, alternating layouts, dates, images, and smooth milestone animations.
 
 More widgets will be added in future releases.
 

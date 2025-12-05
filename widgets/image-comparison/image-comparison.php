@@ -22,7 +22,7 @@ class ImageComparison extends Widget_Base {
 	}
     
 	public function get_categories() {
-		return [ 'elematic-elements' ];
+		return [ 'elematic-widgets' ];
 	}
 
 	public function get_keywords() {

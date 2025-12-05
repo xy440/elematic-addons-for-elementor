@@ -23,7 +23,7 @@ class Countdown extends Widget_Base {
     }
 
     public function get_categories() {
-        return [ 'elematic-elements' ];
+        return [ 'elematic-widgets' ];
     }
     public function get_style_depends() {
         return [ 'elematic-countdown' ];

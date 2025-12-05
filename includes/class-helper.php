@@ -740,6 +740,44 @@ class Helper {
     }
 
 
+    /**
+     * Returns a list of CSS timing-function options for controls.
+     *
+     * @return string[] Array of [slug => label], e.g. 'ease-in' => 'Ease In'.
+     */
+    public static function elematic_animation_timings() {
+        return [
+            'ease-default'      => esc_html__( 'Default',        'elematic-addons-for-elementor' ),
+            'linear'            => esc_html__( 'Linear',         'elematic-addons-for-elementor' ),
+            'ease-in'           => esc_html__( 'Ease In',        'elematic-addons-for-elementor' ),
+            'ease-out'          => esc_html__( 'Ease Out',       'elematic-addons-for-elementor' ),
+            'ease-in-out'       => esc_html__( 'Ease In Out',    'elematic-addons-for-elementor' ),
+            'ease-in-quad'      => esc_html__( 'Ease In Quad',   'elematic-addons-for-elementor' ),
+            'ease-in-cubic'     => esc_html__( 'Ease In Cubic',  'elematic-addons-for-elementor' ),
+            'ease-in-quart'     => esc_html__( 'Ease In Quart',  'elematic-addons-for-elementor' ),
+            'ease-in-quint'     => esc_html__( 'Ease In Quint',  'elematic-addons-for-elementor' ),
+            'ease-in-sine'      => esc_html__( 'Ease In Sine',   'elematic-addons-for-elementor' ),
+            'ease-in-expo'      => esc_html__( 'Ease In Expo',   'elematic-addons-for-elementor' ),
+            'ease-in-circ'      => esc_html__( 'Ease In Circ',   'elematic-addons-for-elementor' ),
+            'ease-in-back'      => esc_html__( 'Ease In Back',   'elematic-addons-for-elementor' ),
+            'ease-out-quad'     => esc_html__( 'Ease Out Quad',  'elematic-addons-for-elementor' ),
+            'ease-out-cubic'    => esc_html__( 'Ease Out Cubic', 'elematic-addons-for-elementor' ),
+            'ease-out-quart'    => esc_html__( 'Ease Out Quart', 'elematic-addons-for-elementor' ),
+            'ease-out-quint'    => esc_html__( 'Ease Out Quint', 'elematic-addons-for-elementor' ),
+            'ease-out-sine'     => esc_html__( 'Ease Out Sine',  'elematic-addons-for-elementor' ),
+            'ease-out-expo'     => esc_html__( 'Ease Out Expo',  'elematic-addons-for-elementor' ),
+            'ease-out-circ'     => esc_html__( 'Ease Out Circ',  'elematic-addons-for-elementor' ),
+            'ease-out-back'     => esc_html__( 'Ease Out Back',  'elematic-addons-for-elementor' ),
+            'ease-in-out-quad'  => esc_html__( 'Ease In-Out Quad','elematic-addons-for-elementor' ),
+            'ease-in-out-cubic' => esc_html__( 'Ease In-Out Cubic','elematic-addons-for-elementor' ),
+            'ease-in-out-quart' => esc_html__( 'Ease In-Out Quart','elematic-addons-for-elementor' ),
+            'ease-in-out-quint' => esc_html__( 'Ease In-Out Quint','elematic-addons-for-elementor' ),
+            'ease-in-out-sine'  => esc_html__( 'Ease In-Out Sine','elematic-addons-for-elementor' ),
+            'ease-in-out-expo'  => esc_html__( 'Ease In-Out Expo','elematic-addons-for-elementor' ),
+            'ease-in-out-circ'  => esc_html__( 'Ease In-Out Circ','elematic-addons-for-elementor' ),
+            'ease-in-out-back'  => esc_html__( 'Ease In-Out Back','elematic-addons-for-elementor' ),
+        ];
+    }
 
 
 

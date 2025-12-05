@@ -32,7 +32,7 @@ class Hotspot extends Widget_Base {
         return [ 'elematic-hotspot' ];
     }
     public function get_categories() {
-        return [ 'elematic-elements' ];
+        return [ 'elematic-widgets' ];
     }
 
 	protected function register_controls() {

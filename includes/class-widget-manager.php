@@ -10,6 +10,7 @@ final class WidgetManager {
         'accordion',
         'animated-heading',
         'animated-shape',
+        'banner',
         'button',
         'chart',
         'circle-info',
@@ -19,6 +20,7 @@ final class WidgetManager {
         'countdown',
         'counter',
         'dual-button',
+        'features',
         'flip-box',
         'gallery',
         'grid',
@@ -35,10 +37,12 @@ final class WidgetManager {
         'info-link',
         'lottie',
         'marquee',
+        'post-alter',
         'post-grid',
         'progress-bar',
         'service-list',
         'table',
+        'timeline'
     ];
 
     public function __construct() {

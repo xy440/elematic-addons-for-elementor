@@ -1,0 +1,470 @@
+/* Banner Subtitle */
+.elematic-banner-subtitle {
+  font-size: 18px;
+}
+
+/* Banner Container */
+.elematic-banner {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+/* Banner Background Elements */
+.elematic-banner-bg-image,
+.elematic-banner-bg-overlay,
+.elematic-banner-image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.elematic-banner-image {
+  overflow: hidden;
+}
+
+.elematic-banner-bg-image {
+  z-index: 10;
+  background-size: cover;
+  background-position: 50%;
+}
+
+.elematic-banner-bg-overlay {
+  z-index: 15;
+  -webkit-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+}
+
+/* Banner Content */
+.elematic-banner-content {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Banner Image Position - Right */
+.elematic-banner-image-position-right .elematic-banner {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+/* Banner Image Position - Center */
+.elematic-banner-image-position-center .elematic-banner {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+/* Responsive - Mobile */
+@media screen and (max-width: 640px) {
+  .elematic-banner-style-classic .elematic-banner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  
+  .elematic-banner-style-classic .elematic-banner-image {
+    min-width: auto !important;
+  }
+}
+
+/* Banner Link */
+.elematic-banner-link {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 40;
+}
+
+/* Banner Elements - Display */
+.elematic-banner-badge,
+.elematic-banner-btn,
+.elematic-banner-icon img {
+  display: inline-block;
+}
+
+.elematic-banner-btn-wrap,
+.elematic-banner-description,
+.elematic-banner-icon,
+.elematic-banner-title {
+  width: 100%;
+}
+
+.elematic-banner-btn-icon {
+  margin-left: 5px;
+}
+
+/* Banner Hover Effect */
+.elementor .elementor-widget-elematic-banner .elematic-banner:hover .elematic-banner-bg-image {
+  -webkit-filter: brightness(100%) contrast(100%) saturate(100%) hue-rotate(0deg);
+  filter: brightness(100%) contrast(100%) saturate(100%) hue-rotate(0deg);
+}
+
+/* Banner Badge */
+.elematic-banner-badge {
+  position: absolute;
+  text-align: center;
+  z-index: 35;
+}
+
+.elematic-banner-badge-left {
+  left: 0;
+  right: auto;
+}
+
+.elematic-banner-badge-right {
+  left: auto;
+  right: 0;
+}
+
+/* Badge Style 1 */
+.elematic-banner-badge-style_1 {
+  top: 0;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.elematic-banner-badge-style_1 .elematic-banner-badge-inner {
+  width: 200%;
+}
+
+.elematic-banner-badge-style_1.elematic-banner-badge-right {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+/* Badge Style 2 */
+.elematic-banner-badge-style_2 {
+  top: 0;
+}
+
+.elematic-banner-badge-style_2.elematic-banner-badge-left {
+  -webkit-transform: translateX(-40%) translateY(-40%);
+  -ms-transform: translateX(-40%) translateY(-40%);
+  transform: translateX(-40%) translateY(-40%);
+}
+
+.elematic-banner-badge-style_2.elematic-banner-badge-right {
+  -webkit-transform: translateX(40%) translateY(-40%);
+  -ms-transform: translateX(40%) translateY(-40%);
+  transform: translateX(40%) translateY(-40%);
+}
+
+.elematic-banner-badge-style_2 .elematic-banner-badge-inner {
+  border-radius: 100%;
+}
+
+/* Badge Style 3 */
+.elematic-banner-badge-style_3 {
+  border-right: 5px;
+}
+
+.elematic-banner-badge-style_3.elematic-banner-badge-left {
+  margin-left: -10px;
+}
+
+.elematic-banner-badge-style_3.elematic-banner-badge-right {
+  margin-right: -10px;
+}
+
+.elematic-banner-badge-style_3:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: -5px;
+  width: 0;
+  height: 0;
+  margin-left: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top-style: solid;
+  border-top-width: 10px;
+}
+
+.elematic-banner-badge-style_3 .elematic-banner-badge-inner {
+  position: relative;
+  z-index: 2;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.elematic-banner-badge-style_3.elematic-banner-badge-left:before {
+  left: 5px;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.elematic-banner-badge-style_3.elematic-banner-badge-right:before {
+  right: -5px;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.elematic-banner-badge-style_3.elematic-banner-badge-left .elematic-banner-badge-inner {
+  border-bottom-right-radius: 3px;
+}
+
+.elematic-banner-badge-style_3.elematic-banner-badge-right .elematic-banner-badge-inner {
+  border-bottom-left-radius: 3px;
+}
+
+/* Background Animation - Zoom In */
+.elematic-animation-active .elematic-bg-anim-zoom-in,
+.elematic-animation:hover .elematic-bg-anim-zoom-in,
+.elematic-bg-anim-zoom-out {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+/* Background Animation - Zoom Out */
+.elematic-animation-active .elematic-bg-anim-zoom-out,
+.elematic-animation:hover .elematic-bg-anim-zoom-out {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+/* Background Animation - Move Right */
+.elematic-animation-active .elematic-bg-anim-move-right,
+.elematic-animation:hover .elematic-bg-anim-move-right,
+.elematic-bg-anim-move-left {
+  -webkit-transform: scale(1.2) translateX(8%);
+  -ms-transform: scale(1.2) translateX(8%);
+  transform: scale(1.2) translateX(8%);
+}
+
+/* Background Animation - Move Left */
+.elematic-animation-active .elematic-bg-anim-move-left,
+.elematic-animation:hover .elematic-bg-anim-move-left,
+.elematic-bg-anim-move-right {
+  -webkit-transform: scale(1.2) translateX(-8%);
+  -ms-transform: scale(1.2) translateX(-8%);
+  transform: scale(1.2) translateX(-8%);
+}
+
+/* Background Animation - Move Down */
+.elematic-animation-active .elematic-bg-anim-move-down,
+.elematic-animation:hover .elematic-bg-anim-move-down,
+.elematic-bg-anim-move-up {
+  -webkit-transform: scale(1.2) translateY(8%);
+  -ms-transform: scale(1.2) translateY(8%);
+  transform: scale(1.2) translateY(8%);
+}
+
+/* Background Animation - Move Up */
+.elematic-animation-active .elematic-bg-anim-move-down,
+.elematic-animation-active .elematic-bg-anim-move-up,
+.elematic-animation:hover .elematic-bg-anim-move-down,
+.elematic-animation:hover .elematic-bg-anim-move-up {
+  -webkit-transform: scale(1.2) translateY(-8%);
+  -ms-transform: scale(1.2) translateY(-8%);
+  transform: scale(1.2) translateY(-8%);
+}
+
+/* Border Animation - Bubba & Layla Base */
+.elematic-border-anim-bubba::after,
+.elematic-border-anim-bubba::before,
+.elematic-border-anim-layla::after,
+.elematic-border-anim-layla::before {
+  position: absolute;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
+  -o-transition: opacity 0.35s, transform 0.35s;
+}
+
+.elematic-border-anim-oscar::before,
+.elematic-border-anim-romeo::after,
+.elematic-border-anim-romeo::before {
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  position: absolute;
+  content: '';
+  opacity: 0;
+}
+
+/* Border Animation - Layla Before */
+.elematic-border-anim-layla::before {
+  -webkit-transform: scale(0, 1);
+  -ms-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+/* Border Animation - Layla After */
+.elematic-border-anim-layla::after {
+  -webkit-transform: scale(1, 0);
+  -ms-transform: scale(1, 0);
+  transform: scale(1, 0);
+  -webkit-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+}
+
+/* Border Animation - Active States */
+.elematic-animation-active .elematic-border-anim-bubba::after,
+.elematic-animation-active .elematic-border-anim-bubba::before,
+.elematic-animation-active .elematic-border-anim-chicho::before,
+.elematic-animation-active .elematic-border-anim-layla::after,
+.elematic-animation-active .elematic-border-anim-layla::before,
+.elematic-animation-active .elematic-border-anim-oscar::before,
+.elematic-animation:hover .elematic-border-anim-bubba::after,
+.elematic-animation:hover .elematic-border-anim-bubba::before,
+.elematic-animation:hover .elematic-border-anim-chicho::before,
+.elematic-animation:hover .elematic-border-anim-layla::after,
+.elematic-animation:hover .elematic-border-anim-layla::before,
+.elematic-animation:hover .elematic-border-anim-oscar::before {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+/* Border Animation - Layla After Delay */
+.elematic-animation-active .elematic-border-anim-layla::after,
+.elematic-animation:hover .elematic-border-anim-layla::after {
+  -webkit-transition-delay: 0.15s;
+  -o-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+
+/* Border Animation - Oscar */
+.elematic-border-anim-oscar::before {
+  transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
+  -o-transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+/* Border Animation - Bubba */
+.elematic-border-anim-bubba::before {
+  -webkit-transform: scale(0, 1);
+  -ms-transform: scale(0, 1);
+  transform: scale(0, 1);
+}
+
+.elematic-border-anim-bubba::after {
+  -webkit-transform: scale(1, 0);
+  -ms-transform: scale(1, 0);
+  transform: scale(1, 0);
+}
+
+/* Border Animation - Romeo */
+.elematic-border-anim-romeo::after,
+.elematic-border-anim-romeo::before {
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
+  -o-transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.elematic-animation-active .elematic-border-anim-romeo::before,
+.elematic-animation:hover .elematic-border-anim-romeo::before {
+  opacity: 1;
+  -webkit-transform: translate3d(-50%, -50%, 0) rotate(45deg);
+  transform: translate3d(-50%, -50%, 0) rotate(45deg);
+}
+
+.elematic-animation-active .elematic-border-anim-romeo::after,
+.elematic-animation:hover .elematic-border-anim-romeo::after {
+  opacity: 1;
+  -webkit-transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+  transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+}
+
+/* Border Animation - Chicho */
+.elematic-border-anim-chicho::before {
+  position: absolute;
+  content: '';
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
+  -o-transition: opacity 0.35s, transform 0.35s;
+}
+
+/* Border Animation - Apollo */
+.elematic-border-anim-apollo::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  content: '';
+  -webkit-transition: -webkit-transform 0.6s;
+  transition: transform 0.6s;
+  -o-transition: transform 0.6s;
+  transition: transform 0.6s, -webkit-transform 0.6s;
+  -webkit-transform: scale3d(2.9, 2.4, 1) rotate3d(0, 0, 1, 28deg) translate3d(0, -110%, 0);
+  transform: scale3d(2.9, 2.4, 1) rotate3d(0, 0, 1, 28deg) translate3d(0, -110%, 0);
+}
+
+.elematic-animation-active .elematic-border-anim-apollo::before,
+.elematic-animation:hover .elematic-border-anim-apollo::before {
+  -webkit-transform: scale3d(2.9, 2.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
+  transform: scale3d(2.9, 2.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
+}
+
+/* Border Animation - Jazz */
+.elematic-border-anim-jazz::after {
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
+  -o-transition: opacity 0.35s, transform 0.35s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  opacity: 0;
+  -webkit-transform: rotate3d(0, 0, 1, 45deg) scale3d(1, 0, 1);
+  transform: rotate3d(0, 0, 1, 45deg) scale3d(1, 0, 1);
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+.elematic-animation-active .elematic-border-anim-jazz::after,
+.elematic-animation:hover .elematic-border-anim-jazz::after {
+  opacity: 1;
+  -webkit-transform: rotate3d(0, 0, 1, 45deg) scale3d(1, 1, 1);
+  transform: rotate3d(0, 0, 1, 45deg) scale3d(1, 1, 1);
+}
