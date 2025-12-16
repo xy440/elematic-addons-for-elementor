@@ -1,0 +1,19 @@
+/* #Breadcrumbs
+------------------------------------- */
+.elematic-breadcrumbs {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.elematic-breadcrumbs-separator {
+    margin-right: 10px;
+}
+.elematic-breadcrumbs-icon svg {
+    width: 15px;
+    height: 15px;
+}
+.elematic-breadcrumbs-separator-icon svg {
+    width: 10px;
+    height: 10px;
+}

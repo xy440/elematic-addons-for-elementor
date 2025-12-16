@@ -1,0 +1,94 @@
+/*  #Team
+------------------------------------- */
+.elematic-team-wrap {
+	display: flex;
+	flex-wrap: wrap;
+}
+.elematic-team-container {
+	margin-bottom: 50px;
+	position: relative;
+	padding: 20px;
+}
+.elematic-team-name,
+.elematic-team-position,
+.elematic-team-details,
+.elematic-social-profile {
+	margin-top: 10px;
+}
+.elematic-team-name {
+	margin-bottom: 0;
+	font-size: 20px;
+}
+.elematic-team-position {
+	color: #333;
+}
+.elematic-team-details {
+	color: #444;
+}
+.elematic-team-image {
+	overflow: hidden;
+	position: relative;
+	box-sizing: unset;
+}
+.elematic-social-profile a i,
+.elematic-social-profile a svg {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/*team style 2*/
+.elematic-team-container.style-2 .elematic-social-profile {
+	opacity: 0;
+	transition: all 0.35s ease-in-out;
+}
+.elematic-team-container.style-2:hover .elematic-social-profile {
+	opacity: 1;
+}
+/*team style 3*/
+.elematic-team-container.style-2 .elematic-social-profile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.elematic-team-container.style-3 .elematic-team-content {
+	position: absolute;
+	bottom: 0;
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    left: 0;
+    right: 0;
+}
+.elematic-team-container.style-3 .elematic-team-content {
+	margin: 30px;
+}
+.elematic-team-container.style-3 .elematic-team-details,
+.elematic-team-container.style-3 .elematic-social-profile {
+	opacity: 0;
+	height: 0;
+	transition: all 0.35s ease-in-out;
+}
+.elematic-team-container.style-3:hover .elematic-team-details {
+	opacity: 1;
+	height: auto;
+}
+.elematic-team-container.style-3:hover .elematic-social-profile {
+	opacity: 1;
+	margin-bottom: 20px;
+}
+/*team style 4*/
+.elematic-team-container.style-4 {
+	display: flex;
+	gap: 30px;
+	padding: 30px;
+	background-color: #f7f7f7;
+}
+.elematic-team-container.style-4 .elematic-team-image {
+    border-radius: 100% 100% 0 0;
+}
+
+/* ---------------------------------------------------------
+   EOF
+------------------------------------------------------------ */

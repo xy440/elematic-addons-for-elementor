@@ -17,17 +17,21 @@ class Init {
     private static function elematic_load_dependencies() {
         require_once ELEMATIC_PATH . 'includes/class-plugin-core.php';
         require_once ELEMATIC_PATH . 'includes/class-widget-manager.php';
+        require_once ELEMATIC_PATH . 'includes/class-module-manager.php';
         require_once ELEMATIC_PATH . 'includes/class-helper.php';
         require_once ELEMATIC_PATH . 'includes/class-enqueue.php';
         require_once ELEMATIC_PATH . 'includes/class-ajax-handler.php';
         require_once ELEMATIC_PATH . 'includes/class-image-choose.php';
+        require_once ELEMATIC_PATH . 'base/module-base.php';
 
         new Plugin_Core();
         new Enqueue();
         new Helper();
         new WidgetManager();
+        new ModuleManager();
         new Ajax_Handler();
-        // Don't instantiate Image_Choose here - it's registered via hook
+
+        
     }
 
     private static function elematic_setup_hooks() {

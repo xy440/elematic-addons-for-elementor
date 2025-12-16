@@ -513,7 +513,7 @@ class ContactForm7 extends Widget_Base {
 }
 
 	protected function render() {
-        $settings = $this->get_settings();
+        $settings = $this->get_settings_for_display();
 
         if ( function_exists( 'wpcf7' ) ) {
 		

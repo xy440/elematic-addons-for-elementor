@@ -11,6 +11,7 @@ final class WidgetManager {
         'animated-heading',
         'animated-shape',
         'banner',
+        'breadcrumbs',
         'button',
         'chart',
         'circle-info',
@@ -35,13 +36,18 @@ final class WidgetManager {
         'image-scrolling',
         'image-slide',
         'info-link',
+        'logo',
         'lottie',
         'marquee',
+        'menu',
+        'page-title',
         'post-alter',
         'post-grid',
+        'post-tiled',
         'progress-bar',
         'service-list',
         'table',
+        'team',
         'timeline'
     ];
 

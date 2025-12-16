@@ -514,7 +514,7 @@ class Countdown extends Widget_Base {
     }
 
 	protected function render( ) {
-        $settings = $this->get_settings();
+        $settings = $this->get_settings_for_display();
         $get_due_date =  esc_attr($settings['tx_cd_due_date_time']);
         $timestamp = strtotime( $get_due_date );
         $due_date  = wp_date( 'M d Y G:i:s', $timestamp );

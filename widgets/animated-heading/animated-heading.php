@@ -546,7 +546,7 @@ class AnimatedHeading extends Widget_Base {
 
 	protected function render() {
 
-		$settings = $this->get_settings();
+		$settings = $this->get_settings_for_display();
         $target = $settings['link_url']['is_external'] ? '_blank' : '_self';
         $id = $this->get_id();
         $animated_txt = explode(",", esc_html($settings['animated_txt']) );

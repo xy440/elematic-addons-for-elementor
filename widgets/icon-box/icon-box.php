@@ -843,9 +843,9 @@ class IconBox extends Widget_Base {
 	}
 
 	protected function render() {
-		$settings = $this->get_settings();
-		$target = $settings['ib_link_url']['is_external'] ? '_blank' : '_self';
-		$target_btn = $settings['ib_btn_link']['is_external'] ? '_blank' : '_self';
+		$settings = $this->get_settings_for_display();
+		$target = isset( $settings['ib_link_url']['is_external'] ) && $settings['ib_link_url']['is_external'] ? '_blank' : '_self';
+		$target_btn = isset( $settings['ib_btn_link']['is_external'] ) && $settings['ib_btn_link']['is_external'] ? '_blank' : '_self';
 		$migrated  = isset( $settings['__fa4_migrated']['ib_btn_icon'] );
         $is_new    = empty( $settings['tx_selected_icon'] ) && Icons_Manager::is_migration_allowed();
 

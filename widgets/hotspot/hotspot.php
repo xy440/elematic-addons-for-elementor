@@ -523,7 +523,7 @@ class Hotspot extends Widget_Base {
     }
 
     protected function render() {
-        $settings = $this->get_settings();
+        $settings = $this->get_settings_for_display();
         
        
     ?>

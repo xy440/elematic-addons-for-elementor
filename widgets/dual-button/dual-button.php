@@ -914,7 +914,7 @@ class DualButton extends Widget_Base {
     }
 
     protected function render() {
-        $settings = $this->get_settings();
+        $settings = $this->get_settings_for_display();
         $target_primary = $settings['btn_primary_link_url']['is_external'] ? '_blank' : '_self';
         $target_secondary = $settings['btn_secondary_link_url']['is_external'] ? '_blank' : '_self';
 

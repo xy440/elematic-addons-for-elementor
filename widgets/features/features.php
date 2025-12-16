@@ -678,14 +678,14 @@ class Features extends Widget_Base {
     }
 
     protected function render() {
-        $settings = $this->get_settings();
+        $settings = $this->get_settings_for_display();
         $ft_tiled = ($settings['ft_tiled'] == 'yes') ? 'elematic-ft-tiled' : ''; 
         $paged = Helper::get_current_page();
         $query_args = Helper::setup_query_args( $settings, $paged );
         $post_query = new \WP_Query( $query_args );
         $post_query = Helper::fix_query_offset_pagination( $post_query, $settings );
         $img_hover  = $settings['image_hover'] ? 'elematic-img-zoom' : '';
-        $target_read_more = $settings['ft_read_more_link']['is_external'] ? '_blank' : '_self';
+        $target_read_more = isset( $settings['ft_read_more_link']['is_external'] ) && $settings['ft_read_more_link']['is_external'] ? '_blank' : '_self';
         ?>
 
         <?php if( $settings['ft_source'] == 'dynamic' ) : ?>
@@ -725,7 +725,7 @@ class Features extends Widget_Base {
                         ?>
                     </div>
                     <?php if( 'show' === $settings['ft_read_more'] ): ?>
-                        <a href="<?php echo esc_url( $settings['ft_read_more_link']['url'] ); ?>" class="elematic--read-more" target="<?php echo esc_attr($target_read_more); ?>"><?php echo esc_html($settings['ft_read_more_text']); ?></a>
+                        <a href="<?php echo esc_url( isset( $settings['ft_read_more_link']['url'] ) ? $settings['ft_read_more_link']['url'] : '#' ); ?>" class="elematic--read-more" target="<?php echo esc_attr($target_read_more); ?>"><?php echo esc_html( isset( $settings['ft_read_more_text'] ) ? $settings['ft_read_more_text'] : '' ); ?></a>
                         <?php endif; ?>
                     <?php endif; ?>
 

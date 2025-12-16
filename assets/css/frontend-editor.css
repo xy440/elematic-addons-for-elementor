@@ -1,0 +1,275 @@
+/**
+ * =================================================================
+ * FILE: assets/css/frontend-editor.css
+ * =================================================================
+ * Frontend edit buttons - Direct inline editing (like Elementor Pro)
+ * 
+ * When you click Edit Header/Footer, you're taken directly to the
+ * Elementor editor where you can edit inline on the builder page.
+ */
+
+/* ===== FRONTEND EDIT BUTTONS ===== */
+
+.elematic-frontend-editor {
+    position: relative;
+    z-index: 99999;
+}
+
+.elematic-edit-btn {
+    position: fixed;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: rgba(92, 73, 227, 0.95);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 99999;
+    backdrop-filter: blur(10px);
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.elematic-edit-btn:hover {
+    background: rgba(75, 60, 210, 0.98);
+    transform: translateX(-30px) translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.elematic-edit-btn:active {
+    transform: translateX(-30px) scale(0.96);
+}
+
+.elematic-edit-btn svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    stroke-width: 2;
+}
+
+/* Header Edit Button */
+.elematic-edit-header {
+    top: 24px;
+    right: 24px;
+}
+
+/* Footer Edit Button */
+.elematic-edit-footer {
+    bottom: 24px;
+    right: 24px;
+}
+
+/* Hide from frontend */
+.elematic-edit-header,
+.elematic-edit-footer {
+    display: none !important;
+}
+
+/* Show only when Elementor editor is active */
+.elementor-editor-active .elematic-edit-header,
+.elementor-editor-active .elematic-edit-footer {
+    display: inline-flex !important;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Hide edit buttons on template's own page */
+body.post-type-elematic_template .elematic-edit-header,
+body.post-type-elematic_template .elematic-edit-footer {
+    display: none !important;
+}
+
+/* Hide edit buttons in Elementor editor on template page */
+.elementor-editor-active body.post-type-elematic_template .elematic-edit-header,
+.elementor-editor-active body.post-type-elematic_template .elematic-edit-footer {
+    display: none !important;
+}
+
+/* ===== MOBILE ADJUSTMENTS ===== */
+
+@media (max-width: 768px) {
+    .elematic-edit-btn {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+    
+    .elematic-edit-header {
+        top: 12px;
+        right: 12px;
+    }
+    
+    .elematic-edit-footer {
+        bottom: 12px;
+        right: 12px;
+    }
+}
+
+
+/**
+ * Frontend Styles for Elematic Headers/Footers
+ */
+
+/* Ensure custom header/footer don't inherit theme styles incorrectly */
+.elematic-custom-header,
+.elematic-custom-footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Reset any theme header/footer styles */
+.elematic-custom-header > *,
+.elematic-custom-footer > * {
+    max-width: 100%;
+}
+
+/* Prevent duplicate headers when custom header is enabled */
+body.elematic-has-custom-header #masthead.site-header:not(.elematic-custom-header),
+body.elematic-has-custom-header header.site-header:not(.elematic-custom-header),
+body.elematic-has-custom-header .site-header:not(.elematic-custom-header),
+body.elematic-has-custom-header .wp-block-template-part[data-area="header"],
+body.elematic-has-custom-header .wp-block-template-part header,
+body.elematic-has-custom-header > header:not(.elematic-custom-header),
+body.elematic-has-custom-header .header:not(.elematic-custom-header),
+body.elematic-has-custom-header [role="banner"]:not(.elematic-custom-header) {
+    display: none !important;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+}
+
+/* Prevent duplicate footers when custom footer is enabled */
+body.elematic-has-custom-footer #colophon.site-footer:not(.elematic-custom-footer),
+body.elematic-has-custom-footer footer.site-footer:not(.elematic-custom-footer),
+body.elematic-has-custom-footer .site-footer:not(.elematic-custom-footer),
+body.elematic-has-custom-footer .wp-block-template-part[data-area="footer"],
+body.elematic-has-custom-footer .wp-block-template-part footer,
+body.elematic-has-custom-footer > footer:not(.elematic-custom-footer),
+body.elematic-has-custom-footer .footer:not(.elematic-custom-footer),
+body.elematic-has-custom-footer [role="contentinfo"]:not(.elematic-custom-footer) {
+    display: none !important;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+}
+
+
+
+/* ===== MODAL EDITOR ===== */
+
+.elematic-editor-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999999999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.elematic-editor-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    cursor: pointer;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.elematic-editor-modal-content {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    background: white;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    animation: slideUp 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.elematic-editor-modal-header {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.elematic-editor-close {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #333;
+    padding: 4px 12px;
+    line-height: 1;
+    transition: all 0.2s ease;
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+.elematic-editor-close:hover {
+    color: #000;
+    transform: scale(1.1);
+}
+
+.elematic-editor-close:active {
+    transform: scale(0.95);
+}
+
+.elematic-editor-modal-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .elematic-editor-modal-content {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+

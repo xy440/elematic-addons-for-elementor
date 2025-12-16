@@ -152,10 +152,7 @@ class FlipBox extends Widget_Base {
                 'label' => esc_html__( 'Front Title', 'elematic-addons-for-elementor' ),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default' => esc_html__( 'Ut enim ad minim veniam quis', 'elematic-addons-for-elementor' ),
-                'condition' => [
-                    'fb_front_back' => 'front'
-                ]
+                'default' => esc_html__( 'Ut enim ad minim veniam quis', 'elematic-addons-for-elementor' )
             ]
         );
         $this->add_control( 
@@ -164,10 +161,7 @@ class FlipBox extends Widget_Base {
                 'label' => esc_html__( 'Front Description', 'elematic-addons-for-elementor' ),
                 'type' => Controls_Manager::WYSIWYG,
                 'label_block' => true,
-                'default' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'elematic-addons-for-elementor' ),
-                'condition' => [
-                    'fb_front_back' => 'front'
-                ]
+                'default' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'elematic-addons-for-elementor' )
             ]
         );
         $this->add_control(
@@ -185,11 +179,7 @@ class FlipBox extends Widget_Base {
                         'icon' => 'eicon-ban',
                     ]
                 ],
-                'default' => 'hide',
-                'condition' => [
-                    'fb_front_back' => 'back'
-
-                ]
+                'default' => 'hide'
             ]
         );
         $this->add_control( 
@@ -199,10 +189,7 @@ class FlipBox extends Widget_Base {
                 'label' => esc_html__( 'Back Title', 'elematic-addons-for-elementor' ),
                 'type' => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default' => esc_html__( 'Exercitation ullamco laboris', 'elematic-addons-for-elementor' ),
-                'condition' => [
-                    'fb_front_back' => 'back'
-                ]
+                'default' => esc_html__( 'Exercitation ullamco laboris', 'elematic-addons-for-elementor' )
             ]
         );
         $this->add_control( 
@@ -214,11 +201,7 @@ class FlipBox extends Widget_Base {
                 'placeholder' => 'Example: https://your-site.com',
                 'default'     => [
                         'url' => '',
-                    ],
-                'condition' => [
-                    'fb_front_back' => 'back'
-
-                ]    
+                    ]
             ]
         );
         $this->add_control( 
@@ -227,10 +210,7 @@ class FlipBox extends Widget_Base {
                 'label' => esc_html__( 'Back Description', 'elematic-addons-for-elementor' ),
                 'type' => Controls_Manager::WYSIWYG,
                 'label_block' => true,
-                'default' => esc_html__( 'Suspendisse potenti hasellus euismod libero in neque molestie et elementum libero maximus. Etiam in enim vestibulum suscipit sem quis molestie nibh. Donec ac lacus nec diam gravida pellentesque.', 'elematic-addons-for-elementor' ),
-                'condition' => [
-                    'fb_front_back' => 'back'
-                ]
+                'default' => esc_html__( 'Suspendisse potenti hasellus euismod libero in neque molestie et elementum libero maximus. Etiam in enim vestibulum suscipit sem quis molestie nibh. Donec ac lacus nec diam gravida pellentesque.', 'elematic-addons-for-elementor' )
             ]
         );
         $this->add_control(
@@ -543,8 +523,8 @@ class FlipBox extends Widget_Base {
     }
 
     protected function render( ) {
-        $settings = $this->get_settings();
-        $target = $settings['fb_back_title_link']['is_external'] ? '_blank' : '_self';
+        $settings = $this->get_settings_for_display();
+        $target = isset( $settings['fb_back_title_link']['is_external'] ) && $settings['fb_back_title_link']['is_external'] ? '_blank' : '_self';
     ?>
     
     <div class="elematic-flip-box-wrapper elematic-flip-box-<?php echo esc_attr( $settings['fb_flip_style'] ); ?>">
@@ -553,39 +533,39 @@ class FlipBox extends Widget_Base {
                 <div class="elematic-flip-box-content">
                     <div class="elematic-flip-box-image">
                         <?php 
-                            if ($settings['ib_select'] == 'icon') : 
+                            if ( isset( $settings['ib_select'] ) && $settings['ib_select'] == 'icon' ) : 
                                 Icons_Manager::render_icon( $settings['ib_icon'], [ 'aria-hidden' => 'true' ] );
                             endif;
-                            if ($settings['ib_select'] == 'image') : ?>
+                            if ( isset( $settings['ib_select'] ) && $settings['ib_select'] == 'image' ) : ?>
                                 <?php Group_Control_Image_Size::print_attachment_image_html( $settings, 'image', 'ib_image' ); ?>
                         <?php endif; ?>
                     </div><!-- elematic-flip-box-image -->
-                    <h3 class="elematic-flip-box-title"><?php echo esc_html( $settings['fb_front_title'] ); ?></h3>
-                    <div class="elematic-flip-box-desc"><?php echo wp_kses_post( $settings['fb_front_desc'] ); ?></div>
+                    <h3 class="elematic-flip-box-title"><?php echo esc_html( isset( $settings['fb_front_title'] ) ? $settings['fb_front_title'] : '' ); ?></h3>
+                    <div class="elematic-flip-box-desc"><?php echo wp_kses_post( isset( $settings['fb_front_desc'] ) ? $settings['fb_front_desc'] : '' ); ?></div>
                 </div><!-- elematic-flip-box-content -->
             </div><!-- elematic-flip-box-front-wrap -->
             
             <div class="elematic-flip-box-back-wrap">
                 <div class="elematic-flip-box-content">
-                    <?php if ($settings['fb_back_icon'] == 'show' ) : ?>
+                    <?php if ( isset( $settings['fb_back_icon'] ) && $settings['fb_back_icon'] == 'show' ) : ?>
                     <div class="elematic-flip-box-image">
                         <?php 
-                            if ($settings['ib_select'] == 'icon') : 
+                            if ( isset( $settings['ib_select'] ) && $settings['ib_select'] == 'icon' ) : 
                                 Icons_Manager::render_icon( $settings['ib_icon'], [ 'aria-hidden' => 'true' ] );
                             endif;
-                            if ($settings['ib_select'] == 'image') : ?>
+                            if ( isset( $settings['ib_select'] ) && $settings['ib_select'] == 'image' ) : ?>
                                 <?php Group_Control_Image_Size::print_attachment_image_html( $settings, 'image', 'ib_image' ); ?>
                         <?php endif; ?>
                     </div><!-- elematic-flip-box-image -->
                     <?php endif; ?>
-                    <?php if(!empty($settings['fb_back_title_link']['url'])) : ?>    
+                    <?php if( isset( $settings['fb_back_title_link']['url'] ) && !empty($settings['fb_back_title_link']['url'])) : ?>    
                         <a class="ex-title" href="<?php echo esc_url($settings['fb_back_title_link']['url']); ?>" target="<?php echo esc_attr($target); ?>">
-                            <h3 class="elematic-flip-box-title"><?php echo esc_html( $settings['fb_back_title'] ); ?></h3>
+                            <h3 class="elematic-flip-box-title"><?php echo esc_html( isset( $settings['fb_back_title'] ) ? $settings['fb_back_title'] : '' ); ?></h3>
                         </a>
                     <?php else :  ?>
-                        <h3 class="elematic-flip-box-title"><?php echo esc_html( $settings['fb_back_title'] ); ?></h3>
+                        <h3 class="elematic-flip-box-title"><?php echo esc_html( isset( $settings['fb_back_title'] ) ? $settings['fb_back_title'] : '' ); ?></h3>
                     <?php endif; ?>
-                    <div class="elematic-flip-box-desc"><?php echo wp_kses_post( $settings['fb_back_desc'] ); ?></div>
+                    <div class="elematic-flip-box-desc"><?php echo wp_kses_post( isset( $settings['fb_back_desc'] ) ? $settings['fb_back_desc'] : '' ); ?></div>
                 </div><!-- elematic-flip-box-content -->
             </div><!-- elematic-flip-box-back-wrap -->
         </div><!-- elematic-flip-box-container -->

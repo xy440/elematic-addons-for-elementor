@@ -444,12 +444,12 @@ class ImageHover extends Widget_Base {
 	}
 
 	protected function render() {
-		$settings = $this->get_settings();
+		$settings = $this->get_settings_for_display();
 		if ( empty( $settings['image']['url'] ) ) {
 			return;
 		}
 		// $this->add_render_attribute( 'image', 'src', $settings['ih_image']['url'] );
-		$target = $settings['ih_link_url']['is_external'] ? '_blank' : '_self';
+		$target = isset( $settings['ih_link_url']['is_external'] ) && $settings['ih_link_url']['is_external'] ? '_blank' : '_self';
 
 
 		?>	
@@ -460,16 +460,16 @@ class ImageHover extends Widget_Base {
             <div class="elematic-ih-content">
             	<div class="elematic-ih-inner-content">
 		            <div class="elematic-ih-title-wrap">
-			            <?php if($settings['ih_link'] == 'yes') : ?>
-			            <a class="elematic-ih-title-link" href="<?php echo esc_url($settings['ih_link_url']['url']); ?>" target="<?php echo esc_attr($target); ?>">
-						<<?php echo esc_attr( $settings['ih_html_tag'] ); ?> class="elematic-ih-title"><?php echo esc_html( $settings['ih_title'] ); ?></<?php echo esc_attr( $settings['ih_html_tag'] ); ?>>
+			            <?php if( isset( $settings['ih_link'] ) && $settings['ih_link'] == 'yes' ) : ?>
+			            <a class="elematic-ih-title-link" href="<?php echo esc_url( isset( $settings['ih_link_url']['url'] ) ? $settings['ih_link_url']['url'] : '' ); ?>" target="<?php echo esc_attr($target); ?>">
+						<<?php echo esc_attr( isset( $settings['ih_html_tag'] ) ? $settings['ih_html_tag'] : 'h2' ); ?> class="elematic-ih-title"><?php echo esc_html( isset( $settings['ih_title'] ) ? $settings['ih_title'] : '' ); ?></<?php echo esc_attr( isset( $settings['ih_html_tag'] ) ? $settings['ih_html_tag'] : 'h2' ); ?>>
 						</a>
 						<?php else : ?>
-						<<?php echo esc_attr( $settings['ih_html_tag'] ); ?> class="elematic-ih-title"><?php echo esc_html( $settings['ih_title'] ); ?></<?php echo esc_attr( $settings['ih_html_tag'] ); ?>>
+						<<?php echo esc_attr( isset( $settings['ih_html_tag'] ) ? $settings['ih_html_tag'] : 'h2' ); ?> class="elematic-ih-title"><?php echo esc_html( isset( $settings['ih_title'] ) ? $settings['ih_title'] : '' ); ?></<?php echo esc_attr( isset( $settings['ih_html_tag'] ) ? $settings['ih_html_tag'] : 'h2' ); ?>>
 						<?php endif; ?>
 					</div><!-- elematic-ih-title-wrap -->
 					<div class="elematic-ih-desc">
-						<?php echo wp_kses_post( $settings['ih_desc'] ); ?>
+						<?php echo wp_kses_post( isset( $settings['ih_desc'] ) ? $settings['ih_desc'] : '' ); ?>
 					</div>
 				</div><!-- elematic-ih-inner-content -->
 			</div><!-- elematic-ih-content-wrap -->

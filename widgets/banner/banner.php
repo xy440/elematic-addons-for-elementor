@@ -1875,161 +1875,157 @@ class Banner extends Widget_Base {
 	}
 
 	protected function render() {
-		$settings = $this->get_settings();
+    $settings = $this->get_settings_for_display();
+    
+    $image_src = isset( $settings['image']['id'] ) ? Group_Control_Image_Size::get_attachment_image_src( $settings['image']['id'], 'image_size', $settings ) : '';
+    $content_image_src = isset( $settings['content_image']['id'] ) ? Group_Control_Image_Size::get_attachment_image_src( $settings['content_image']['id'], 'content_image_size', $settings ) : '';
 
-		if ( $settings['badge_style'] !== 'none' && ! empty( $settings['badge_title'] ) ) :
+    if ( ! $image_src && isset( $settings['image']['url'] ) ) {
+        $image_src = $settings['image']['url'];
+    }
 
-			$this->add_render_attribute( 'elematic-banner-badge-attr', 'class', 'elematic-banner-badge elematic-banner-badge-'. $settings[ 'badge_style'] );
-			if ( ! empty( $settings['badge_hr_position'] ) ) :
-				$this->add_render_attribute( 'elematic-banner-badge-attr', 'class', 'elematic-banner-badge-'. $settings['badge_hr_position'] );
-			endif; ?>
+    if ( ! $content_image_src && isset( $settings['content_image']['url'] ) ) {
+        $content_image_src = $settings['content_image']['url'];
+    }
 
-			<div <?php $this->print_render_attribute_string( 'elematic-banner-badge-attr' ); ?>>
-				<div class="elematic-banner-badge-inner"><?php echo esc_html($settings['badge_title']); ?></div>
-			</div>
-		<?php endif;
-		
-		$image_src = Group_Control_Image_Size::get_attachment_image_src( $settings['image']['id'], 'image_size', $settings );
-		$content_image_src = Group_Control_Image_Size::get_attachment_image_src( $settings['content_image']['id'], 'content_image_size', $settings );
+    $content_btn_element = 'div';
+    $content_link = isset( $settings['content_link']['url'] ) ? $settings['content_link']['url'] : '';
 
-		if ( ! $image_src ) {
-			$image_src = $settings['image']['url'];
-		}
+    if ( '' !== $content_link ) {
 
-		if ( ! $content_image_src ) {
-			$content_image_src = $settings['content_image']['url'];
-		}
+        $content_btn_element = 'a';
 
-		$content_btn_element = 'div';
-		$content_link = $settings['content_link']['url'];
+        $this->add_render_attribute( 'link_attribute', 'href', $settings['content_link']['url'] );
 
-		if ( '' !== $content_link ) {
+        if ( isset( $settings['content_link']['is_external'] ) && $settings['content_link']['is_external'] ) {
+            $this->add_render_attribute( 'link_attribute', 'target', '_blank' );
+        }
 
-			$content_btn_element = 'a';
+        if ( isset( $settings['content_link']['nofollow'] ) && $settings['content_link']['nofollow'] ) {
+            $this->add_render_attribute( 'link_attribute', 'nofollow', '' );
+        }
+    }
 
-			$this->add_render_attribute( 'link_attribute', 'href', $settings['content_link']['url'] );
+    $this->add_render_attribute( 'title_attribute', 'class', 'elematic-banner-title' );
+    $this->add_render_attribute( 'description_attribute', 'class', 'elematic-banner-description' );
+    $this->add_render_attribute( 'btn_attribute', 'class', 'elematic-banner-btn-wrap' );
+    $this->add_render_attribute( 'icon_attribute', 'class', 'elematic-banner-icon' );
 
-			if ( $settings['content_link']['is_external'] ) {
-				$this->add_render_attribute( 'link_attribute', 'target', '_blank' );
-			}
+    ?>
 
-			if ( $settings['content_link']['nofollow'] ) {
-				$this->add_render_attribute( 'link_attribute', 'nofollow', '' );
-			}
-		}
+    <div class="elematic-banner elematic-animation">
 
-		$this->add_render_attribute( 'title_attribute', 'class', 'elematic-banner-title' );
-		$this->add_render_attribute( 'description_attribute', 'class', 'elematic-banner-description' );
-		$this->add_render_attribute( 'btn_attribute', 'class', 'elematic-banner-btn-wrap' );
-		$this->add_render_attribute( 'icon_attribute', 'class', 'elematic-banner-icon' );
+        <?php if ( 'box' === $settings['content_link_type'] ): ?>
+        <a class="elematic-banner-link" <?php $this->print_render_attribute_string( 'link_attribute' ); ?>></a>	
+        <?php endif; ?>
+            
+        <?php if ( $image_src ) : ?>
+            <div class="elematic-banner-image">
+                <div class="elematic-banner-bg-image elematic-bg-anim-<?php echo esc_attr($settings['image_animation']); ?> wpr-anim-timing-<?php echo esc_attr( $settings['image_animation_timing'] ); ?>" style="background-image:url(<?php echo esc_url( $image_src ); ?>);"></div>
+                <div class="elematic-banner-bg-overlay elematic-border-anim-<?php echo esc_attr($settings['border_animation']); ?>"></div>
+            </div>
+        <?php endif; ?>
+        
+        <div class="elematic-banner-content">
 
+            <?php if ( isset( $settings['content_icon_type'] ) && 'none' !== $settings['content_icon_type'] ) : ?>
+            <div <?php $this->print_render_attribute_string('icon_attribute'); ?>>
+                <?php if ( 'icon' === $settings['content_icon_type'] && isset( $settings['content_icon']['value'] ) && '' !== $settings['content_icon']['value'] ) : ?>
+                    <i class="<?php echo esc_attr( $settings['content_icon']['value'] ); ?>"></i>
+                <?php elseif ( 'image' === $settings['content_icon_type'] && $content_image_src ) : ?>
+                    <img src="<?php echo esc_url( $content_image_src ); ?>" >
+                <?php endif; ?>
+            </div>
+            <?php endif; ?>
 
-		?>
+            <?php if ( isset( $settings['content_subtitle'] ) && '' !== $settings['content_subtitle'] ) : 
+                $subtitle_tag = isset( $settings['content_subtitle_tag'] ) ? $settings['content_subtitle_tag'] : 'p';
+                echo '<'. esc_attr($subtitle_tag) .' class="elematic-banner-subtitle">';
+            ?>
+                    <?php echo wp_kses_post($settings['content_subtitle']); ?>	
+            <?php 
+                echo '</'. esc_attr($subtitle_tag) .'>';
+                endif; ?>
 
-		<div class="elematic-banner elematic-animation">
+            <?php
 
-			<?php if ( 'box' === $settings['content_link_type'] ): ?>
-			<a class="elematic-banner-link" <?php $this->print_render_attribute_string( 'link_attribute' ); ?>></a>	
-			<?php endif; ?>
-				
-			<?php if ( $image_src ) : ?>
-				<div class="elematic-banner-image">
-					<div class="elematic-banner-bg-image elematic-bg-anim-<?php echo esc_attr($settings['image_animation']); ?> wpr-anim-timing-<?php echo esc_attr( $settings['image_animation_timing'] ); ?>" style="background-image:url(<?php echo esc_url( $image_src ); ?>);"></div>
-					<div class="elematic-banner-bg-overlay elematic-border-anim-<?php echo esc_attr($settings['border_animation']); ?>"></div>
-				</div>
-			<?php endif; ?>
-			
-			<div class="elematic-banner-content">
+            if ( isset( $settings['content_title'] ) && '' !== $settings['content_title'] ) {
 
-				<?php if ( 'none' !== $settings['content_icon_type'] ) : ?>
-				<div <?php $this->print_render_attribute_string('icon_attribute'); ?>>
-					<?php if ( 'icon' === $settings['content_icon_type'] && '' !== $settings['content_icon']['value'] ) : ?>
-						<i class="<?php echo esc_attr( $settings['content_icon']['value'] ); ?>"></i>
-					<?php elseif ( 'image' === $settings['content_icon_type'] && $content_image_src ) : ?>
-						<img src="<?php echo esc_url( $content_image_src ); ?>" >
-					<?php endif; ?>
-				</div>
-				<?php endif; ?>
+                // open tag with attributes printed separately to satisfy PHPCS
+                $title_tag = isset( $settings['content_title_tag'] ) ? $settings['content_title_tag'] : 'h2';
+                echo '<' . esc_attr( $title_tag ) . ' ';
+                $this->print_render_attribute_string( 'title_attribute' );
+                echo '>';
 
-				<?php if ( '' !== $settings['content_subtitle'] ) : 
-					echo '<'. esc_attr($settings['content_subtitle_tag']) .' class="elematic-banner-subtitle">';
-				?>
-						<?php echo wp_kses_post($settings['content_subtitle']); ?>	
-				<?php 
-					echo '</'. esc_attr($settings['content_subtitle_tag']) .'>';
-					endif; ?>
+                if ( isset( $settings['content_link_type'] ) && ('title' === $settings['content_link_type'] || 'btn-title' === $settings['content_link_type']) ) {
+                    echo '<a ';
+                    $this->print_render_attribute_string( 'link_attribute' );
+                    echo '>';
+                }
 
-				<?php
+                echo '<span>' . wp_kses_post( $settings['content_title'] ) . '</span>';
 
-				if ( '' !== $settings['content_title'] ) {
+                if ( isset( $settings['content_link_type'] ) && ('title' === $settings['content_link_type'] || 'btn-title' === $settings['content_link_type']) ) {
+                    echo '</a>';
+                }
 
-				    // open tag with attributes printed separately to satisfy PHPCS
-				    echo '<' . esc_attr( $settings['content_title_tag'] ) . ' ';
-				    $this->print_render_attribute_string( 'title_attribute' );
-				    echo '>';
+                echo '</' . esc_attr( $title_tag ) . '>';
+            }
 
-				    if ( 'title' === $settings['content_link_type'] || 'btn-title' === $settings['content_link_type'] ) {
-				        echo '<a ';
-				        $this->print_render_attribute_string( 'link_attribute' );
-				        echo '>';
-				    }
+            ?>
 
-				    echo '<span>' . wp_kses_post( $settings['content_title'] ) . '</span>';
+            <?php if ( isset( $settings['content_description'] ) && '' !== $settings['content_description'] ) : ?>
+                <div <?php $this->print_render_attribute_string( 'description_attribute' ); ?>>
+                    <?php echo '<p>'. wp_kses_post($settings['content_description']) .'</p>'; ?>	
+                </div>						
+            <?php endif; ?>
 
-				    if ( 'title' === $settings['content_link_type'] || 'btn-title' === $settings['content_link_type'] ) {
-				        echo '</a>';
-				    }
+            <?php if ( ('btn' === $settings['content_link_type'] || 'btn-title' === $settings['content_link_type']) && isset( $settings['content_btn_text'] ) && ('' !== $settings['content_btn_text'] ) ) : ?>
+                <div <?php $this->print_render_attribute_string( 'btn_attribute' ); ?>>
+                    <<?php echo esc_html($content_btn_element); ?> class="elematic-banner-btn elementor-animation-<?php echo esc_attr($settings['btn_hover_animation']); ?>" <?php $this->print_render_attribute_string( 'link_attribute' ); ?>>
 
-				    echo '</' . esc_attr( $settings['content_title_tag'] ) . '>';
-				}
+                        <?php if ( isset( $settings['content_btn_icon_position'] ) && $settings['content_btn_icon_position'] == 'before' ) : ?>
+                            <span class="elematic-banner-btn-icon elematic-banner-btn-icon-position-before">
+                                <i class="<?php echo isset( $settings['content_btn_icon']['value'] ) ? esc_attr( $settings['content_btn_icon']['value'] ) : ''; ?>"></i>
+                            </span>
+                            <span class="elematic-banner-btn-text"><?php echo esc_html($settings['content_btn_text']); ?></span>
+                        <?php elseif ( isset( $settings['content_btn_icon_position'] ) && $settings['content_btn_icon_position'] == 'after' ) : ?>
+                            <span class="elematic-banner-btn-text"><?php echo esc_html($settings['content_btn_text']); ?></span>
+                            <span class="elematic-banner-btn-icon elematic-banner-btn-icon-position-after">
+                                <i class="<?php echo isset( $settings['content_btn_icon']['value'] ) ? esc_attr( $settings['content_btn_icon']['value'] ) : ''; ?>"></i>
+                            </span>
+                        <?php else : ?>
+                            <span class="elematic-banner-btn-text"><?php echo esc_html($settings['content_btn_text']); ?></span>
+                        <?php endif; ?>
+                    </<?php echo esc_html($content_btn_element); ?>>
+                </div>	
+            <?php endif; ?>
+        </div>
 
-				?>
+        <?php 
+// Badge should ONLY be rendered here, inside the banner wrapper
+if ( isset( $settings['badge_style'] ) && ! empty( $settings['badge_style'] ) && $settings['badge_style'] !== 'none' && ! empty( $settings['badge_title'] ) ) :
+    
+    $badge_style = sanitize_text_field( $settings['badge_style'] );
+    $badge_position = isset( $settings['badge_hr_position'] ) ? sanitize_text_field( $settings['badge_hr_position'] ) : '';
+    
+    $badge_attr_key = 'elematic-banner-badge-attr';
+    $badge_classes = 'elematic-banner-badge elematic-banner-badge-' . $badge_style;
+    
+    if ( ! empty( $badge_position ) ) {
+        $badge_classes .= ' elematic-banner-badge-' . $badge_position;
+    }
+    
+    $this->add_render_attribute( $badge_attr_key, 'class', $badge_classes );
+    ?>
 
-				<?php if ( '' !== $settings['content_description'] ) : ?>
-					<div <?php $this->print_render_attribute_string( 'description_attribute' ); ?>>
-						<?php echo '<p>'. wp_kses_post($settings['content_description']) .'</p>'; ?>	
-					</div>						
-				<?php endif; ?>
+    <div <?php $this->print_render_attribute_string( $badge_attr_key ); ?>>
+        <div class="elematic-banner-badge-inner"><?php echo esc_html( $settings['badge_title'] ); ?></div>
+    </div>
+<?php endif; ?>
+    </div>
 
-				<?php if ( ('btn' === $settings['content_link_type'] || 'btn-title' === $settings['content_link_type']) && ('' !== $settings['content_btn_text'] ) ) : ?>
-					<div <?php $this->print_render_attribute_string( 'btn_attribute' ); ?>>
-						<<?php echo esc_html($content_btn_element); ?> class="elematic-banner-btn elementor-animation-<?php echo esc_attr($settings['btn_hover_animation']); ?>" <?php $this->print_render_attribute_string( 'link_attribute' ); ?>>
-
-							<?php if ( $settings['content_btn_icon_position'] == 'before' ) : ?>
-							<span class="elematic-banner-btn-icon elematic-banner-btn-icon-position-before">
-								<i class="<?php echo esc_attr( $settings['content_btn_icon']['value'] ); ?>"></i>
-							</span>
-							<span class="elematic-banner-btn-text"><?php echo esc_html($settings['content_btn_text']); ?></span>		
-							<?php endif; ?>
-
-							
-							<?php if ( $settings['content_btn_icon_position'] == 'after' ) : ?>
-							<span class="elematic-banner-btn-text"><?php echo esc_html($settings['content_btn_text']); ?></span>
-							<span class="elematic-banner-btn-icon elematic-banner-btn-icon-position-after">
-								<i class="<?php echo esc_attr( $settings['content_btn_icon']['value'] ); ?>"></i>
-							</span>
-							<?php endif; ?>
-						</<?php echo esc_html($content_btn_element); ?>>
-					</div>	
-				<?php endif; ?>
-			</div>
-
-			<?php 
-
-			if ( $settings['badge_style'] !== 'none' && ! empty( $settings['badge_title'] ) ) :
-
-			$this->add_render_attribute( 'elematic-banner-badge-attr', 'class', 'elematic-banner-badge elematic-banner-badge-'. $settings[ 'badge_style'] );
-			if ( ! empty( $settings['badge_hr_position'] ) ) :
-				$this->add_render_attribute( 'elematic-banner-badge-attr', 'class', 'elematic-banner-badge-'. $settings['badge_hr_position'] );
-			endif; ?>
-
-			<div <?php $this->print_render_attribute_string( 'elematic-banner-badge-attr' ); ?>>
-				<div class="elematic-banner-badge-inner"><?php echo esc_html($settings['badge_title']); ?></div>
-			</div>
-		<?php endif; ?>
-		</div>
-
-		
-<?php } //render()
+    <?php
+} //render()
 
 } // class

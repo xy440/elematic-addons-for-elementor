@@ -1,0 +1,558 @@
+/**
+ * =================================================================
+ * FILE: assets/css/admin-dashboard.css
+ * =================================================================
+ * Modern, clean admin interface styling
+ */
+
+/* =================================================================
+   Variables & Reset
+   ================================================================= */
+:root {
+    --elematic-primary: #6C5CE7;
+    --elematic-primary-hover: #5F4FD4;
+    --elematic-success: #00B894;
+    --elematic-danger: #FF7675;
+    --elematic-warning: #FDCB6E;
+    --elematic-bg: #F8F9FA;
+    --elematic-card: #FFFFFF;
+    --elematic-border: #E9ECEF;
+    --elematic-text: #2D3436;
+    --elematic-text-muted: #636E72;
+    --elematic-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --elematic-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.1);
+    --elematic-radius: 8px;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+/* =================================================================
+   Main Dashboard
+   ================================================================= */
+.elematic-dashboard {
+    margin: -20px -20px 0 -12px;
+    background: var(--elematic-bg);
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+/* =================================================================
+   Header
+   ================================================================= */
+.elematic-header {
+    background: var(--elematic-card);
+    border-bottom: 1px solid var(--elematic-border);
+    padding: 32px 40px;
+    margin-bottom: 32px;
+}
+
+.elematic-header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.elematic-header h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--elematic-text);
+}
+
+.elematic-header p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--elematic-text-muted);
+}
+
+/* =================================================================
+   Loading State
+   ================================================================= */
+.elematic-loading {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.elematic-spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 20px;
+    border: 3px solid var(--elematic-border);
+    border-top-color: var(--elematic-primary);
+    border-radius: 50%;
+    animation: elematic-spin 0.8s linear infinite;
+}
+
+@keyframes elematic-spin {
+    to { transform: rotate(360deg); }
+}
+
+.elematic-loading p {
+    color: var(--elematic-text-muted);
+    font-size: 14px;
+}
+
+/* =================================================================
+   Content Area
+   ================================================================= */
+.elematic-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* =================================================================
+   Section
+   ================================================================= */
+.elematic-section {
+    margin-bottom: 48px;
+}
+
+.elematic-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.elematic-section-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--elematic-text);
+}
+
+.elematic-icon {
+    font-size: 24px;
+}
+
+.elematic-count {
+    padding: 4px 12px;
+    background: var(--elematic-bg);
+    border-radius: 20px;
+    font-size: 13px;
+    color: var(--elematic-text-muted);
+    font-weight: 500;
+}
+
+/* =================================================================
+   Templates List
+   ================================================================= */
+.elematic-templates-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* =================================================================
+   Template Card
+   ================================================================= */
+.elematic-template-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: var(--elematic-card);
+    border: 1px solid var(--elematic-border);
+    border-radius: var(--elematic-radius);
+    box-shadow: var(--elematic-shadow);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.elematic-template-card:hover {
+    box-shadow: var(--elematic-shadow-hover);
+    transform: translateY(-2px);
+}
+
+
+
+/* Template Info */
+.elematic-template-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.elematic-template-info h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--elematic-text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.elematic-template-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+}
+
+.elematic-condition-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background: #EEF2FF;
+    color: var(--elematic-primary);
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.elematic-condition-badge svg {
+    width: 12px;
+    height: 12px;
+}
+
+
+
+/* Template Actions */
+.elematic-template-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* =================================================================
+   Buttons
+   ================================================================= */
+.elematic-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.elematic-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+}
+
+.elematic-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.elematic-btn svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Primary Button */
+.elematic-btn-primary {
+    background: var(--elematic-primary);
+    color: white;
+}
+
+.elematic-btn-primary:hover:not(:disabled) {
+    background: var(--elematic-primary-hover);
+}
+
+/* Secondary Button */
+.elematic-btn-secondary {
+    background: var(--elematic-bg);
+    color: var(--elematic-text);
+}
+
+.elematic-btn-secondary:hover:not(:disabled) {
+    background: #DEE2E6;
+}
+
+/* Conditions Button */
+.elematic-btn-conditions {
+    background: #EEF2FF;
+    color: var(--elematic-primary);
+}
+
+.elematic-btn-conditions:hover:not(:disabled) {
+    background: #E0E7FF;
+}
+
+/* Danger Button */
+.elematic-btn-danger {
+    background: #FFE5E5;
+    color: var(--elematic-danger);
+    padding: 8px;
+}
+
+.elematic-btn-danger:hover:not(:disabled) {
+    background: var(--elematic-danger);
+    color: white;
+}
+
+/* =================================================================
+   Empty State
+   ================================================================= */
+.elematic-empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--elematic-card);
+    border: 2px dashed var(--elematic-border);
+    border-radius: var(--elematic-radius);
+}
+
+.elematic-empty-state svg {
+    margin-bottom: 20px;
+}
+
+.elematic-empty-state p {
+    margin: 0 0 20px;
+    font-size: 15px;
+    color: var(--elematic-text-muted);
+}
+
+/* =================================================================
+   Modal
+   ================================================================= */
+.elematic-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100000;
+    padding: 20px;
+}
+
+.elematic-modal {
+    background: var(--elematic-card);
+    border-radius: var(--elematic-radius);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.elematic-modal-large {
+    max-width: 700px;
+}
+
+.elematic-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--elematic-border);
+}
+
+.elematic-modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--elematic-text);
+}
+
+.elematic-modal-close {
+    background: none;
+    border: none;
+    color: var(--elematic-text-muted);
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    transition: color 0.2s ease;
+}
+
+.elematic-modal-close:hover {
+    color: var(--elematic-text);
+}
+
+.elematic-modal-body {
+    padding: 32px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.elematic-modal-description {
+    margin: 0 0 24px;
+    padding: 16px;
+    background: var(--elematic-bg);
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--elematic-text-muted);
+    line-height: 1.6;
+}
+
+.elematic-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 20px 32px;
+    border-top: 1px solid var(--elematic-border);
+}
+
+/* =================================================================
+   Forms
+   ================================================================= */
+.elematic-form-group {
+    margin-bottom: 24px;
+}
+
+.elematic-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--elematic-text);
+}
+
+.elematic-form-group small {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--elematic-text-muted);
+}
+
+.elematic-input,
+.elematic-select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--elematic-border);
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--elematic-text);
+    transition: all 0.2s ease;
+}
+
+.elematic-input:focus,
+.elematic-select:focus {
+    outline: none;
+    border-color: var(--elematic-primary);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+}
+
+/* Radio Group */
+.elematic-radio-group {
+    display: flex;
+    gap: 16px;
+}
+
+.elematic-radio {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border: 2px solid var(--elematic-border);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.elematic-radio:hover {
+    border-color: var(--elematic-primary);
+    background: #F8F9FF;
+}
+
+.elematic-radio input[type="radio"] {
+    margin: 0;
+    cursor: pointer;
+}
+
+.elematic-radio input[type="radio"]:checked + span {
+    color: var(--elematic-primary);
+    font-weight: 600;
+}
+
+.elematic-radio:has(input:checked) {
+    border-color: var(--elematic-primary);
+    background: #EEF2FF;
+}
+/* Add at the end of the file */
+
+
+
+/* Inactive template styling */
+.elematic-template-card:has(.elematic-condition-badge:contains("Inactive")) {
+    opacity: 0.6;
+    border-left: 3px solid var(--elematic-warning);
+}
+/* =================================================================
+   Notification
+   ================================================================= */
+.elematic-notification {
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    padding: 16px 24px;
+    background: var(--elematic-success);
+    color: white;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 100001;
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.elematic-notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* =================================================================
+   Responsive
+   ================================================================= */
+@media (max-width: 1024px) {
+    .elematic-dashboard {
+        margin: -20px -10px 0 -10px;
+    }
+    
+    .elematic-header,
+    .elematic-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .elematic-template-card {
+        flex-wrap: wrap;
+    }
+    
+    .elematic-template-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 768px) {
+    .elematic-header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    
+    .elematic-template-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .elematic-modal {
+        max-width: 100%;
+    }
+    
+    .elematic-radio-group {
+        flex-direction: column;
+    }
+}
