@@ -3,7 +3,7 @@
  * Plugin Name: Elematic — Addons for Elementor
  * Plugin URI: https://themes.network/elematic/
  * Description: Lightweight and blazing fast Elementor widgets.
- * Version: 1.5
+ * Version: 1.6
  * Text Domain: elematic-addons-for-elementor
  * Domain Path: /languages
  * Author: Anwar Hossain
@@ -18,7 +18,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'ELEMATIC_VERSION', '1.5' );
+define( 'ELEMATIC_VERSION', '1.6' );
 define( 'ELEMATIC_PATH', plugin_dir_path( __FILE__ ) );
 define( 'ELEMATIC_URL', plugin_dir_url( __FILE__ ) );
 

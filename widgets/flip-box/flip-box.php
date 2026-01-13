@@ -126,26 +126,6 @@ class FlipBox extends Widget_Base {
                 ]
             ]
         );
-        $this->add_control(
-            'fb_front_back',
-            [
-                'label' => esc_html__( 'Front / Back', 'elematic-addons-for-elementor' ),
-                'type' => Controls_Manager::CHOOSE,
-                'label_block' => false,
-                'options' => [
-                    'front' => [
-                        'title' => esc_html__( 'Front Content', 'elematic-addons-for-elementor' ),
-                        'icon' => 'fa fa-reply',
-                    ],
-                    'back' => [
-                        'title' => esc_html__( 'Back Content', 'elematic-addons-for-elementor' ),
-                        'icon' => 'fa fa-share',
-                    ],
-                ],
-                'default' => 'front',
-                'separator' => 'before',
-            ]
-        );
         $this->add_control( 
             'fb_front_title',
             [
@@ -373,6 +353,7 @@ class FlipBox extends Widget_Base {
                 
                 'selectors' => [
                     '{{WRAPPER}} .elematic-flip-box-image i' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .elematic-flip-box-image svg' => 'fill: {{VALUE}};',
                 ],
             ]
         );

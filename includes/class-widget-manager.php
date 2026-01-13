@@ -2,6 +2,8 @@
 
 namespace Elematic;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 use Elementor\Widgets_Manager;
 
 final class WidgetManager {

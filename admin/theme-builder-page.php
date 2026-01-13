@@ -1,10 +1,17 @@
-<!-- 
-=================================================================
-FILE: admin/theme-builder-page.php
-=================================================================
-This is the main admin page for Theme Builder
-Uses Alpine.js for interactivity
--->
+<?php
+
+/***
+ * 
+ * 
+ * =================================================================
+ * FILE: admin/theme-builder-page.php
+ * =================================================================
+ * This is the main admin page for Theme Builder
+ * Uses Alpine.js for interactivity
+*/
+
+if ( ! defined( 'ABSPATH' ) ) exit;
+?>
 
 <div class="elematic-dashboard" x-data="themeBuilder()" x-init="init()">
     

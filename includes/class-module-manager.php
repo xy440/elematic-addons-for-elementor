@@ -1,6 +1,8 @@
 <?php
 namespace Elematic;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 final class ModuleManager {
 	/**
 	 * @var Module_Base[]

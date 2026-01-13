@@ -668,6 +668,7 @@ class Timeline extends Widget_Base {
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .elematic-timeline-icon i' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .elematic-timeline-icon svg' => 'fill: {{VALUE}};',
                 ],
                 
             ]

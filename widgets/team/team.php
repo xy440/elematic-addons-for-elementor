@@ -238,7 +238,7 @@ class Team extends Widget_Base {
                     ],
                     [
                         'social_icon' => [
-                            'value' => 'fab fa-twitter',
+                            'value' => 'fab fa-x-twitter',
                             'library' => 'fa-brands',
                         ],
                         'link' => [
@@ -742,6 +742,7 @@ class Team extends Widget_Base {
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .elematic-social-profile a i' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .elematic-social-profile a svg' => 'fill: {{VALUE}};',
                 ],
                 
                 'separator' => 'before',
@@ -758,13 +759,31 @@ class Team extends Widget_Base {
                 ],
             ]
         );
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-              [
-                   'name'    => 'sp_typography',
-                   'selector'  => '{{WRAPPER}} .elematic-social-profile a i',
-                   
-              ]
+        $this->add_responsive_control(
+            'sp_typography',
+            [
+                'label'                 => esc_html__( 'Icon Size', 'elematic-addons-for-elementor' ),
+                'type'                  => Controls_Manager::SLIDER,
+                'default'               => [
+                    // 'size' => 100,
+                    'unit' => 'px',
+                ],
+                'size_units'            => [ 'px' ],
+                'range'                 => [
+                    // '%' => [
+                    //     'min' => 1,
+                    //     'max' => 100,
+                    // ],
+                    'px' => [
+                        'min' => 1,
+                        'max' => 100,
+                    ],
+                ],
+                'selectors'             => [
+                    '{{WRAPPER}} .elematic-social-profile a i' => 'font-size: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elematic-social-profile a svg' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
         );
         $this->add_group_control(
             Group_Control_Border::get_type(),
