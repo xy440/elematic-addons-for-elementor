@@ -4,7 +4,7 @@ Tags: elementor, elementor addons, elementor widgets, header footer builder, web
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.6
+Stable tag: 1.7
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -127,6 +127,9 @@ This brings **Elementor Pro-style header/footer editing** into a lightweight, de
 - **[Highlight Text](https://themes.network/elematic/highlight-text/) (Webflow + Framer style)**
   Scroll-triggered highlight text effect inspired by Webflow and Framer, animating your headings or paragraphs as they enter the viewport.
 
+- **[Horizontal Timeline](https://themes.network/elematic/horizontal-timeline/)**
+  Display milestones and events in a scrollable horizontal timeline with 4 layout styles, custom icons, images, dates, and an animated progress line — perfect for history sections, roadmaps, and process flows.
+
 - **[Hotspot](https://themes.network/elematic/hotspot/)**
   Lets you add clickable markers over images with tooltips or popups, perfect for product highlights, maps, and interactive storytelling.
 
@@ -175,6 +178,9 @@ This brings **Elementor Pro-style header/footer editing** into a lightweight, de
 - **[Post Alter](https://themes.network/elematic/post-alter/)**. Display blog posts in an alternating left-right layout with featured images, meta info, excerpt. Perfect for storytelling-style blog layouts.
 
 - **[Post Grid](https://themes.network/elematic/post-grid/)**. Display posts in a customizable grid with category filters, numbered pagination and AJAX “Load More” button without page reload.
+
+- **[Post Tab](https://themes.network/elematic/post-tab/)**
+  Display posts in a tabbed layout organized by any taxonomy, with left/top/right tab positions, click or hover trigger, and a responsive multi-column grid — ideal for browsing blog content by category on a single page.
 
 - **[Post Tiled](https://themes.network/elematic/post-tiled/)**  
   Modern tiled post layouts with 13 styles layout.
@@ -232,6 +238,10 @@ Currently not, but we are working for it.
 
 == Changelog ==
 
+= 1.7 =
+- Added Horizontal Timeline widget.
+- Added Post Tab widget.
+
 = 1.6 =
 - Fix: Flip widget's icon color doesn't change.
 - Fix: Team widget's icon size doesn't change.
@@ -284,8 +294,8 @@ Currently not, but we are working for it.
 
 == Upgrade Notice ==
 
-= 1.6 =
-Fixed some widgets icon settings.
+= 1.7 =
+Added some widgets.
 
 == Support ==
 

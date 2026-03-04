@@ -121,6 +121,16 @@ class Helper {
         return $results;
     }
 
+    // get all registered taxonomies
+    static function get_all_taxonomies() {
+        $map = array();
+        $taxonomies = get_taxonomies();
+        foreach ($taxonomies as $taxonomy) {
+            $map [$taxonomy] = $taxonomy;
+        }
+        return $map;
+    }
+
     /**
      * Trim the current post title to a specific character length without breaking words.
      *

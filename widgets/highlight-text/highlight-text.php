@@ -13,7 +13,7 @@ class HighlightText extends Widget_Base {
 		return 'elematic-highlight-text'; 
 	}
 	public function get_title() { 
-		return esc_html__( 'Highlight Text', 'elematic-addons-for-elementor' ); 
+		return ELEMATIC . esc_html__( 'Highlight Text', 'elematic-addons-for-elementor' ); 
 	}
 	public function get_icon() { 
 		return 'eicon-text'; 
