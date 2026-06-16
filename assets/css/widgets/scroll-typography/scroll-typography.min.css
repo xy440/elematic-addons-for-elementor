@@ -1,0 +1,36 @@
+/**
+ * Elematic — Scroll Typography Widget
+ * Minimal CSS — layout and visibility only. All animation styles are driven by JS.
+ */
+
+.elematic-scroll-typography {
+	word-break: break-word;
+}
+
+/**
+ * Prevent flash of un-animated text on initial load.
+ * JS removes this class once the element is split and prepared.
+ */
+.elematic-scroll-typography.elematic-st-ready {
+	visibility: visible;
+}
+
+/**
+ * Ensure nested spans from splitting do not break word wrapping or
+ * introduce unexpected block-level gaps.
+ */
+.elematic-scroll-typography .elematic-st-part {
+	will-change: transform, opacity, filter;
+	backface-visibility: hidden;
+}
+
+/**
+ * Effect-specific baseline corrections.
+ * Overflow:hidden on word wrappers (set via JS) clips descenders on some fonts.
+ * A tiny extra padding-bottom on the outer span compensates.
+ */
+.elematic-scroll-typography[data-elematic-style="word-fade-up"] > span,
+.elematic-scroll-typography[data-elematic-style="emerge-up"] > span,
+.elematic-scroll-typography[data-elematic-style="split-reveal"] > span {
+	padding-bottom: 0.1em;
+}

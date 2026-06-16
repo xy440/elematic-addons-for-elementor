@@ -1,0 +1,123 @@
+/* ── 3D Carousel ───────────────────────────────────────────────────── */
+.elematic-3d-carousel {
+    width: 100%;
+    overflow: hidden;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.e3dc-stage {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.e3dc-track {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Perspective MUST live on the direct parent of the cards */
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+}
+
+/* ── Card ──────────────────────────────────────────────────────────── */
+.e3dc-card {
+    position: absolute;
+    width: 480px;
+    height: 320px;
+    cursor: grab;
+    will-change: transform, opacity;
+    transform-style: preserve-3d;
+}
+
+.e3dc-card:active {
+    cursor: grabbing;
+}
+
+.e3dc-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.e3dc-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+.e3dc-image-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.e3dc-image-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ── Caption ───────────────────────────────────────────────────────── */
+.e3dc-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 24px;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.82) 0%,
+        rgba(0, 0, 0, 0.25) 60%,
+        transparent 100%
+    );
+    pointer-events: auto;
+}
+
+.e3dc-title {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 5px;
+    line-height: 1.3;
+}
+
+.e3dc-title-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.e3dc-title-link:hover {
+    opacity: 0.85;
+    text-decoration: none;
+    color: inherit;
+}
+
+.e3dc-title-link .e3dc-title {
+    margin-bottom: 0;
+}
+
+.e3dc-desc {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 13px;
+    margin: 5px 0 0;
+    line-height: 1.5;
+}

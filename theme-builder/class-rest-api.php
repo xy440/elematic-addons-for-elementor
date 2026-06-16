@@ -81,8 +81,8 @@ class Elematic_REST_API {
         // Set default conditions
         update_post_meta($post_id, '_elematic_conditions', ['type' => 'global']);
         
-        // Set Elementor template type
-        update_post_meta($post_id, '_elementor_template_type', 'page');
+        // Set Elementor document type for inline theme builder editing
+        update_post_meta($post_id, '_elementor_template_type', $type);
         
         // Set canvas template
         update_post_meta($post_id, '_wp_page_template', 'elementor_canvas');
@@ -173,17 +173,39 @@ class Elematic_REST_API {
     }
     
     public function update_template($request) {
-        $id = $request->get_param('id');
+        $id = absint($request->get_param('id'));
+        $title = $request->get_param('title');
         $conditions = $request->get_param('conditions');
-        
+
+        $post = get_post($id);
+
+        if (!$post || $post->post_type !== 'elematic_template') {
+            return new \WP_Error('elematic_template_not_found', __('Template not found.', 'elematic-addons-for-elementor'), ['status' => 404]);
+        }
+
+        if ($title !== null) {
+            $title = sanitize_text_field($title);
+
+            if ($title === '') {
+                return new \WP_Error('elematic_invalid_title', __('Template name is required.', 'elematic-addons-for-elementor'), ['status' => 400]);
+            }
+
+            wp_update_post([
+                'ID'         => $id,
+                'post_title' => $title,
+            ]);
+        }
+
         if ($conditions) {
             update_post_meta($id, '_elematic_conditions', $conditions);
         }
-        
-        // Clear cache
+
         Elematic_Conditions::instance()->clear_template_cache($id);
-        
-        return rest_ensure_response(['success' => true]);
+
+        return rest_ensure_response([
+            'success' => true,
+            'title'   => get_the_title($id),
+        ]);
     }
     
     public function delete_template($request) {
@@ -244,13 +266,15 @@ class Elematic_REST_API {
         }
         
         // Copy meta data
-        $meta_keys = ['_elematic_priority', '_elematic_conditions', '_elementor_template_type', '_wp_page_template'];
+        $meta_keys = ['_elematic_priority', '_elematic_conditions', '_wp_page_template'];
         foreach ($meta_keys as $key) {
             $meta_value = get_post_meta($template_id, $key, true);
             if ($meta_value) {
                 update_post_meta($new_post_id, $key, $meta_value);
             }
         }
+
+        Elematic_Document_Types::instance()->sync_template_document_type($new_post_id);
         
         // Copy Elementor meta (content)
         $elementor_data = get_post_meta($template_id, '_elementor_data', true);

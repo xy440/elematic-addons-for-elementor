@@ -33,6 +33,11 @@ class Elematic_Renderer {
         
         // Enqueue template styles
         add_action('wp_enqueue_scripts', [$this, 'enqueue_template_styles']);
+        add_action('elementor/preview/enqueue_styles', [$this, 'enqueue_layout_styles']);
+
+        // Inject header/footer on Elementor canvas pages
+        add_action('elementor/page_templates/canvas/before_content', [$this, 'render_canvas_header']);
+        add_action('elementor/page_templates/canvas/after_content', [$this, 'render_canvas_footer']);
         
         // For block themes, use block rendering filters
         if ($this->using_block_theme) {
@@ -150,10 +155,7 @@ class Elematic_Renderer {
             if ($is_header) {
                 $header_id = Elematic_Conditions::instance()->get_active_template('header');
                 if ($header_id) {
-                    // Return custom header instead of theme template part
-                    return '<header id="site-header" role="banner" class="wp-block-template-part elematic-custom-header">' . 
-                           $this->get_template_content($header_id) . 
-                           '</header>';
+                    return $this->get_template_content($header_id);
                 }
             }
             
@@ -161,10 +163,7 @@ class Elematic_Renderer {
             if ($is_footer) {
                 $footer_id = Elematic_Conditions::instance()->get_active_template('footer');
                 if ($footer_id) {
-                    // Return custom footer instead of theme template part
-                    return '<footer id="site-footer" role="contentinfo" class="wp-block-template-part elematic-custom-footer">' . 
-                           $this->get_template_content($footer_id) . 
-                           '</footer>';
+                    return $this->get_template_content($footer_id);
                 }
             }
         }
@@ -195,9 +194,7 @@ class Elematic_Renderer {
             in_array($template_part_slug, ['header'], true)) {
             $header_id = Elematic_Conditions::instance()->get_active_template('header');
             if ($header_id) {
-                return '<header id="site-header" role="banner" class="wp-block-template-part elematic-custom-header">' . 
-                       $this->get_template_content($header_id) . 
-                       '</header>';
+                return $this->get_template_content($header_id);
             }
         }
         
@@ -206,9 +203,7 @@ class Elematic_Renderer {
             in_array($template_part_slug, ['footer'], true)) {
             $footer_id = Elematic_Conditions::instance()->get_active_template('footer');
             if ($footer_id) {
-                return '<footer id="site-footer" role="contentinfo" class="wp-block-template-part elematic-custom-footer">' . 
-                       $this->get_template_content($footer_id) . 
-                       '</footer>';
+                return $this->get_template_content($footer_id);
             }
         }
         
@@ -239,12 +234,8 @@ class Elematic_Renderer {
         
         // Output our custom header HTML structure
         require ELEMATIC_PATH . 'theme-builder/templates/elematic-header.php';
-        
-        // Render the Elementor template content inside the header
         $this->render_template($header_id);
-        
-        // Close header tag
-        echo '</header>';
+        echo '<div id="page" class="site">';
     }
     
     /**
@@ -281,16 +272,8 @@ class Elematic_Renderer {
         // Stop this hook from running again
         remove_action('get_footer', [$this, 'get_footer'], -999);
         
-        // Output our custom footer
-        echo '<footer id="colophon" class="site-footer elematic-custom-footer">';
-        
-        // Render the Elementor template inside the footer
-        $this->render_template($footer_id);
-        
-        echo '</footer>';
-        
-        // Close page container
         echo '</div><!-- #page -->';
+        $this->render_template($footer_id);
         
         // CRITICAL: Only call wp_footer ONCE
         // This ensures all scripts are loaded, but only once
@@ -322,15 +305,54 @@ class Elematic_Renderer {
         return $classes;
     }
     
-    public function enqueue_template_styles() {
+    public function enqueue_layout_styles() {
         $header_id = Elematic_Conditions::instance()->get_active_template('header');
+        $footer_id = Elematic_Conditions::instance()->get_active_template('footer');
+
+        if (!$header_id && !$footer_id) {
+            return;
+        }
+
+        wp_enqueue_style(
+            'elematic-theme-builder',
+            ELEMATIC_URL . 'assets/css/theme-builder.min.css',
+            [],
+            ELEMATIC_VERSION
+        );
+    }
+
+    public function enqueue_template_styles() {
+        $this->enqueue_layout_styles();
+
+        $header_id = Elematic_Conditions::instance()->get_active_template('header');
+        $footer_id = Elematic_Conditions::instance()->get_active_template('footer');
+
+        if (!$header_id && !$footer_id) {
+            return;
+        }
+
         if ($header_id) {
             $this->enqueue_template_css($header_id);
         }
-        
-        $footer_id = Elematic_Conditions::instance()->get_active_template('footer');
+
         if ($footer_id) {
             $this->enqueue_template_css($footer_id);
+        }
+    }
+
+    public function render_canvas_header() {
+        $header_id = Elematic_Conditions::instance()->get_active_template('header');
+
+        if ($header_id) {
+            self::render_template($header_id);
+        }
+    }
+
+    public function render_canvas_footer() {
+        $footer_id = Elematic_Conditions::instance()->get_active_template('footer');
+
+        if ($footer_id) {
+            self::render_template($footer_id);
         }
     }
     

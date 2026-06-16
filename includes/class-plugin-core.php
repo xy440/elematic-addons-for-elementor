@@ -12,6 +12,7 @@ class Plugin_Core {
 	private function elematic_setup_hooks() {
 		add_action( 'elementor/frontend/after_enqueue_styles', [ $this, 'elematic_widget_styles' ] );
 		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'elematic_widget_scripts' ] );
+		add_action( 'elementor/frontend/after_enqueue_scripts', [ $this, 'elematic_enqueue_global_scripts' ] );
 	}
 
 	public function elematic_widget_styles() {
@@ -59,18 +60,28 @@ class Plugin_Core {
 		wp_register_style( 'elematic-post-tab', ELEMATIC_URL . 'assets/css/widgets/post-tab/post-tab.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-post-tiled', ELEMATIC_URL . 'assets/css/widgets/post-tiled/post-tiled.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-progress-bar', ELEMATIC_URL . 'assets/css/widgets/progress-bar/progress-bar.min.css', [], ELEMATIC_VERSION );
+		wp_register_style( 'elematic-scroll-typography', ELEMATIC_URL . 'assets/css/widgets/scroll-typography/scroll-typography.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-service-list', ELEMATIC_URL . 'assets/css/widgets/service-list/service-list.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-table', ELEMATIC_URL . 'assets/css/widgets/table/table.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-team', ELEMATIC_URL . 'assets/css/widgets/team/team.min.css', [], ELEMATIC_VERSION );
+		wp_register_style( 'elematic-threed-carousel', ELEMATIC_URL . 'assets/css/widgets/threed-carousel/threed-carousel.min.css', [], ELEMATIC_VERSION );
 		wp_register_style( 'elematic-timeline', ELEMATIC_URL . 'assets/css/widgets/timeline/timeline.min.css', [], ELEMATIC_VERSION );
 	}
 
 
 	public function elematic_widget_scripts() {
+		// GSAP vendor scripts
+		wp_register_script( 'elematic-gsap', ELEMATIC_URL . 'assets/js/vendor/gsap/gsap.min.js', [], ELEMATIC_VERSION, true );
+		wp_register_script( 'elematic-gsap-scrolltrigger', ELEMATIC_URL . 'assets/js/vendor/gsap/ScrollTrigger.min.js', [ 'elematic-gsap' ], ELEMATIC_VERSION, true );
+ 
+		// Global scroll animation module
+		wp_register_script( 'elematic-scroll-animate', ELEMATIC_URL . 'assets/js/scroll-animate.min.js', [ 'elematic-gsap-scrolltrigger', 'jquery' ], ELEMATIC_VERSION, true );
+
+		// load more button
 		wp_register_script( 'elematic-load-more-btn', ELEMATIC_URL . 'assets/js/load-more-btn.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
 
 		// modules
-
+		// wp_register_script( 'countdown', ELEMATIC_URL . 'assets/js/modules/scroll-animation/countdown.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
 
 		// widgets
 		wp_register_script( 'countdown', ELEMATIC_URL . 'assets/js/vendor/countdown.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
@@ -96,6 +107,7 @@ class Plugin_Core {
 		wp_register_script( 'elematic-highlight-text', ELEMATIC_URL . 'assets/js/widgets/highlight-text/highlight-text.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
 		wp_register_script( 'elematic-horizontal-timeline', ELEMATIC_URL . 'assets/js/widgets/horizontal-timeline/horizontal-timeline.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
 		wp_register_script( 'elematic-hotspot', ELEMATIC_URL . 'assets/js/widgets/hotspot/hotspot.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
+		wp_register_script( 'elematic-icon-box', ELEMATIC_URL . 'assets/js/widgets/icon-box/icon-box.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
 		wp_register_script( 'elematic-image-comparison', ELEMATIC_URL . 'assets/js/widgets/image-comparison/image-comparison.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
 		wp_register_script( 'elematic-image-slide', ELEMATIC_URL . 'assets/js/widgets/image-slide/image-slide.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
 		
@@ -105,8 +117,11 @@ class Plugin_Core {
 		wp_register_script( 'lottie', ELEMATIC_URL . 'assets/js/widgets/lottie/lottie.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
 		wp_register_script( 'elematic-post-tab', ELEMATIC_URL . 'assets/js/widgets/post-tab/post-tab.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
 		wp_register_script( 'elematic-progress-bar', ELEMATIC_URL . 'assets/js/widgets/progress-bar/progress-bar.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
+		wp_register_script( 'elematic-scroll-typography', ELEMATIC_URL . 'assets/js/widgets/scroll-typography/scroll-typography.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
 		wp_register_script( 'elematic-table', ELEMATIC_URL . 'assets/js/widgets/table/table.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
+		wp_register_script( 'elematic-threed-carousel', ELEMATIC_URL . 'assets/js/widgets/threed-carousel/threed-carousel.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
 		wp_register_script( 'elematic-timeline', ELEMATIC_URL . 'assets/js/widgets/timeline/timeline.min.js', [ 'jquery' ], ELEMATIC_VERSION, true );
+		
 		
 
 		// Localize the script with the AJAX URL
@@ -116,6 +131,10 @@ class Plugin_Core {
 	    ));
 
 
+	}
+
+	public function elematic_enqueue_global_scripts() {
+		wp_enqueue_script( 'elematic-scroll-animate' );
 	}
 
 

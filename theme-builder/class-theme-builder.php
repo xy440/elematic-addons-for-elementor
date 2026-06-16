@@ -29,6 +29,7 @@ class Elematic_Theme_Builder {
         require_once ELEMATIC_PATH . 'theme-builder/class-renderer.php';
         require_once ELEMATIC_PATH . 'theme-builder/class-frontend-editor.php';
         require_once ELEMATIC_PATH . 'theme-builder/class-rest-api.php';
+        require_once ELEMATIC_PATH . 'theme-builder/class-document-types.php';
     }
     
     private function init_hooks() {
@@ -38,6 +39,7 @@ class Elematic_Theme_Builder {
         Elematic_Renderer::instance();
         Elematic_Frontend_Editor::instance();
         Elematic_REST_API::instance();
+        Elematic_Document_Types::instance();
         
         // Admin menu
         add_action('admin_menu', [$this, 'add_admin_menu']);
@@ -96,7 +98,7 @@ class Elematic_Theme_Builder {
         // Admin dashboard (MUST load BEFORE Alpine.js)
         wp_enqueue_script(
             'elematic-admin-dashboard',
-            ELEMATIC_URL . 'assets/js/admin-dashboard.js',
+            ELEMATIC_URL . 'assets/js/admin-dashboard.min.js',
             [],
             ELEMATIC_VERSION,
             false  // Load in header, BEFORE Alpine
@@ -122,7 +124,7 @@ class Elematic_Theme_Builder {
         // Admin CSS
         wp_enqueue_style(
             'elematic-admin-dashboard',
-            ELEMATIC_URL . 'assets/css/admin-dashboard.css',
+            ELEMATIC_URL . 'assets/css/admin-dashboard.min.css',
             [],
             ELEMATIC_VERSION
         );

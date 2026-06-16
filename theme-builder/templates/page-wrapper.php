@@ -225,16 +225,13 @@ $elematic_footer_id = Elematic_Conditions::instance()->get_active_template('foot
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<div id="page" class="site">
-    <?php
-    // Render Custom Header (if exists)
-    if ($elematic_header_id) {
-        echo '<header id="masthead" class="site-header elematic-custom-header">';
-        Elematic_Renderer::render_template($elematic_header_id);
-        echo '</header>';
-    }
-    ?>
+<?php
+if ($elematic_header_id) {
+    Elematic_Renderer::render_template($elematic_header_id);
+}
+?>
 
+<div id="page" class="site">
     <!-- Main Content Wrapper -->
     <div id="content" class="site-content">
         <div id="primary" class="content-area">
@@ -323,16 +320,13 @@ $elematic_footer_id = Elematic_Conditions::instance()->get_active_template('foot
             </main>
         </div>
     </div>
-
-    <?php
-    // Render Custom Footer (if exists)
-    if ($elematic_footer_id) {
-        echo '<footer id="colophon" class="site-footer elematic-custom-footer">';
-        Elematic_Renderer::render_template($elematic_footer_id);
-        echo '</footer>';
-    }
-    ?>
 </div><!-- #page -->
+
+<?php
+if ($elematic_footer_id) {
+    Elematic_Renderer::render_template($elematic_footer_id);
+}
+?>
 
 <?php wp_footer(); ?>
 </body>

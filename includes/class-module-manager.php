@@ -11,7 +11,8 @@ final class ModuleManager {
 
 	public function __construct() {
 		$modules = [
-			'wrapper-link'
+			'wrapper-link',
+			'scroll-animation',
 		];
 
 		foreach ( $modules as $module_name ) {

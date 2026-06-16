@@ -1,10 +1,10 @@
-=== Elematic — Addons for Elementor ===
+=== Elematic — Elementor Addons, Header Footer Builder & Animations ===
 Contributors: xy440
-Tags: elementor, elementor addons, elementor widgets, header footer builder, webflow
-Requires at least: 6.0
-Tested up to: 6.9
+Tags: elementor, elementor addons, elementor header footer, elementor widgets, elementor animations
+Requires at least: 6.1
+Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.7
+Stable tag: 1.8
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -46,7 +46,7 @@ The plugin is built with **performance first** in mind. Assets load only when wi
 ✔ WooCommerce stores  
 ✔ Elementor users who want more control and better animations
 
-🔥 **Key Highlights**
+=== Key Highlights ===
 - Elementor Theme Builder (Header & Footer)
 - Webflow & Framer-style animations
 - Performance-optimized architecture
@@ -69,6 +69,9 @@ Elematic includes a **visual Theme Builder** that lets you design headers and fo
 This brings **Elementor Pro-style header/footer editing** into a lightweight, developer-friendly plugin.
 
 == Included Widgets ==
+
+- **[3D Carousel](https://themes.network/elematic/3d-carousel/)**
+  Bring your images to life with realistic depth and perspective. This new widget creates a striking 3D rotating stage with dynamic scaling, custom slide labels, and elegant shadow details.
 
 - **[Accordion](https://themes.network/elematic/accordion/)**
   Clean collapsible FAQ sections with icons and smooth animation.
@@ -237,6 +240,13 @@ No. Elematic is built with performance-first architecture.
 Currently not, but we are working for it.
 
 == Changelog ==
+
+= 1.8 =
+- Added 3d Carousel widget.
+- Header and footer now edit inline in the Elementor preview (Elementor Pro–style document switching) instead of opening in a popup iframe.
+- Added contextual Edit Header, Edit Footer, and Edit Page controls: region buttons show on hover; Edit Page appears after switching to header/footer editing so you can return to page content.
+- Added a Rename action beside Edit on each header and footer template row on Theme Builder.
+- Minified some css and js files.
 
 = 1.7 =
 - Added Horizontal Timeline widget.

@@ -23,6 +23,7 @@ class Init {
         require_once ELEMATIC_PATH . 'includes/class-ajax-handler.php';
         require_once ELEMATIC_PATH . 'includes/class-image-choose.php';
         require_once ELEMATIC_PATH . 'base/module-base.php';
+        require_once ELEMATIC_PATH . 'includes/traits/trait-carousel-controls.php';
 
         new Plugin_Core();
         new Enqueue();

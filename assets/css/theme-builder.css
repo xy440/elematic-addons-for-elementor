@@ -1,0 +1,68 @@
+/**
+ * Theme Builder layout styles
+ */
+
+.elementor.elematic-custom-header,
+.elementor.elematic-custom-footer,
+.elematic-custom-header,
+.elematic-custom-footer {
+    display: block;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+}
+
+.elementor.elematic-custom-header.elementor-edit-area,
+.elementor.elematic-custom-footer.elementor-edit-area,
+.elementor.elematic-custom-header.elementor-edit-area-active,
+.elementor.elematic-custom-footer.elementor-edit-area-active {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.elementor.elematic-custom-header > .e-con,
+.elementor.elematic-custom-footer > .e-con,
+.elementor.elematic-custom-header > .elementor-section,
+.elementor.elematic-custom-footer > .elementor-section {
+    max-width: none;
+}
+
+/* Neutralize common theme header/footer layout rules */
+#site-header.elematic-custom-header,
+#masthead.elematic-custom-header,
+#colophon.elematic-custom-footer,
+.site-header.elematic-custom-header,
+.site-footer.elematic-custom-footer,
+header.elematic-custom-header,
+footer.elematic-custom-footer {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Break out of boxed theme wrappers such as #page-wrap */
+body.elematic-has-custom-header #page-wrap .elematic-custom-header,
+body.elematic-has-custom-footer #page-wrap .elematic-custom-footer,
+body.elematic-has-custom-header #page .elematic-custom-header,
+body.elematic-has-custom-footer #page .elematic-custom-footer,
+body.elematic-has-custom-header .site-content .elematic-custom-header,
+body.elematic-has-custom-footer .site-content .elematic-custom-footer,
+body.elematic-has-custom-header .main-container .elematic-custom-header,
+body.elematic-has-custom-footer .main-container .elematic-custom-footer {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+}
+
+body.elematic-has-custom-header > .elementor.elematic-custom-header,
+body.elematic-has-custom-footer > .elementor.elematic-custom-footer {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}

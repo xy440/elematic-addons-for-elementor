@@ -14,6 +14,7 @@ function themeBuilder() {
         footerTemplates: [],
         showCreateModal: false,
         showConditionsModal: false,
+        showRenameModal: false,
         newTemplate: {
             title: '',
             type: 'header'
@@ -26,6 +27,10 @@ function themeBuilder() {
                 post_ids: '',
                 post_type: ''
             }
+        },
+        renamingTemplate: {
+            id: null,
+            title: ''
         },
         // Initialize
         async init() {
@@ -115,6 +120,53 @@ function themeBuilder() {
             }
             
             this.showConditionsModal = true;
+        },
+
+        renameTemplate(template) {
+            this.renamingTemplate = {
+                id: template.id,
+                title: template.title
+            };
+            this.showRenameModal = true;
+        },
+
+        async saveRename() {
+            const title = this.renamingTemplate.title.trim();
+
+            if (!title) {
+                alert('Please enter a template name.');
+                return;
+            }
+
+            try {
+                const response = await fetch(elematicData.restUrl + '/template/' + this.renamingTemplate.id, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-WP-Nonce': elematicData.restNonce
+                    },
+                    body: JSON.stringify({
+                        title: title
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to rename template');
+                }
+
+                const data = await response.json();
+                const template = this.templates.find(t => t.id === this.renamingTemplate.id);
+
+                if (template) {
+                    template.title = data.title || title;
+                }
+
+                this.showRenameModal = false;
+                this.showNotification('Template renamed successfully!');
+            } catch (error) {
+                console.error('Error renaming template:', error);
+                alert('Failed to rename template. Please try again.');
+            }
         },
         
         // Save conditions

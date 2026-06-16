@@ -75,6 +75,15 @@ if ( ! defined( 'ABSPATH' ) ) exit;
                                 </svg>
                                 <?php esc_html_e('Edit', 'elematic-addons-for-elementor'); ?>
                             </a>
+
+                            <button @click="renameTemplate(template)" class="elematic-btn elematic-btn-secondary">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M2 12H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    <path d="M9 2H12V5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 2L6.5 7.5L4 8L4.5 5.5L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                                </svg>
+                                <?php esc_html_e('Rename', 'elematic-addons-for-elementor'); ?>
+                            </button>
                             
                             <button @click="editConditions(template)" class="elematic-btn elematic-btn-conditions">
                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -149,6 +158,15 @@ if ( ! defined( 'ABSPATH' ) ) exit;
                                 </svg>
                                 <?php esc_html_e('Edit', 'elematic-addons-for-elementor'); ?>
                             </a>
+
+                            <button @click="renameTemplate(template)" class="elematic-btn elematic-btn-secondary">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M2 12H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    <path d="M9 2H12V5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 2L6.5 7.5L4 8L4.5 5.5L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                                </svg>
+                                <?php esc_html_e('Rename', 'elematic-addons-for-elementor'); ?>
+                            </button>
                             
                             <button @click="editConditions(template)" class="elematic-btn elematic-btn-conditions">
                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -244,6 +262,45 @@ if ( ! defined( 'ABSPATH' ) ) exit;
         </div>
     </div>
     
+    <!-- Rename Template Modal -->
+    <div x-show="showRenameModal"
+         x-cloak
+         @click.self="showRenameModal = false"
+         class="elematic-modal-overlay">
+        <div class="elematic-modal">
+            <div class="elematic-modal-header">
+                <h2><?php esc_html_e('Rename Template', 'elematic-addons-for-elementor'); ?></h2>
+                <button @click="showRenameModal = false" class="elematic-modal-close">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 5L15 15M15 5L5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="elematic-modal-body">
+                <div class="elematic-form-group">
+                    <label><?php esc_html_e('Template Name', 'elematic-addons-for-elementor'); ?></label>
+                    <input type="text"
+                           x-model="renamingTemplate.title"
+                           @keyup.enter="saveRename()"
+                           placeholder="<?php esc_attr_e('Enter template name', 'elematic-addons-for-elementor'); ?>"
+                           class="elematic-input">
+                </div>
+            </div>
+
+            <div class="elematic-modal-footer">
+                <button @click="showRenameModal = false" class="elematic-btn elematic-btn-secondary">
+                    <?php esc_html_e('Cancel', 'elematic-addons-for-elementor'); ?>
+                </button>
+                <button @click="saveRename()"
+                        :disabled="!renamingTemplate.title || !renamingTemplate.title.trim()"
+                        class="elematic-btn elematic-btn-primary">
+                    <?php esc_html_e('Save', 'elematic-addons-for-elementor'); ?>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Conditions Modal -->
     <div x-show="showConditionsModal" 
          x-cloak

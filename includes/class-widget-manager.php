@@ -49,9 +49,11 @@ final class WidgetManager {
         'post-tab',
         'post-tiled',
         'progress-bar',
+        'scroll-typography',
         'service-list',
         'table',
         'team',
+        'threed-carousel',
         'timeline'
     ];
 
